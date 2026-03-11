@@ -9,8 +9,9 @@
 # Allow markdown files
 !*.md
 
-# Allow mkdocs config and dependencies
+# Allow mkdocs config, Netlify config, and dependencies
 !mkdocs.yml
+!netlify.toml
 !requirements.txt
 
 # Allow Giscus assets

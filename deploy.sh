@@ -29,5 +29,6 @@ else
   echo "Done — site live at https://harmonious-phoenix-96cdd9.netlify.app/"
 fi
 
-# Clean up worktree
-git -C "$PROJECT_DIR" worktree remove "$WORKTREE" --force
+# Clean up worktree (cd back first to avoid Windows permission errors)
+cd "$PROJECT_DIR"
+git worktree remove "$WORKTREE" --force || rm -rf "$WORKTREE"

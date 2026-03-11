@@ -18,13 +18,16 @@ git -C "$PROJECT_DIR" worktree add "$WORKTREE" gh-pages
 # Copy built files into worktree
 cp -r "$PROJECT_DIR/site/." "$WORKTREE/"
 
-# Commit and push
+# Commit and push (skip if nothing changed)
 cd "$WORKTREE"
 git add -A
-git commit -m "Deploy: $(date '+%Y-%m-%d %H:%M')"
-git push origin gh-pages
+if git diff --cached --quiet; then
+  echo "No changes to deploy."
+else
+  git commit -m "Deploy: $(date '+%Y-%m-%d %H:%M')"
+  git push origin gh-pages
+  echo "Done — site live at https://harmonious-phoenix-96cdd9.netlify.app/"
+fi
 
 # Clean up worktree
 git -C "$PROJECT_DIR" worktree remove "$WORKTREE" --force
-
-echo "Done — site live at https://harmonious-phoenix-96cdd9.netlify.app/"

@@ -1,22 +1,55 @@
 # Migration Decision Framework
 
-This page captures the key inputs needed to make a confident go/no-go decision on Shopify migration and the headed vs. headless architecture choice. Sections 1–6 feed into the Decision Scorecard. The final recommendation is recorded at the bottom.
+This page captures the key inputs needed to make a confident go/no-go decision on Shopify migration and the headed vs. headless architecture choice. The Recommendation at the top is completed last — once Sections 2–10 are populated, record the final decision there.
 
 ---
 
-## 1. Total Cost of Ownership
+## 1. Recommendation
+
+> To be completed once Sections 2–10 are populated.
+
+| Field | Value |
+| --- | --- |
+| Recommended Architecture | TBD — Headed / Headless |
+| Recommended Agency | TBD |
+| Decision Date | TBD |
+| Decision Made By | TBD |
+| Next Action | TBD |
+| Rationale | TBD |
+
+---
+
+## 2. Decision Scorecard — Headed vs. Headless
+
+> Score each criterion 1 (poor) to 5 (excellent). Weighted Score = Weight × Score.
+
+| Criteria | Weight | Headed Score | Headed Weighted | Headless Score | Headless Weighted | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| Speed to Market | 20% | | | | | Headed faster by ~6–12 months |
+| Total Cost — Year 1 | 15% | | | | | |
+| Total Cost — Year 3 | 10% | | | | | |
+| Content & Design Flexibility | 15% | | | | | |
+| SEO Continuity Risk | 15% | | | | | Headed lower risk |
+| Internal Team Capacity | 10% | | | | | |
+| Integration Complexity | 10% | | | | | Headless adds overhead on checkout-adjacent integrations |
+| Revenue Risk During Cutover | 5% | | | | | |
+| **Weighted Total** | **100%** | | **TBD** | | **TBD** | |
+
+---
+
+## 3. Total Cost of Ownership
 
 > Context: All cost estimates should be anchored against annual GMV. Populate GMV first — cost figures are meaningless without it.
 
 | Metric | Value |
-|---|---|
+| --- | --- |
 | Annual GMV (CA + US) | TBD |
 | Shopify Plus GMV Fee Threshold | $800K USD/month (~0.25% above) |
 
 ### Current State (WooCommerce Baseline)
 
 | Cost Category | Annual Cost | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Hosting & Infrastructure | TBD | |
 | Plugin & License Fees | TBD | |
 | Development & Maintenance | TBD | |
@@ -26,7 +59,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 ### Option 1 — Headed (Shopify Native)
 
 | Cost Category | Estimate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Shopify Plus License | ~$27,600/year | ~$2,300/month billed annually |
 | Shopify Plus GMV Fee | TBD | 0.25% above threshold |
 | Theme Development | TBD | One-time |
@@ -40,7 +73,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 ### Option 2 — Headless (Decoupled Frontend)
 
 | Cost Category | Estimate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Shopify Plus License | ~$27,600/year | ~$2,300/month billed annually |
 | Shopify Plus GMV Fee | TBD | 0.25% above threshold |
 | Build Cost | >$250,000 | One-time estimate — unvalidated |
@@ -54,38 +87,28 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ---
 
-## 2. Current State Baseline
+## 4. Agency Comparison Matrix
 
-### Known Pain Points Driving Migration
+> Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score.
 
-| Pain Point | Business Impact | Priority |
-|---|---|---|
-| Rapid growth has outpaced WooCommerce capabilities | Platform instability, missed opportunities | High |
-| Teams making high-impact decisions with limited system support | Operational risk, slow response | High |
-| Manual workarounds for bundles, SKUs, and promotions | Error-prone, slows launches | High |
-| No US storefront with compliant pricing and payment routing | Revenue ceiling | High |
-| Fulfil integration fragility | Inventory and fulfillment risk | High |
-| CA French-language storefront not live | Regulatory and market risk | Medium |
-| Limited B2B / wholesale ordering capability | Revenue opportunity gap | Medium |
-
-### Site Performance (Pre-Migration)
-
-| Metric | Current Value | Target Post-Migration |
-|---|---|---|
-| Annual GMV | TBD | |
-| Core Web Vitals — LCP | TBD | <2.5s |
-| Core Web Vitals — CLS | TBD | <0.1 |
-| Core Web Vitals — INP | TBD | <200ms |
-| Conversion Rate | TBD | |
-| Average Page Load Time | TBD | |
-| Organic Search Sessions (monthly) | TBD | Maintain or grow |
+| Criteria | Weight | eHouse | Domaine | StreamCommerce |
+| --- | --- | --- | --- | --- |
+| Shopify Plus Partner Status | 15% | TBD | TBD | TBD |
+| Headless Experience | 20% | Low — positions headed as default | Strong — presents multiple arch options | Limited — not demonstrated |
+| Headed / Shopify Native Experience | 15% | Strong | Strong | Strong |
+| Co-Development / Shared Ownership Model | 15% | TBD | Supports phased, co-dev | Less flexible for collaboration |
+| Estimated Build Cost | 15% | TBD | TBD | TBD |
+| Estimated Timeline | 10% | TBD | TBD | TBD |
+| Data Migration Experience | 5% | TBD | TBD | TBD |
+| Post-Launch Support Model | 5% | TBD | TBD | TBD |
+| **Weighted Score** | **100%** | **TBD** | **TBD** | **TBD** |
 
 ---
 
-## 3. Integration Complexity Map
+## 5. Integration Complexity Map
 
 | Integration | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Fulfil (OMS) | Custom API | High | High | TBD |
 | Zendesk | Native Shopify App | Low | Medium | TBD |
 | ClaimLane (Returns/Warranty) | Custom / TBD | High | High | TBD |
@@ -106,10 +129,10 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ---
 
-## 4. SEO Risk Assessment
+## 6. SEO Risk Assessment
 
 | Area | Current State | Risk Level | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Organic Traffic Value (monthly) | TBD | — | |
 | High-Value URLs requiring redirects | TBD | High | Full redirect map before go-live |
 | CA French / EN-FR hreflang | TBD | High | Validate hreflang on staging before launch |
@@ -120,46 +143,25 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ---
 
-## 5. Agency Comparison Matrix
+## 7. Risk Register
 
-> Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score.
-
-| Criteria | Weight | eHouse | Domaine | StreamCommerce |
-|---|---|---|---|---|
-| Shopify Plus Partner Status | 15% | TBD | TBD | TBD |
-| Headless Experience | 20% | Low — positions headed as default | Strong — presents multiple arch options | Limited — not demonstrated |
-| Headed / Shopify Native Experience | 15% | Strong | Strong | Strong |
-| Co-Development / Shared Ownership Model | 15% | TBD | Supports phased, co-dev | Less flexible for collaboration |
-| Estimated Build Cost | 15% | TBD | TBD | TBD |
-| Estimated Timeline | 10% | TBD | TBD | TBD |
-| Data Migration Experience | 5% | TBD | TBD | TBD |
-| Post-Launch Support Model | 5% | TBD | TBD | TBD |
-| **Weighted Score** | **100%** | **TBD** | **TBD** | **TBD** |
+| Risk | Likelihood | Impact | Mitigation | Owner |
+| --- | --- | --- | --- | --- |
+| Headless build exceeds $250k estimate | High | High | Get fixed-fee SOW; define scope freeze date | TBD |
+| SEO ranking drop post-migration | Medium | High | Full redirect map + staging CWV audit before go-live | TBD |
+| Fulfil OMS integration delayed | Medium | High | Parallel-run WooCommerce + Shopify during Phase 1 | TBD |
+| ClaimLane not compatible with Shopify | Medium | Medium | Validate in Phase 0; identify fallback returns platform | TBD |
+| CA French (EN-FR) hreflang errors | Medium | Medium | Dedicated QA pass on bilingual routing before launch | TBD |
+| Go-live during peak season causes revenue disruption | Low | Very High | Hard block on Oct 15 – Jan 5 launch window | TBD |
+| Agency delivery delays | Medium | High | Define milestone-based payment schedule in SOW | TBD |
+| Internal team bandwidth insufficient for co-development | Medium | Medium | Define internal headcount commitment before contract | TBD |
 
 ---
 
-## 6. Decision Scorecard — Headed vs. Headless
-
-> Score each criterion 1 (poor) to 5 (excellent). Weighted Score = Weight × Score.
-
-| Criteria | Weight | Headed Score | Headed Weighted | Headless Score | Headless Weighted | Notes |
-| --- | --- | --- | --- | --- | --- | --- |
-| Speed to Market | 20% | | | | | Headed faster by ~6–12 months |
-| Total Cost — Year 1 | 15% | | | | | |
-| Total Cost — Year 3 | 10% | | | | | |
-| Content & Design Flexibility | 15% | | | | | |
-| SEO Continuity Risk | 15% | | | | | Headed lower risk |
-| Internal Team Capacity | 10% | | | | | |
-| Integration Complexity | 10% | | | | | Headless adds overhead on checkout-adjacent integrations |
-| Revenue Risk During Cutover | 5% | | | | | |
-| **Weighted Total** | **100%** | | **TBD** | | **TBD** | |
-
----
-
-## 7. Go/No-Go Timeline
+## 8. Go/No-Go Timeline
 
 | Milestone | Target Date | Owner | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Architecture Decision Made | TBD | | |
 | Agency Selected | TBD | | |
 | Contract / SOW Signed | TBD | | |
@@ -175,25 +177,10 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ---
 
-## 8. Risk Register
-
-| Risk | Likelihood | Impact | Mitigation | Owner |
-|---|---|---|---|---|
-| Headless build exceeds $250k estimate | High | High | Get fixed-fee SOW; define scope freeze date | TBD |
-| SEO ranking drop post-migration | Medium | High | Full redirect map + staging CWV audit before go-live | TBD |
-| Fulfil OMS integration delayed | Medium | High | Parallel-run WooCommerce + Shopify during Phase 1 | TBD |
-| ClaimLane not compatible with Shopify | Medium | Medium | Validate in Phase 0; identify fallback returns platform | TBD |
-| CA French (EN-FR) hreflang errors | Medium | Medium | Dedicated QA pass on bilingual routing before launch | TBD |
-| Go-live during peak season causes revenue disruption | Low | Very High | Hard block on Oct 15 – Jan 5 launch window | TBD |
-| Agency delivery delays | Medium | High | Define milestone-based payment schedule in SOW | TBD |
-| Internal team bandwidth insufficient for co-development | Medium | Medium | Define internal headcount commitment before contract | TBD |
-
----
-
 ## 9. Open Assumptions
 
 | Assumption | Needs Validation By | Status |
-|---|---|---|
+| --- | --- | --- |
 | Headed Shopify can support all Must-Have requirements natively or via apps | Agency discovery phase | TBD |
 | Headless build cost estimate of >$250k is accurate | SOW from selected agency | TBD |
 | WooCommerce can run in parallel during phased migration | Dev team assessment | TBD |
@@ -204,15 +191,28 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ---
 
-## 10. Recommendation
+## 10. Current State Baseline
 
-> To be completed once Sections 1–9 are populated.
+### Known Pain Points Driving Migration
 
-| Field | Value |
-| --- | --- |
-| Recommended Architecture | TBD — Headed / Headless |
-| Recommended Agency | TBD |
-| Decision Date | TBD |
-| Decision Made By | TBD |
-| Next Action | TBD |
-| Rationale | TBD |
+| Pain Point | Business Impact | Priority |
+| --- | --- | --- |
+| Rapid growth has outpaced WooCommerce capabilities | Platform instability, missed opportunities | High |
+| Teams making high-impact decisions with limited system support | Operational risk, slow response | High |
+| Manual workarounds for bundles, SKUs, and promotions | Error-prone, slows launches | High |
+| No US storefront with compliant pricing and payment routing | Revenue ceiling | High |
+| Fulfil integration fragility | Inventory and fulfillment risk | High |
+| CA French-language storefront not live | Regulatory and market risk | Medium |
+| Limited B2B / wholesale ordering capability | Revenue opportunity gap | Medium |
+
+### Site Performance (Pre-Migration)
+
+| Metric | Current Value | Target Post-Migration |
+| --- | --- | --- |
+| Annual GMV | TBD | |
+| Core Web Vitals — LCP | TBD | <2.5s |
+| Core Web Vitals — CLS | TBD | <0.1 |
+| Core Web Vitals — INP | TBD | <200ms |
+| Conversion Rate | TBD | |
+| Average Page Load Time | TBD | |
+| Organic Search Sessions (monthly) | TBD | Maintain or grow |

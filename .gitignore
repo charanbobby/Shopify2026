@@ -5,6 +5,9 @@
 !docs/
 !docs/css/
 !docs/js/
+!overrides/
+!overrides/partials/
+!overrides/partials/*.html
 # Allow markdown files
 !*.md
 

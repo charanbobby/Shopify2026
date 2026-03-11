@@ -48,6 +48,14 @@ Full prioritized backlog sourced from Shopify requirements worksheet v4, organiz
 | 9. Open Assumptions | 7 assumptions requiring validation before decision is locked |
 | 10. Current State Baseline | WooCommerce pain points and site performance targets |
 
+### [Current S&S Architecture](current-sns-architecture.md)
+
+End-to-end system map of the live WooCommerce stack, covering:
+
+- Perimeter & hosting (AWS EC2, Cloudflare)
+- All active integrations across OMS, CX, marketing, finance, and data
+- Shopify migration notes: MVP parity integration table and headless reuse opportunity analysis
+
 ### [Headless Migration — Developer Analysis](developer-analysis.md)
 
 Developer-focused analysis of the phased migration path, covering:

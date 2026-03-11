@@ -160,25 +160,36 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ## 5. Integration Complexity Map
 
-| Integration | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
-| --- | --- | --- | --- | --- |
-| Fulfil (OMS) | Custom API | High | High | TBD |
-| Zendesk | Native Shopify App | Low | Medium | TBD |
-| ClaimLane (Returns/Warranty) | Custom / TBD | High | High | TBD |
-| ActiveCampaign / Klaviyo | Native Shopify App | Low | Medium | TBD |
-| TrackShip | Native Shopify App | Low | Medium | TBD |
-| Zowie Chatbot | TBD | Medium | Medium | TBD |
-| Impact Radius | Custom Pixel / App | Medium | Medium | TBD |
-| RaveCapture / Review Platform | TBD (Judge.me / Junip options) | Medium | Medium | TBD |
-| Affirm & PayPal Financing | Native payment methods | Low | High (checkout ownership) | Affirm CA live |
-| Google Merchant Center | Native Shopify Feed | Low | Medium | TBD |
-| Sprout Social | TBD | Low | Low | TBD |
-| Dscopify (B2B) | Shopify B2B / Dscopify App | Medium | High | TBD |
-| Shopify Collabs | Native | Low | Medium | TBD |
-| MyRegistry | TBD | Medium | Medium | TBD |
-| Planet App (carbon shipping) | Native Shopify App | Low | Medium | TBD |
+> **MVP Parity Required** = must be live and functional on Shopify at launch to match current WooCommerce operations. Any integration marked **No** is either Shopify-native out of the box (no build work) or a net-new capability beyond current state. Do not scope additional work for No rows at MVP — Shopify handles them automatically or they are deferred.
+>
+> **Headless architecture note:** The existing WooCommerce infrastructure has already invested in API connections to Fulfil, Zendesk, Avalara, Signifyd, Xero, and others. A phased headless approach could preserve these connections during transition rather than rebuilding from scratch — this is under active investigation as a factor in the architecture decision. See also Section 9.
 
-> Note: Headless effort is generally higher for checkout-adjacent integrations (payments, upsells, discount logic) because the storefront no longer uses Shopify's native checkout flow directly.
+| Integration | MVP Parity Required | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
+| --- | --- | --- | --- | --- | --- |
+| Fulfil (OMS) | **Yes** | Custom API | High | High | TBD |
+| Zendesk | **Yes** | Native Shopify App | Low | Medium | TBD |
+| ClaimLane (Returns/Warranty) | **Yes** | Custom / TBD | High | High | TBD |
+| Signifyd (Fraud Detection) | **Yes** | Shopify Fraud Protect (native) or Signifyd Shopify App | Low | Medium | TBD |
+| Avalara (Tax) | **Yes** | Shopify Tax (native, replaces Avalara) or Avalara Shopify App | Low | Medium | TBD |
+| Xero (Accounting) | **Yes** | Xero native Shopify integration | Low | Medium | TBD |
+| ActiveCampaign / Klaviyo | **Yes** | Native Shopify App | Low | Medium | TBD |
+| Google Tag Manager | **Yes** | Shopify Customer Events / GTM via web pixel | Low | High (custom event mapping required) | TBD |
+| Google Ads | **Yes** | Shopify Google & YouTube channel / GTM conversion tracking | Low | High (conversion tracking needs custom implementation) | TBD |
+| MessageMedia (SMS) | **Yes** | Klaviyo SMS / direct MessageMedia; routing decision needed | Low | Medium | TBD |
+| Impact Radius | **Yes** | Custom Pixel / App | Medium | Medium | TBD |
+| RaveCapture / Review Platform | **Yes** | TBD (Judge.me / Junip options) | Medium | Medium | TBD |
+| Reputation (Review Aggregator) | **Yes** | Shopify App / webhook to Reputation | Low | Medium | TBD |
+| Affirm & PayPal Financing | **Yes** | Native payment methods | Low | High (checkout ownership) | Affirm CA live |
+| TrackShip | **Yes** | Native Shopify App | Low | Medium | TBD |
+| Google Merchant Center | **Yes** | Native Shopify Feed | Low | Medium | TBD |
+| Zowie Chatbot | **Yes** | TBD | Medium | Medium | TBD |
+| Sprout Social | **Yes** | TBD | Low | Low | TBD |
+| Dscopify (B2B) | **Partial** — Should Have; not MVP blocker | Shopify B2B / Dscopify App | Medium | High | TBD |
+| MyRegistry | **TBD** — confirm if live on WooCommerce today | TBD | Medium | Medium | TBD |
+| Shopify Collabs | **No** — net-new; Shopify native | Native | Low | Medium | TBD |
+| Planet App (carbon shipping) | **No** — net-new; Shopify native | Native Shopify App | Low | Medium | TBD |
+
+> **Notes:** Headless effort is generally higher for checkout-adjacent integrations (payments, GTM/conversion, upsells) because the storefront no longer uses Shopify's native checkout and pixel infrastructure directly. Retail/wholesale channels (EQ3, TSC, SCC, Costco) all route through Fulfil — covered by the Fulfil row; no separate Shopify integration needed. Finance tools (Dext, ApprovalMax) connect to Xero, not WooCommerce — covered by the Xero row. Assembled (CX workforce) connects to Zendesk, not WooCommerce — unaffected by Shopify migration.
 
 ---
 
@@ -249,6 +260,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | ClaimLane integration is feasible on Shopify | ClaimLane + dev team | TBD |
 | Shopify Markets handles CA/US pricing and routing without custom middleware | Shopify sandbox test | TBD |
 | Current organic traffic can be preserved with redirect strategy | SEO audit | TBD |
+| **Existing WooCommerce API connections (Fulfil, Avalara, Signifyd, Xero, etc.) can be preserved during a phased headless migration, reducing integration rebuild cost** | Dev team architecture review — under investigation | TBD |
 
 ---
 

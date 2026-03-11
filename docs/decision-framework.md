@@ -21,19 +21,18 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ## 2. Decision Scorecard — Headed vs. Headless
 
-> Score each criterion 1 (poor) to 5 (excellent). Weighted Score = Weight × Score.
+> Score each criterion 1 (poor) to 5 (excellent). Weighted total to be calculated separately (Score × Weight, summed per column).
 
-| Criteria | Weight | Headed Score | Headed Weighted | Headless Score | Headless Weighted | Notes |
-| --- | --- | --- | --- | --- | --- | --- |
-| Speed to Market | 20% | | | | | Headed faster by ~6–12 months |
-| Total Cost — Year 1 | 15% | | | | | |
-| Total Cost — Year 3 | 10% | | | | | |
-| Content & Design Flexibility | 15% | | | | | |
-| SEO Continuity Risk | 15% | | | | | Headed lower risk |
-| Internal Team Capacity | 10% | | | | | |
-| Integration Complexity | 10% | | | | | Headless adds overhead on checkout-adjacent integrations |
-| Revenue Risk During Cutover | 5% | | | | | |
-| **Weighted Total** | **100%** | | **TBD** | | **TBD** | |
+| Criteria | Weight | Headed Score | Headless Score | Notes |
+| --- | --- | --- | --- | --- |
+| Speed to Market | 20% | | | Headed faster by ~6–12 months |
+| Total Cost — Year 1 | 15% | | | |
+| Total Cost — Year 3 | 10% | | | |
+| Content & Design Flexibility | 15% | | | |
+| SEO Continuity Risk | 15% | | | Headed lower risk |
+| Internal Team Capacity | 10% | | | |
+| Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations |
+| Revenue Risk During Cutover | 5% | | | |
 
 ---
 

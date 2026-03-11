@@ -1,6 +1,10 @@
+---
+comments: true
+---
+
 # Headless Shopify Migration — Developer Analysis
 
-*Sources: Shopify headless migration phase list.docx, Shopify migration to headless to do list.xlsx*
+> Sources: Shopify headless migration phase list.docx, Shopify migration to headless to do list.xlsx
 
 ---
 
@@ -17,13 +21,13 @@ Shopping cart and all ecommerce functions still run by WooCommerce. Product info
 
 Note: During Phase 1, catalogues from both Shopify and WooCommerce need to be updated near-simultaneously.
 
-**Pros**
+#### Pros
 
 - Product team can be gradually phased into the new system
 - Impact of mistakes initially minimized
 - Pages can be launched gradually to ease transition
 
-**Cons**
+#### Cons
 
 - Extra workload temporarily
 - Potentially two sources of truth
@@ -42,17 +46,17 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 ## To Do List
 
-### Phase 0
+### Phase 0 Tasks
 
 | ID | Task |
-|---|---|
+| --- | --- |
 | 1 | Decision on which product information should be on Shopify (carousel images, custom fields, dimensions, etc.) |
 | 2 | Set up development store on Shopify with current catalogue |
 
-### Phase 1
+### Phase 1 Tasks
 
 | ID | Task |
-|---|---|
+| --- | --- |
 | 3 | Set up and populate custom fields and images in Shopify (or migrate to WordPress page) |
 | 4 | Set up product page template using Shopify catalogue and Storefront API |
 | 5 | Additional modularization of product page components (carousel image, size/colour selector, details, etc.) |
@@ -63,10 +67,10 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | 10 | Home page and remaining pages using Shopify catalogue |
 | 11 | GMC feed from Shopify catalogue |
 
-### Phase 2
+### Phase 2 Tasks
 
 | ID | Task |
-|---|---|
+| --- | --- |
 | 12 | Shopping cart using Shopify Storefront API |
 | 13 | Checkout on Shopify |
 | 14 | Rate shopping based on Shopify catalogue and orders |
@@ -74,10 +78,10 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | 16 | Sending tracking number through Shopify |
 | 17 | ActiveCampaign integration with Shopify |
 
-### Phase 3
+### Phase 3 Tasks
 
 | ID | Task |
-|---|---|
+| --- | --- |
 | 18 | Remove WooCommerce from WordPress |
 | 19 | Upgrade to PHP 8.0 and modify deprecated code |
 | 20 | Update plugins and port customization |
@@ -86,10 +90,10 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 ## Key Exploratory Questions
 
-### Phase 0/1
+### Phase 0/1 Questions
 
 | Question | Answer / Reference |
-|---|---|
+| --- | --- |
 | Should product page carousel images be stored on Shopify? | Yes, unless loading/performance issues arise. [DEV ticket](https://app.clickup.com/t/86b8fehhb) |
 | Should landing page carousel images be stored on Shopify? | Yes, unless loading/performance issues arise. [DEV ticket](https://app.clickup.com/t/86b8fehhb) |
 | Should we store front-end product information (details, certifications) on Shopify as product information? | [DEV ticket](https://app.clickup.com/t/86b8fevjm) |
@@ -99,10 +103,10 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | How can we handle SKU changes? | [DEV-2384](https://app.clickup.com/t/9014235134/DEV-2384) |
 | How do we handle two-packs? (Pillows, washcloths, hand towels) | [DEV-2385](https://app.clickup.com/t/9014235134/DEV-2385) |
 
-### Phase 2
+### Phase 2 Questions
 
 | Question | Answer |
-|---|---|
+| --- | --- |
 | How do we handle bundled SKUs (e.g., furniture SKUs with multiple boxes)? | Use a BOM SKU (e.g., SNSFNWO5005AC3BDL) — same concept as WooCommerce. Fulfil has a BOM automation that explodes the bundle into individual components. |
 | How do we handle bundle discounts? | Shopify Function |
 | How to handle BOGO (Eco Soy Pillows)? | Shopify Function |
@@ -116,8 +120,8 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | ClaimLane integration? | No answer yet — to be investigated. |
 | How to handle Affirm and PayPal financing? | These are payment methods added in Shopify admin. Affirm is already set up on production (Canada). |
 
-### Other
+### Other Questions
 
 | Question | Answer |
-|---|---|
+| --- | --- |
 | Do we need to migrate old orders to Shopify? | Leaning towards no — new order ID naming convention makes it easy to differentiate when a customer calls. |

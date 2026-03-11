@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Requirements Backlog
 
 Source: Shopify_requirements_worksheet v4.xlsx — Requirements sheet

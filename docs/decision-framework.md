@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Migration Decision Framework
 
 This page captures the key inputs needed to make a confident go/no-go decision on Shopify migration and the headed vs. headless architecture choice. The Recommendation at the top is completed last — once Sections 2–10 are populated, record the final decision there.

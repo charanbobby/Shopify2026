@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Shopify 2026 — Project Documentation
 
 Welcome to the Silk & Snow Shopify migration documentation hub.

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Project Phoenix: A Strategic Migration to Shopify
 
 Executive Briefing & Proposed Path Forward

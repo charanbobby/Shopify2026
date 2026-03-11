@@ -1,0 +1,8 @@
+# Ignore all files by default
+*
+
+# Allow markdown files
+!*.md
+
+# Allow .gitignore itself
+!.gitignore

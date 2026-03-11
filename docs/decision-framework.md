@@ -96,10 +96,9 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 | Criteria | Weight | Agency E | Agency D | Agency S | Self-Build (Internal) |
 | --- | --- | --- | --- | --- | --- |
-| Shopify Plus Partner Status | 15% | TBD | TBD | TBD | N/A |
-| Headless Experience | 20% | Low — defaults to headed; headless quoted at $250K+ | Strong — presented Headed / Headless / Hydrogen options with co-dev model | Low — no headless experience demonstrated | Medium — dev team has explored Storefront API; learning curve remains |
-| Headed / Shopify Native Experience | 15% | Strong | Strong | Strong — did solid Shopify discovery homework | Low — limited Shopify-native production experience |
-| Co-Development / Shared Ownership Model | 15% | TBD — not yet confirmed | Strong — explicit co-dev (Option 2) and consulting (Option 3) tracks offered | Weak — not flexible for co-development | Full — entirely internal; no external dependency |
+| Headless Experience | 25% | Low — defaults to headed; headless quoted at $250K+ | Strong — presented Headed / Headless / Hydrogen options with co-dev model | Low — no headless experience demonstrated | Medium — dev team has explored Storefront API; learning curve remains |
+| Headed / Shopify Native Experience | 20% | Strong | Strong | Strong — did solid Shopify discovery homework | Low — limited Shopify-native production experience |
+| Co-Development / Shared Ownership Model | 20% | TBD — not yet confirmed | Strong — explicit co-dev (Option 2) and consulting (Option 3) tracks offered | Weak — not flexible for co-development | Full — entirely internal; no external dependency |
 | Estimated Build Cost | 15% | TBD — headless $250K+; headed TBD | TBD — potentially highest (team flagged "Hush?") | TBD | Staff cost only; no agency fee |
 | Estimated Timeline | 10% | TBD | TBD | TBD | Longest — no dedicated build team |
 | Data Migration Experience | 5% | TBD | TBD | TBD — mentioned data migration approach | Low — no prior Shopify migration at this scale |

@@ -32,12 +32,12 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 | Criteria | Weight | Headed Score | Headless Score | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | **30%** | | | Headed faster by ~6–12 months; Aug 31 hard deadline makes full headless build non-viable in this window |
+| Speed to Market | **30%** | | | Headed faster by ~6–12 months; Aug 31 hard deadline makes full headless build non-viable in this window; co-development + consultancy model accelerates further by running internal and agency work in parallel |
 | Total Cost — Year 1 | 15% | | | |
 | Total Cost — Year 3 | **5%** | | | Reduced weight — timeline risk outweighs long-run cost optimization at this stage |
 | Content & Design Flexibility | **10%** | | | |
 | SEO Continuity Risk | 15% | | | Headed lower risk |
-| Internal Team Capacity | 10% | | | |
+| Internal Team Capacity | 10% | | | Co-dev model directly mitigates capacity risk — agency handles architecture and complex integrations; internal team executes alongside |
 | Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations |
 | Revenue Risk During Cutover | 5% | | | |
 
@@ -96,14 +96,16 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 ## 4. Agency Comparison Matrix
 
 > Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score. Self-Build is included as a baseline option — no agency fees, but full internal resourcing burden.
+>
+> **Engagement model selected: Co-development + Consultancy.** Given the Aug 31 hard deadline, the internal team will execute alongside the agency rather than waiting on agency-only delivery. Agencies without a viable co-dev or consulting track are effectively disqualified from solo-build consideration. Co-Development weight increased to 25% to reflect this.
 
 | Criteria | Weight | Agency E | Agency D | Agency S | Self-Build (Internal) |
 | --- | --- | --- | --- | --- | --- |
 | Headless Experience | 25% | Low — defaults to headed; headless quoted at $250K+ | Strong — presented Headed / Headless / Hydrogen options with co-dev model | Low — no headless experience demonstrated | Medium — dev team has explored Storefront API; learning curve remains |
 | Headed / Shopify Native Experience | 20% | Strong | Strong | Strong — did solid Shopify discovery homework | Low — limited Shopify-native production experience |
-| Co-Development / Shared Ownership Model | 20% | TBD — not yet confirmed | Strong — explicit co-dev (Option 2) and consulting (Option 3) tracks offered | Weak — not flexible for co-development | Full — entirely internal; no external dependency |
+| Co-Development / Shared Ownership Model | **25%** | TBD — not yet confirmed; key question before Apr 1 | **Strong — explicit co-dev (Option 2) and consulting (Option 3) tracks; best fit for Aug 31 deadline** | Weak — not flexible for co-development; effectively disqualified for co-dev track | Full — entirely internal; no external dependency |
 | Estimated Build Cost | 15% | TBD — headless $250K+; headed TBD | TBD — potentially highest (team flagged "Hush?") | TBD | Staff cost only; no agency fee |
-| Estimated Timeline | 10% | TBD | TBD | TBD | Longest — no dedicated build team |
+| Estimated Timeline | **5%** | TBD | TBD | TBD | Longest — no dedicated build team; co-dev mitigates partially |
 | Data Migration Experience | 5% | TBD | TBD | TBD — mentioned data migration approach | Low — no prior Shopify migration at this scale |
 | Post-Launch Support Model | 5% | TBD | TBD | TBD | Internal only |
 | **Weighted Score** | **100%** | **TBD** | **TBD** | **TBD** | **TBD** |
@@ -117,6 +119,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 - Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); Agency E aligned with that direction
 - Headless quoted at $250K+; team flags this may be over-estimated
 - Concerns: potential over-reliance on Shopify platform; AI tooling and advanced landing page/blog capabilities not confirmed; no impact on redundancy protocols
+- **Key open question before Apr 1: Does Agency E support a co-development / consultancy engagement model? This is now a qualifying criterion.**
 - Alex: developer preference leans headed (move fast); Shopify Markets being new is a positive; headed may not achieve pixel-perfect parity with current site
 - Sri: headless keeps options open for disruptive platforms 5 years out
 - JJ: TCO is lighter with headed; need 3-year headless TCO (initiation + annual maintenance) before deciding
@@ -206,7 +209,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | CA French (EN-FR) hreflang errors | Medium | Medium | Dedicated QA pass on bilingual routing before launch | TBD |
 | Go-live during peak season causes revenue disruption | Low | Very High | Hard block on Oct 15 – Jan 5 launch window | TBD |
 | Agency delivery delays | Medium | High | Define milestone-based payment schedule in SOW | TBD |
-| Internal team bandwidth insufficient for co-development | Medium | Medium | Define internal headcount commitment before contract | TBD |
+| Internal team bandwidth insufficient for co-development | **Low** | Medium | Co-dev + consultancy model is the chosen engagement; internal headcount commitment must be defined before contract; agency carries architecture and complex integration load | TBD |
 
 ---
 
@@ -235,7 +238,9 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 | Assumption | Needs Validation By | Status |
 | --- | --- | --- |
-| **Selected agency can deliver a production-ready headed build by Aug 31, 2026 (~5 months)** | Agency SOW / confirmed project plan by Apr 10 | TBD |
+| **Engagement model is co-development + consultancy — not agency-led only; internal team capacity is committed before contract signing** | Internal resourcing confirmed before Apr 10 | TBD |
+| **Co-dev + consultancy model compresses the build timeline sufficiently to meet Aug 31** | Agency SOW with co-dev workstream breakdown by Apr 10 | TBD |
+| **Selected agency can deliver a production-ready headed build by Aug 31, 2026 (~5 months) under co-dev model** | Agency SOW / confirmed project plan by Apr 10 | TBD |
 | **Headless architecture is not achievable within the Aug 31 deadline without a phased/hybrid compromise** | Architecture decision on Apr 1 | TBD |
 | Headed Shopify can support all Must-Have requirements natively or via apps | Agency discovery phase | TBD |
 | Headless build cost estimate of >$250k is accurate | SOW from selected agency | TBD |

@@ -65,7 +65,7 @@ Developer-focused analysis of the phased migration path, covering:
 | Decision | Status |
 | --- | --- |
 | Architecture: Headed vs Headless | **Open** — Decision date locked **Apr 1, 2026**; time-to-market now primary filter |
-| Agency Selection | **Open** — Decision date **Apr 1, 2026**; 3 agencies evaluated + self-build baseline |
+| Agency Selection | **Open** — Decision date **Apr 1, 2026**; engagement model: **co-development + consultancy**; agencies without co-dev track are disqualified |
 | Hard Launch Deadline | **Aug 31, 2026** — non-negotiable; ~5-month build window from decision |
 | WooCommerce Parallel Run | **Assumed yes** — to be confirmed by dev team |
 | US Storefront (Shopify Markets) | **Must Have** — included in backlog |

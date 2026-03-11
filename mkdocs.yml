@@ -5,7 +5,6 @@ use_directory_urls: false
 
 theme:
   name: material
-  custom_dir: overrides
   palette:
     primary: deep purple
     accent: purple
@@ -29,6 +28,7 @@ nav:
 
   - Project Phoenix:
       - Strategic Migration: project-phoenix.md
+      - Requirements Backlog: requirements-backlog.md
 
   - Developer Analysis:
       - Headless Migration: developer-analysis.md

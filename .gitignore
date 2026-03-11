@@ -17,6 +17,9 @@
 !*.css
 !*.js
 
+# Allow deploy script
+!*.sh
+
 # Allow .gitignore itself
 !.gitignore
 

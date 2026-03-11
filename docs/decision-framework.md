@@ -94,7 +94,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 > Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score. Self-Build is included as a baseline option — no agency fees, but full internal resourcing burden.
 
-| Criteria | Weight | eHouse | Domaine | StreamCommerce | Self-Build (Internal) |
+| Criteria | Weight | Agency E | Agency D | Agency S | Self-Build (Internal) |
 | --- | --- | --- | --- | --- | --- |
 | Shopify Plus Partner Status | 15% | TBD | TBD | TBD | N/A |
 | Headless Experience | 20% | Low — defaults to headed; headless quoted at $250K+ | Strong — presented Headed / Headless / Hydrogen options with co-dev model | Low — no headless experience demonstrated | Medium — dev team has explored Storefront API; learning curve remains |
@@ -108,18 +108,18 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ### Agency Notes — Key Observations from Team
 
-#### eHouse
+#### Agency E
 
 - Recommended by Kavya; positioned as safe, proven Shopify Plus partner
 - Steers 99%+ of projects to headed — treats headless as edge case
-- Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); eHouse aligned with that direction
+- Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); Agency E aligned with that direction
 - Headless quoted at $250K+; team flags this may be over-estimated
 - Concerns: potential over-reliance on Shopify platform; AI tooling and advanced landing page/blog capabilities not confirmed; no impact on redundancy protocols
 - Alex: developer preference leans headed (move fast); Shopify Markets being new is a positive; headed may not achieve pixel-perfect parity with current site
 - Sri: headless keeps options open for disruptive platforms 5 years out
 - JJ: TCO is lighter with headed; need 3-year headless TCO (initiation + annual maintenance) before deciding
 
-#### Domaine
+#### Agency D
 
 - Two formal meetings (Dec 10, Dec 18); most thorough discovery of the three agencies
 - Presented four options: (1) Headed with React, (2) Headed, (3) Headless with Hydrogen + Oxygen, (4) Headless
@@ -130,7 +130,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 - Alex: open to any involvement level; may be the most expensive option
 - Key open question: Shopify Functions cannot stack multiple discount types in a single cart (e.g., mattress + bed frame + GC redemption + promo code) — needs validation before architecture is locked
 
-#### StreamCommerce
+#### Agency S
 
 - Did strong pre-meeting homework; liked Shopify discovery approach and sample site
 - Rebuilt Casper Canada on Shopify — relevant reference

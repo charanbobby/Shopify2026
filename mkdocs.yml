@@ -30,6 +30,9 @@ nav:
       - Strategic Migration: project-phoenix.md
       - Requirements Backlog: requirements-backlog.md
 
+  - Decision Framework:
+      - Migration Decision: decision-framework.md
+
   - Developer Analysis:
       - Headless Migration: developer-analysis.md
 

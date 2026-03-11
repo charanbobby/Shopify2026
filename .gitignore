@@ -8,12 +8,14 @@
 !overrides/
 !overrides/partials/
 !overrides/partials/*.html
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
 # Allow markdown files
 !*.md
 
-# Allow mkdocs config, Netlify config, and dependencies
+# Allow mkdocs config and dependencies
 !mkdocs.yml
-!netlify.toml
 !requirements.txt
 
 # Allow deploy script

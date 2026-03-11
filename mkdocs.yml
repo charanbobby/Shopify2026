@@ -33,8 +33,3 @@ nav:
   - Developer Analysis:
       - Headless Migration: developer-analysis.md
 
-extra_css:
-  - css/giscus.css
-
-extra_javascript:
-  - js/giscus.js

@@ -5,11 +5,6 @@
 !docs/
 !docs/css/
 !docs/js/
-!overrides/
-
-# Allow HTML overrides
-!*.html
-
 # Allow markdown files
 !*.md
 
@@ -17,10 +12,6 @@
 !mkdocs.yml
 !netlify.toml
 !requirements.txt
-
-# Allow Giscus assets
-!*.css
-!*.js
 
 # Allow deploy script
 !*.sh

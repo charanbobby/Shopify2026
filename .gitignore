@@ -1,8 +1,24 @@
 # Ignore all files by default
 *
 
+# Allow directories
+!docs/
+!docs/css/
+!docs/js/
+
 # Allow markdown files
 !*.md
 
+# Allow mkdocs config and dependencies
+!mkdocs.yml
+!requirements.txt
+
+# Allow Giscus assets
+!*.css
+!*.js
+
 # Allow .gitignore itself
 !.gitignore
+
+# Never track generated site output
+site/

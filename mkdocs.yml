@@ -1,0 +1,39 @@
+site_name: Shopify 2026 — Project Phoenix
+docs_dir: docs
+site_url: https://charanbobby.github.io/Shopify2026/
+use_directory_urls: false
+
+theme:
+  name: material
+  palette:
+    primary: deep purple
+    accent: purple
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+
+  - Project Phoenix:
+      - Strategic Migration: project-phoenix.md
+
+  - Developer Analysis:
+      - Headless Migration: developer-analysis.md
+
+extra_css:
+  - css/giscus.css
+
+extra_javascript:
+  - js/giscus.js

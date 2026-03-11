@@ -89,19 +89,64 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ## 4. Agency Comparison Matrix
 
-> Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score.
+> Criteria are weighted by importance. Scores are 1–5. Weighted score = Weight × Score. Self-Build is included as a baseline option — no agency fees, but full internal resourcing burden.
 
-| Criteria | Weight | eHouse | Domaine | StreamCommerce |
-| --- | --- | --- | --- | --- |
-| Shopify Plus Partner Status | 15% | TBD | TBD | TBD |
-| Headless Experience | 20% | Low — positions headed as default | Strong — presents multiple arch options | Limited — not demonstrated |
-| Headed / Shopify Native Experience | 15% | Strong | Strong | Strong |
-| Co-Development / Shared Ownership Model | 15% | TBD | Supports phased, co-dev | Less flexible for collaboration |
-| Estimated Build Cost | 15% | TBD | TBD | TBD |
-| Estimated Timeline | 10% | TBD | TBD | TBD |
-| Data Migration Experience | 5% | TBD | TBD | TBD |
-| Post-Launch Support Model | 5% | TBD | TBD | TBD |
-| **Weighted Score** | **100%** | **TBD** | **TBD** | **TBD** |
+| Criteria | Weight | eHouse | Domaine | StreamCommerce | Self-Build (Internal) |
+| --- | --- | --- | --- | --- | --- |
+| Shopify Plus Partner Status | 15% | TBD | TBD | TBD | N/A |
+| Headless Experience | 20% | Low — defaults to headed; headless quoted at $250K+ | Strong — presented Headed / Headless / Hydrogen options with co-dev model | Low — no headless experience demonstrated | Medium — dev team has explored Storefront API; learning curve remains |
+| Headed / Shopify Native Experience | 15% | Strong | Strong | Strong — did solid Shopify discovery homework | Low — limited Shopify-native production experience |
+| Co-Development / Shared Ownership Model | 15% | TBD — not yet confirmed | Strong — explicit co-dev (Option 2) and consulting (Option 3) tracks offered | Weak — not flexible for co-development | Full — entirely internal; no external dependency |
+| Estimated Build Cost | 15% | TBD — headless $250K+; headed TBD | TBD — potentially highest (team flagged "Hush?") | TBD | Staff cost only; no agency fee |
+| Estimated Timeline | 10% | TBD | TBD | TBD | Longest — no dedicated build team |
+| Data Migration Experience | 5% | TBD | TBD | TBD — mentioned data migration approach | Low — no prior Shopify migration at this scale |
+| Post-Launch Support Model | 5% | TBD | TBD | TBD | Internal only |
+| **Weighted Score** | **100%** | **TBD** | **TBD** | **TBD** | **TBD** |
+
+### Agency Notes — Key Observations from Team
+
+#### eHouse
+
+- Recommended by Kavya; positioned as safe, proven Shopify Plus partner
+- Steers 99%+ of projects to headed — treats headless as edge case
+- Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); eHouse aligned with that direction
+- Headless quoted at $250K+; team flags this may be over-estimated
+- Concerns: potential over-reliance on Shopify platform; AI tooling and advanced landing page/blog capabilities not confirmed; no impact on redundancy protocols
+- Alex: developer preference leans headed (move fast); Shopify Markets being new is a positive; headed may not achieve pixel-perfect parity with current site
+- Sri: headless keeps options open for disruptive platforms 5 years out
+- JJ: TCO is lighter with headed; need 3-year headless TCO (initiation + annual maintenance) before deciding
+
+#### Domaine
+
+- Two formal meetings (Dec 10, Dec 18); most thorough discovery of the three agencies
+- Presented four options: (1) Headed with React, (2) Headed, (3) Headless with Hydrogen + Oxygen, (4) Headless
+- Co-development (Option 2) and consulting-only (Option 3) engagement models available
+- Suggested 2-prong approach: BBBY on headed; S&S on WordPress + Shopify cart — learnings transferable
+- Jason: co-dev is good; CMS advantage depends on copy volume; lowest risk path
+- Kavya: co-dev is valuable; search/filtering/product indexing and upsell widget are 2026 priorities — may be easier in headed; concerned about losing capabilities in headless
+- Alex: open to any involvement level; may be the most expensive option
+- Key open question: Shopify Functions cannot stack multiple discount types in a single cart (e.g., mattress + bed frame + GC redemption + promo code) — needs validation before architecture is locked
+
+#### StreamCommerce
+
+- Did strong pre-meeting homework; liked Shopify discovery approach and sample site
+- Rebuilt Casper Canada on Shopify — relevant reference
+- GA4 attribution was painful on previous builds; need due diligence on Shopify analytics
+- No headless experience — could not articulate headless benefits
+- Justin G: appears to sell their ecosystem rather than advising; design system hard with existing theme
+- Justin C: not flexible for co-development model
+- Sri: good preparation but headless capability gap is disqualifying for that option
+- Jason: server-side WooCommerce plugin; redirect history needs SEO impact audit; headless could be done internally with their guidance on promo bundles / integrations
+
+#### Self-Build (Internal)
+
+- Explored in developer analysis (see Headless Migration page) as a phased approach
+- Phase 1: product pages via Storefront API while WooCommerce handles cart/checkout
+- Phase 2: cart and checkout migrate to Shopify; WooCommerce remains on standby
+- Phase 3: WooCommerce removed; full Shopify stack
+- Advantage: full ownership, no agency lock-in, lowest cash outlay
+- Risk: internal team bandwidth is the hard constraint; co-development with any agency reduces this risk
+- Justin G: architectural consistency between S&S and BBBY easier to maintain if both internally owned
 
 ---
 

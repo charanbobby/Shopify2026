@@ -1,6 +1,3 @@
-
----
-
 # **Silk & Snow – End-to-End Architecture (Updated Markdown Version)**
 
 ## **1. Scenario Overview**
@@ -24,7 +21,7 @@ Also included:
 
 ## **2. Containers (High-Level Boxes)**
 
-```
+```text
 1. Public Internet
 2. Perimeter & Hosting
 3. Core Website & E-commerce
@@ -326,15 +323,25 @@ The following connections are **live today on WooCommerce** and must be re-estab
 | MessageMedia (SMS) | Via ActiveCampaign | Klaviyo SMS or direct; routing decision needed |
 | Sprout Social | Social channels | TBD — likely embed-compatible |
 
-### Headless Architecture Reuse Opportunity
+### Phased Migration and Integration Rebuild Reality
 
-The current AWS/WooCommerce stack has already invested in API connections to Fulfil, Avalara, Signifyd, Xero, Zendesk, and others. A **phased headless migration** could preserve these connections during transition:
+All WooCommerce connector code — plugins, PHP hooks, webhooks — is WooCommerce-specific. **None of it is reusable on Shopify.** Every integration in the MVP parity table above must be rebuilt for Shopify regardless of whether headed or headless architecture is chosen.
 
-* **Phase 1:** Shopify Storefront API serves the frontend; WooCommerce backend remains live — existing connections stay intact, no rebuild required yet
-* **Phase 2:** Cart and checkout migrate to Shopify; backend connections re-routed to Shopify APIs one by one
-* **Phase 3:** WooCommerce decommissioned; all connections fully on Shopify
+What IS preserved across any migration path:
 
-This means headless is not starting from zero on integrations — the existing infrastructure investment reduces rebuild cost and risk compared to a greenfield headless build. **This is under active investigation** as it materially affects the headed vs. headless architecture decision.
+* Vendor accounts and contracts (Fulfil, Avalara, Xero, Zendesk, Signifyd, etc.)
+* Configurations and business rules (Avalara nexus settings, Fulfil item/SKU catalog, Xero chart of accounts)
+* Domain knowledge of how these systems are configured for S&S
+
+This reduces ramp-up time but not rebuild effort.
+
+**What a phased headless migration actually buys:**
+
+* **Phase 1:** Shopify Storefront API serves the frontend; WooCommerce backend stays live — all existing integrations keep running unchanged. Revenue operations are not disrupted.
+* **Phase 2:** Cart and checkout migrate to Shopify; every integration must be rebuilt and re-connected to Shopify's data model. This is the full integration lift — same scope as a headed build.
+* **Phase 3:** WooCommerce decommissioned; all connections fully on Shopify.
+
+The benefit is **risk mitigation and parallel build time**, not cost reduction. WooCommerce running in Phase 1 gives the team time to build and test Shopify connectors without a hard cutover deadline on the integrations. The rebuild still happens.
 
 ---
 

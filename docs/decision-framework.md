@@ -162,7 +162,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 > **MVP Parity Required** = must be live and functional on Shopify at launch to match current WooCommerce operations. Any integration marked **No** is either Shopify-native out of the box (no build work) or a net-new capability beyond current state. Do not scope additional work for No rows at MVP — Shopify handles them automatically or they are deferred.
 >
-> **Headless architecture note:** The existing WooCommerce infrastructure has already invested in API connections to Fulfil, Zendesk, Avalara, Signifyd, Xero, and others. A phased headless approach could preserve these connections during transition rather than rebuilding from scratch — this is under active investigation as a factor in the architecture decision. See also Section 9.
+> **Headless architecture note:** All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific and cannot be reused on Shopify — every integration in this table must be rebuilt regardless of headed or headless architecture. What is preserved across any migration path is vendor accounts, configurations, and business logic knowledge (Avalara nexus rules, Fulfil item catalog, Xero chart of accounts, etc.), which reduces ramp-up time but not rebuild effort. The real benefit of a phased headless approach is **risk mitigation, not cost savings**: WooCommerce stays live as the order backend during Phase 1, so revenue-critical integrations keep running while Shopify connectors are built and tested in parallel before cutover. The integration rebuild happens in Phase 2 regardless.
 
 | Integration | MVP Parity Required | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -260,7 +260,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | ClaimLane integration is feasible on Shopify | ClaimLane + dev team | TBD |
 | Shopify Markets handles CA/US pricing and routing without custom middleware | Shopify sandbox test | TBD |
 | Current organic traffic can be preserved with redirect strategy | SEO audit | TBD |
-| **Existing WooCommerce API connections (Fulfil, Avalara, Signifyd, Xero, etc.) can be preserved during a phased headless migration, reducing integration rebuild cost** | Dev team architecture review — under investigation | TBD |
+| **Phased headless migration (WooCommerce live during Phase 1) reduces cutover risk but does NOT reduce integration rebuild cost — all connectors must be rebuilt for Shopify in Phase 2 regardless** | Validate with dev team before architecture decision Apr 1 | TBD |
 
 ---
 

@@ -16,7 +16,8 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | --- | --- |
 | Recommended Architecture | TBD — Headed / Headless |
 | Recommended Agency | TBD |
-| Decision Date | TBD |
+| Decision Date | **April 1, 2026** |
+| Hard Launch Deadline | **August 31, 2026** |
 | Decision Made By | TBD |
 | Next Action | TBD |
 | Rationale | TBD |
@@ -26,13 +27,15 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 ## 2. Decision Scorecard — Headed vs. Headless
 
 > Score each criterion 1 (poor) to 5 (excellent). Weighted total to be calculated separately (Score × Weight, summed per column).
+>
+> **Note — timeline now a primary constraint:** With a hard launch deadline of **Aug 31, 2026** and an architecture decision on **Apr 1, 2026**, the effective build window is approximately **5 months**. Headless builds typically add 6–12 months over headed. Speed to Market weight has been increased to 30% to reflect this constraint.
 
 | Criteria | Weight | Headed Score | Headless Score | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | 20% | | | Headed faster by ~6–12 months |
+| Speed to Market | **30%** | | | Headed faster by ~6–12 months; Aug 31 hard deadline makes full headless build non-viable in this window |
 | Total Cost — Year 1 | 15% | | | |
-| Total Cost — Year 3 | 10% | | | |
-| Content & Design Flexibility | 15% | | | |
+| Total Cost — Year 3 | **5%** | | | Reduced weight — timeline risk outweighs long-run cost optimization at this stage |
+| Content & Design Flexibility | **10%** | | | |
 | SEO Continuity Risk | 15% | | | Headed lower risk |
 | Internal Team Capacity | 10% | | | |
 | Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations |
@@ -194,6 +197,8 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 | Risk | Likelihood | Impact | Mitigation | Owner |
 | --- | --- | --- | --- | --- |
+| **Headless build cannot meet Aug 31, 2026 hard deadline** | **Very High** | **Very High** | Architecture decision must weight time-to-market as primary filter; headed strongly favoured given ~5-month window | TBD |
+| Headed build encounters scope creep and also slips past Aug 31 | Medium | Very High | Fix scope at SOW signing; milestone payments tied to delivery gates; go-live must clear Oct 15 holiday freeze | TBD |
 | Headless build exceeds $250k estimate | High | High | Get fixed-fee SOW; define scope freeze date | TBD |
 | SEO ranking drop post-migration | Medium | High | Full redirect map + staging CWV audit before go-live | TBD |
 | Fulfil OMS integration delayed | Medium | High | Parallel-run WooCommerce + Shopify during Phase 1 | TBD |
@@ -207,20 +212,22 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 ## 8. Go/No-Go Timeline
 
+> **Hard deadline: August 31, 2026.** The go-live window must clear the Oct 15 holiday freeze. Working backwards from Aug 31 with a ~5-month build window, the decision must be made by April 1, 2026.
+
 | Milestone | Target Date | Owner | Status |
 | --- | --- | --- | --- |
-| Architecture Decision Made | TBD | | |
-| Agency Selected | TBD | | |
-| Contract / SOW Signed | TBD | | |
-| WooCommerce Contract Expiry | TBD | | |
-| Development Kickoff | TBD | | |
-| Data Migration Cutover Date | TBD | | |
-| UAT / Staging Launch | TBD | | |
-| Staff Training Completed | TBD | | |
-| Soft Launch | TBD | | |
-| Production Hard Launch | TBD | | |
-| Black Friday / Holiday Freeze (avoid go-live) | Oct 15 – Jan 5 | | Do not go live in this window |
-| Peak Season Post-Mortem | TBD | | |
+| Architecture & Agency Decision Made | **Apr 1, 2026** | | Decision date locked |
+| Agency Selected / Notified | Apr 3, 2026 | | |
+| Contract / SOW Signed | Apr 10, 2026 | | |
+| Development Kickoff | Apr 14, 2026 | | |
+| WooCommerce Contract Expiry | TBD | | Confirm with hosting/plugin vendors |
+| UAT / Staging Launch | Jul 14, 2026 | | 6-week UAT window |
+| Data Migration Cutover | Aug 18, 2026 | | Dry-run at least once before this |
+| Staff Training Completed | Aug 24, 2026 | | CS, ops, marketing teams |
+| Soft Launch | Aug 25, 2026 | | Limited traffic; monitoring on |
+| **Production Hard Launch** | **Aug 31, 2026** | | **Hard deadline** |
+| Black Friday / Holiday Freeze (avoid go-live) | Oct 15 – Jan 5 | | Do not go live in this window — Aug 31 target clears this |
+| Peak Season Post-Mortem | Jan 2027 | | |
 
 ---
 
@@ -228,6 +235,8 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 | Assumption | Needs Validation By | Status |
 | --- | --- | --- |
+| **Selected agency can deliver a production-ready headed build by Aug 31, 2026 (~5 months)** | Agency SOW / confirmed project plan by Apr 10 | TBD |
+| **Headless architecture is not achievable within the Aug 31 deadline without a phased/hybrid compromise** | Architecture decision on Apr 1 | TBD |
 | Headed Shopify can support all Must-Have requirements natively or via apps | Agency discovery phase | TBD |
 | Headless build cost estimate of >$250k is accurate | SOW from selected agency | TBD |
 | WooCommerce can run in parallel during phased migration | Dev team assessment | TBD |

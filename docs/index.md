@@ -44,7 +44,7 @@ Full prioritized backlog sourced from Shopify requirements worksheet v4, organiz
 | 5. Integration Complexity Map | 15 integrations mapped with Headed vs Headless effort ratings |
 | 6. SEO Risk Assessment | 7 risk areas identified with mitigations |
 | 7. Risk Register | 8 risks with likelihood, impact, and mitigation owners |
-| 8. Go/No-Go Timeline | Milestones defined; dates TBD; holiday freeze hard-blocked Oct 15 – Jan 5 |
+| 8. Go/No-Go Timeline | **Dates locked** — Decision Apr 1; Kickoff Apr 14; UAT Jul 14; Hard Launch **Aug 31, 2026**; holiday freeze hard-blocked Oct 15 – Jan 5 |
 | 9. Open Assumptions | 7 assumptions requiring validation before decision is locked |
 | 10. Current State Baseline | WooCommerce pain points and site performance targets |
 
@@ -64,12 +64,13 @@ Developer-focused analysis of the phased migration path, covering:
 
 | Decision | Status |
 | --- | --- |
-| Architecture: Headed vs Headless | **Open** — Decision Scorecard in progress |
-| Agency Selection | **Open** — 3 agencies evaluated + self-build baseline |
+| Architecture: Headed vs Headless | **Open** — Decision date locked **Apr 1, 2026**; time-to-market now primary filter |
+| Agency Selection | **Open** — Decision date **Apr 1, 2026**; 3 agencies evaluated + self-build baseline |
+| Hard Launch Deadline | **Aug 31, 2026** — non-negotiable; ~5-month build window from decision |
 | WooCommerce Parallel Run | **Assumed yes** — to be confirmed by dev team |
 | US Storefront (Shopify Markets) | **Must Have** — included in backlog |
 | CA French / EN-FR Launch | **Must Have** — included in backlog |
-| Go-Live Window | **Blocked Oct 15 – Jan 5** (Black Friday / holiday freeze) |
+| Go-Live Window | **Target Aug 31, 2026** — clears Oct 15 – Jan 5 holiday freeze |
 
 ---
 

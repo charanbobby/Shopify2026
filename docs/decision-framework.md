@@ -22,7 +22,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | Hard Launch Deadline | **August 31, 2026** |
 | Decision Made By | TBD |
 | Next Action | TBD |
-| Rationale | TBD — include links to key Shopify doc pages used to validate architecture assumptions (e.g., [OS2.0](https://shopify.dev/docs/storefronts/themes/os20), [Hydrogen migration](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate), [Checkout Extensibility](https://shopify.dev/docs/apps/checkout/checkout-extensions)) |
+| Rationale | TBD — include links to key Shopify doc pages used to validate architecture assumptions (e.g., [OS2.0](https://shopify.dev/docs/storefronts/themes/os20), [Hydrogen migration](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate), [Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)) |
 
 ---
 
@@ -38,10 +38,10 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | Total Cost — Year 1 | 15% | | | |
 | Total Cost — Year 3 | **5%** | | | Reduced weight — timeline risk outweighs long-run cost optimization at this stage |
 | Content & Design Flexibility | **10%** | | | OS2.0 JSON templates and sections provide significant headed flexibility. [[Ref](https://shopify.dev/docs/storefronts/themes/os20)] |
-| Checkout Ownership | **—** | | | **(New row — do not score yet; weight TBD.)** Checkout-adjacent work materially affects timeline and architecture. Checkout Extensibility provides headed customization points; headless requires checkout subdomain routing. [[Ref](https://shopify.dev/docs/apps/checkout/checkout-extensions)] [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| Checkout Ownership | **—** | | | **(New row — do not score yet; weight TBD.)** Checkout-adjacent work materially affects timeline and architecture. Checkout Extensibility provides headed customization points; headless requires checkout subdomain routing. [[Ref](https://shopify.dev/docs/apps/build/checkout)] [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | SEO Continuity Risk | 15% | | | Headed lower risk; redirect mapping and canonical strategy required either way. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | Internal Team Capacity | 10% | | | Co-dev model directly mitigates capacity risk — agency handles architecture and complex integrations; internal team executes alongside |
-| Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations (payments, GTM/conversion, upsells). [[Ref](https://shopify.dev/docs/apps/checkout/checkout-extensions)] |
+| Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations (payments, GTM/conversion, upsells). [[Ref](https://shopify.dev/docs/apps/build/checkout)] |
 | Revenue Risk During Cutover | 5% | | | Shared carts support phased migration to reduce cutover risk. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 
 ---
@@ -104,7 +104,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 >
 > **Engagement model selected: Co-development + Consultancy.** Given the Aug 31 hard deadline, the internal team will execute alongside the agency rather than waiting on agency-only delivery. Agencies without a viable co-dev or consulting track are effectively disqualified from solo-build consideration. Co-Development weight increased to 25% to reflect this.
 >
-> **Critique note:** Agency RFP should require demonstrated experience with specific Shopify capabilities: OS2.0 + Theme App Extensions [[Ref](https://shopify.dev/docs/storefronts/themes/os20)], Checkout Extensibility [[Ref](https://shopify.dev/docs/apps/checkout/checkout-extensions)], and Hydrogen/Oxygen [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)]. Co-dev workstream should use Shopify recommended patterns (theme app extensions, app blocks) to avoid modifying theme code directly. [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)]
+> **Critique note:** Agency RFP should require demonstrated experience with specific Shopify capabilities: OS2.0 + Theme App Extensions [[Ref](https://shopify.dev/docs/storefronts/themes/os20)], Checkout Extensibility [[Ref](https://shopify.dev/docs/apps/build/checkout)], and Hydrogen/Oxygen [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)]. Co-dev workstream should use Shopify recommended patterns (theme app extensions, app blocks) to avoid modifying theme code directly. [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)]
 
 | Criteria | Weight | Agency E | Agency D | Agency S | Self-Build (Internal) |
 | --- | --- | --- | --- | --- | --- |
@@ -123,7 +123,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 
 - Recommended by Kavya; positioned as safe, proven Shopify Plus partner
 - Steers 99%+ of projects to headed — treats headless as edge case
-- Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); Agency E aligned with that direction. [[Ref: OS2.0](https://shopify.dev/docs/storefronts/themes/os20)] [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/checkout/checkout-extensions)]
+- Shopify is investing heavily in headed (Online Store 2.0 + Checkout Extensibility); Agency E aligned with that direction. [[Ref: OS2.0](https://shopify.dev/docs/storefronts/themes/os20)] [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)]
 - Headless quoted at $250K+; team flags this may be over-estimated
 - Concerns: potential over-reliance on Shopify platform; AI tooling and advanced landing page/blog capabilities not confirmed; no impact on redundancy protocols
 - **Key open question before Apr 1: Does Agency E support a co-development / consultancy engagement model? This is now a qualifying criterion.**
@@ -171,7 +171,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 >
 > **Headless architecture note:** All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific and cannot be reused on Shopify — every integration in this table must be rebuilt on Shopify's APIs/apps regardless of headed or headless architecture. [[Ref: Apps](https://shopify.dev/docs/apps)] [[Ref: Admin API](https://shopify.dev/docs/admin-api)] What is preserved across any migration path is vendor accounts, configurations, and business logic knowledge (Avalara nexus rules, Fulfil item catalog, Xero chart of accounts, etc.), which reduces ramp-up time but not rebuild effort. The real benefit of a phased headless approach is **risk mitigation, not cost savings**: shared carts and checkout routing allow WooCommerce to stay live during Phase 1 while Shopify connectors are built in parallel. [[Ref: Hydrogen migration — shared carts](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] The integration rebuild happens in Phase 2 regardless.
 >
-> **Action required:** For each integration, validate the Shopify App Store listing and confirm migration effort with the vendor. Checkout-adjacent integrations are constrained by Shopify's hosted checkout; Checkout Extensibility provides extension points but not full checkout hosting in headless. [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/checkout/checkout-extensions)]
+> **Action required:** For each integration, validate the Shopify App Store listing and confirm migration effort with the vendor. Checkout-adjacent integrations are constrained by Shopify's hosted checkout; Checkout Extensibility provides extension points but not full checkout hosting in headless. [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)]
 
 | Integration | MVP Parity Required | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -188,7 +188,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | Impact Radius | **Yes** | Custom Pixel / App | Medium | Medium | TBD |
 | RaveCapture / Review Platform | **Yes** | TBD (Judge.me / Junip options) | Medium | Medium | TBD |
 | Reputation (Review Aggregator) | **Yes** | Shopify App / webhook to Reputation | Low | Medium | TBD |
-| Affirm & PayPal Financing | **Yes** | Native payment methods — **confirm availability via Shopify Payments / third-party gateway docs** | Low | High (checkout ownership). [[Ref](https://shopify.dev/docs/apps/checkout/checkout-extensions)] | Affirm CA live |
+| Affirm & PayPal Financing | **Yes** | Native payment methods — **confirm availability via Shopify Payments / third-party gateway docs** | Low | High (checkout ownership). [[Ref](https://shopify.dev/docs/apps/build/checkout)] | Affirm CA live |
 | TrackShip | **Yes** | Native Shopify App | Low | Medium | TBD |
 | Google Merchant Center | **Yes** | Native Shopify Feed | Low | Medium | TBD |
 | Zowie Chatbot | **Yes** | TBD | Medium | Medium | TBD |
@@ -246,7 +246,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | Contract / SOW Signed | Apr 10, 2026 | | |
 | Development Kickoff | Apr 14, 2026 | | |
 | WooCommerce Contract Expiry | TBD | | Confirm with hosting/plugin vendors |
-| Checkout Extensibility / Payment Validation | Jun 30, 2026 | | **(New milestone)** Validate checkout customizations and payment provider integrations before UAT. [[Ref](https://shopify.dev/docs/apps/checkout/checkout-extensions)] |
+| Checkout Extensibility / Payment Validation | Jun 30, 2026 | | **(New milestone)** Validate checkout customizations and payment provider integrations before UAT. [[Ref](https://shopify.dev/docs/apps/build/checkout)] |
 | UAT / Staging Launch | Jul 14, 2026 | | 6-week UAT window; acceptance requires: full redirect map passing, CWV benchmarks met, integration smoke tests, and checkout dry-run. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | Data Migration Cutover | Aug 18, 2026 | | Dry-run at least once before this |
 | Staff Training Completed | Aug 24, 2026 | | CS, ops, marketing teams |
@@ -313,7 +313,7 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | OS2.0 (themes, JSON templates, sections) | <https://shopify.dev/docs/storefronts/themes/os20> | Sections 2, 4, 6, 10 |
 | Theme App Extensions (app blocks) | <https://shopify.dev/docs/apps/build/online-store/theme-app-extensions> | Sections 2, 3, 4, 6 |
 | Hydrogen Migration (shared carts, checkout subdomain, redirects) | <https://shopify.dev/docs/storefronts/headless/hydrogen/migrate> | Sections 2, 3, 5, 6, 7, 8, 9, 10 |
-| Checkout Extensibility (UI extensions, constraints) | <https://shopify.dev/docs/apps/checkout/checkout-extensions> | Sections 2, 4, 5, 7, 8 |
+| Checkout Extensibility (UI extensions, constraints) | <https://shopify.dev/docs/apps/build/checkout> | Sections 2, 4, 5, 7, 8 |
 | Shopify Functions (discounts, server-side customization) | <https://shopify.dev/docs/api/functions> | Sections 4, 7 |
 | Discount Functions | <https://shopify.dev/docs/apps/discounts/functions> | Sections 4, 7 |
 | Admin API | <https://shopify.dev/docs/admin-api> | Sections 5, 10 |

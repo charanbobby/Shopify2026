@@ -21,6 +21,13 @@
 # Allow deploy script
 !*.sh
 
+# Allow notebook infrastructure (but not .env or actual notebooks)
+!notebooks/
+!notebooks/Dockerfile
+!notebooks/docker-compose.yml
+!notebooks/requirements-jupyter.txt
+!notebooks/.env.example
+
 # Allow .gitignore itself
 !.gitignore
 

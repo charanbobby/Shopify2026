@@ -1,0 +1,15 @@
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      # Notebooks persist on D drive — not inside the container
+      - ./work:/app/work
+      # Mount docs folder so notebooks can read the decision framework
+      - ../docs:/app/work/docs:ro
+      # Mount .env so API keys are available inside notebooks
+      - ./.env:/app/.env:ro
+    env_file:
+      - .env
+    restart: unless-stopped

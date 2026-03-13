@@ -33,3 +33,5 @@
 
 # Never track generated site output
 site/
+
+.env

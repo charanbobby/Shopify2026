@@ -172,33 +172,35 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 > **Headless architecture note:** All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific and cannot be reused on Shopify — every integration in this table must be rebuilt on Shopify's APIs/apps regardless of headed or headless architecture. [[Ref: Apps](https://shopify.dev/docs/apps)] [[Ref: Admin API](https://shopify.dev/docs/admin-api)] What is preserved across any migration path is vendor accounts, configurations, and business logic knowledge (Avalara nexus rules, Fulfil item catalog, Xero chart of accounts, etc.), which reduces ramp-up time but not rebuild effort. The real benefit of a phased headless approach is **risk mitigation, not cost savings**: shared carts and checkout routing allow WooCommerce to stay live during Phase 1 while Shopify connectors are built in parallel. [[Ref: Hydrogen migration — shared carts](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] The integration rebuild happens in Phase 2 regardless.
 >
 > **Action required:** For each integration, validate the Shopify App Store listing and confirm migration effort with the vendor. Checkout-adjacent integrations are constrained by Shopify's hosted checkout; Checkout Extensibility provides extension points but not full checkout hosting in headless. [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)]
+>
+> **Critique applied 2026-03-13 (Gemini 3 Flash via Shopify Dev MCP).** Integration Type column added to clarify why headed/headless effort differs. Key principle: **Backend-API** integrations (Admin API + webhooks) are architecture-agnostic — effort is identical for headed and headless. [[Ref: Admin API](https://shopify.dev/docs/api/admin-rest)] [[Ref: Webhooks](https://shopify.dev/docs/apps/build/webhooks)] **Storefront-Widget** integrations differ because headed uses Theme App Extensions (drag-and-drop) while headless requires manual React component embedding. [[Ref: Theme App Extensions](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)] **Checkout-Adjacent** integrations are constrained by Shopify-hosted checkout; since this project assumes Shopify-hosted checkout for headless, effort is capped at storefront UI (not full checkout rebuild). [[Ref: Checkout for Headless](https://shopify.dev/docs/storefronts/headless/building-with-storefront-api/checkout)]
 
-| Integration | MVP Parity Required | Shopify Native Equivalent | Headed Effort | Headless Effort | Status |
-| --- | --- | --- | --- | --- | --- |
-| Fulfil (OMS) | **Yes** | Custom API | High | High | TBD |
-| Zendesk | **Yes** | Native Shopify App | Low | Medium | TBD |
-| ClaimLane (Returns/Warranty) | **Yes** | Custom / TBD | High | High | TBD |
-| Signifyd (Fraud Detection) | **Yes** | Shopify Fraud Protect (native) or Signifyd Shopify App | Low | Medium | TBD |
-| Avalara (Tax) | **Yes** | Shopify Tax may cover requirements; Avalara remains available as app for complex nexus — **validate fit with tax team** | Low | Medium | TBD |
-| Xero (Accounting) | **Yes** | Xero native Shopify integration | Low | Medium | TBD |
-| ActiveCampaign / Klaviyo | **Yes** | Native Shopify App | Low | Medium | TBD |
-| Google Tag Manager | **Yes** | Shopify Customer Events / GTM via web pixel | Low | High (custom event mapping required) | TBD |
-| Google Ads | **Yes** | Shopify Google & YouTube channel / GTM conversion tracking | Low | High (conversion tracking needs custom implementation) | TBD |
-| MessageMedia (SMS) | **Yes** | Klaviyo SMS / direct MessageMedia; routing decision needed | Low | Medium | TBD |
-| Impact Radius | **Yes** | Custom Pixel / App | Medium | Medium | TBD |
-| RaveCapture / Review Platform | **Yes** | TBD (Judge.me / Junip options) | Medium | Medium | TBD |
-| Reputation (Review Aggregator) | **Yes** | Shopify App / webhook to Reputation | Low | Medium | TBD |
-| Affirm & PayPal Financing | **Yes** | Native payment methods — **confirm availability via Shopify Payments / third-party gateway docs** | Low | High (checkout ownership). [[Ref](https://shopify.dev/docs/apps/build/checkout)] | Affirm CA live |
-| TrackShip | **Yes** | Native Shopify App | Low | Medium | TBD |
-| Google Merchant Center | **Yes** | Native Shopify Feed | Low | Medium | TBD |
-| Zowie Chatbot | **Yes** | TBD | Medium | Medium | TBD |
-| Sprout Social | **Yes** | TBD | Low | Low | TBD |
-| Dscopify (B2B) | **Partial** — Should Have; not MVP blocker | Shopify B2B / Dscopify App | Medium | High | TBD |
-| MyRegistry | **TBD** — confirm if live on WooCommerce today | TBD | Medium | Medium | TBD |
-| Shopify Collabs | **No** — net-new; Shopify native | Native | Low | Medium | TBD |
-| Planet App (carbon shipping) | **No** — net-new; Shopify native | Native Shopify App | Low | Medium | TBD |
+| Integration | Type | MVP Parity | Shopify Native Equivalent | Headed | Headless | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fulfil (OMS) | Backend-API | **Yes** | Custom API | High | High | Admin API + webhooks for order lifecycle; architecture-agnostic. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| Zendesk | Storefront-Widget | **Yes** | Native Shopify App | Low | Medium | Admin ticket sync is Low/Low; storefront chat widget needs manual embed in headless. [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)] |
+| ClaimLane (Returns/Warranty) | Backend-API | **Yes** | Custom / TBD | High | High | Admin API + webhooks; architecture-agnostic. If ClaimLane has a storefront widget, headed is simpler. |
+| Signifyd (Fraud Detection) | Backend-API + Storefront | **Yes** | Shopify Fraud Protect (native) or Signifyd Shopify App | Low | Medium | Fraud decisioning is backend (Low/Low), but headless requires manual device fingerprinting script + IP/User-Agent delegation via Storefront API. [[Ref: Storefront API](https://shopify.dev/docs/api/storefront)] [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)] |
+| Avalara (Tax) | Checkout-Adjacent | **Yes** | Shopify Tax may cover requirements; Avalara available for complex nexus — **validate fit with tax team** | Low | Low | Tax calculation happens at Shopify-hosted checkout layer; architecture-agnostic. [[Ref: Shopify Tax](https://help.shopify.com/en/manual/taxes/shopify-tax)] |
+| Xero (Accounting) | Backend-API | **Yes** | Xero native Shopify integration | Low | Low | Admin API + webhooks for order/refund sync; architecture-agnostic. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| ActiveCampaign / Klaviyo | Backend-API + Storefront | **Yes** | Native Shopify App | Low | Medium | Server-side sync (orders/customers) is Low/Low; client-side behavioral events (browse, add-to-cart) require Web Pixels API instrumentation in headless. [[Ref: Web Pixels](https://shopify.dev/docs/api/pixels/customer-events)] |
+| Google Tag Manager | Storefront-Widget | **Yes** | Shopify Customer Events / GTM via web pixel | Low | High | Headless requires manual instrumentation of all frontend triggers (AddToCart, ViewProduct) via Hydrogen Analytics component. [[Ref: Customer Events](https://shopify.dev/docs/api/pixels/customer-events)] [[Ref: Hydrogen Analytics](https://shopify.dev/docs/storefronts/headless/hydrogen/analytics)] |
+| Google Ads | Storefront-Widget | **Yes** | Shopify Google & YouTube channel / GTM conversion tracking | Low | High | Conversion pixels must be rewired via Web Pixels API or server-side conversions for headless. [[Ref: Web Pixels](https://shopify.dev/docs/api/pixels/customer-events)] |
+| MessageMedia (SMS) | Backend-API | **Yes** | Klaviyo SMS / direct MessageMedia; routing decision needed | Low | Low | Admin API + webhooks for order-triggered SMS; if opt-in capture uses theme JS, headless adds minor work. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| Impact Radius | Storefront-Widget | **Yes** | Custom Pixel / App | Medium | Medium | Affiliate conversion pixels run on order status page via Web Pixels in both architectures. [[Ref: Web Pixels](https://shopify.dev/docs/apps/build/marketing-analytics/pixels)] |
+| RaveCapture / Review Platform | Storefront-Widget | **Yes** | TBD (Judge.me / Junip options) | Medium | Medium | Both need widget embedding; headed uses app blocks, headless needs React component or API. Check vendor for NPM package. [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)] |
+| Reputation (Review Aggregator) | Backend-API + Storefront | **Yes** | Shopify App / webhook to Reputation | Low | Low (sync) / Medium (widget) | Backend ingestion via webhooks is Low/Low; storefront widget needs manual embed in headless. [[Ref](https://shopify.dev/docs/apps/build/webhooks)] |
+| Affirm & PayPal Financing | Checkout-Adjacent | **Yes** | Native payment methods — **confirm via Shopify Payments docs** | Low | Medium | Affirm CA live. Checkout payment flow handled by Shopify-hosted checkout (Low/Low); headless effort is for on-storefront "As low as $X/mo" messaging widgets. [[Ref: Checkout for Headless](https://shopify.dev/docs/storefronts/headless/building-with-storefront-api/checkout)] [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)] |
+| TrackShip | Backend-API | **Yes** | Native Shopify App | Low | Low | Fulfillment tracking via Admin API + webhooks; architecture-agnostic. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| Google Merchant Center | Backend-API | **Yes** | Native Shopify Feed | Low | Low | Product feed generated from Admin catalog; architecture-agnostic. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| Zowie Chatbot | Storefront-Widget | **Yes** | TBD | Medium | Medium | Chat widget requires manual embed in both; headed simpler via app blocks. [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)] |
+| Sprout Social | Backend-API | **Yes** | TBD | Low | Low | Social management via API sync; architecture-agnostic. [[Ref](https://shopify.dev/docs/api/admin-rest)] |
+| Dscopify (B2B) | Storefront-Widget + Backend-API | **Partial** — Should Have; not MVP blocker | Shopify B2B / Dscopify App | Medium | High | B2B UI (company profiles, bulk ordering, price lists) is extensive in headless React. [[Ref: Storefront API B2B](https://shopify.dev/docs/api/storefront)] |
+| MyRegistry | Storefront-Widget | **TBD** — confirm if live on WooCommerce today | TBD | Medium | Medium | Registry widget embedding similar in both; headless may benefit from vendor API. |
+| Shopify Collabs | Backend-API | **No** — net-new; Shopify native | Native | Low | Low | Admin/channel feature; architecture-agnostic. |
+| Planet App (carbon shipping) | Checkout-Adjacent | **No** — net-new; Shopify native | Native Shopify App | Low | Low | Operates at checkout/order level via Shopify-hosted checkout. [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)] |
 
-> **Notes:** Headless effort is generally higher for checkout-adjacent integrations (payments, GTM/conversion, upsells) because the storefront no longer uses Shopify's native checkout and pixel infrastructure directly. Retail/wholesale channels (EQ3, TSC, SCC, Costco) all route through Fulfil — covered by the Fulfil row; no separate Shopify integration needed. Finance tools (Dext, ApprovalMax) connect to Xero, not WooCommerce — covered by the Xero row. Assembled (CX workforce) connects to Zendesk, not WooCommerce — unaffected by Shopify migration.
+> **Notes:** Retail/wholesale channels (EQ3, TSC, SCC, Costco) all route through Fulfil — covered by the Fulfil row; no separate Shopify integration needed. Finance tools (Dext, ApprovalMax) connect to Xero, not WooCommerce — covered by the Xero row. Assembled (CX workforce) connects to Zendesk, not WooCommerce — unaffected by Shopify migration.
 
 ---
 
@@ -316,8 +318,15 @@ This page captures the key inputs needed to make a confident go/no-go decision o
 | Checkout Extensibility (UI extensions, constraints) | <https://shopify.dev/docs/apps/build/checkout> | Sections 2, 4, 5, 7, 8 |
 | Shopify Functions (discounts, server-side customization) | <https://shopify.dev/docs/api/functions> | Sections 4, 7 |
 | Discount Functions | <https://shopify.dev/docs/apps/discounts/functions> | Sections 4, 7 |
-| Admin API | <https://shopify.dev/docs/admin-api> | Sections 5, 10 |
+| Admin API (REST) | <https://shopify.dev/docs/api/admin-rest> | Section 5 |
+| Admin API (legacy path) | <https://shopify.dev/docs/admin-api> | Section 10 |
 | Storefront API | <https://shopify.dev/docs/storefront-api> | Section 5 |
+| Webhooks | <https://shopify.dev/docs/apps/build/webhooks> | Section 5 |
+| Web Pixels / Customer Events | <https://shopify.dev/docs/api/pixels/customer-events> | Section 5 |
+| Hydrogen Analytics | <https://shopify.dev/docs/storefronts/headless/hydrogen/analytics> | Section 5 |
+| Checkout for Headless (Storefront API) | <https://shopify.dev/docs/storefronts/headless/building-with-storefront-api/checkout> | Section 5 |
+| Marketing Analytics / Pixels | <https://shopify.dev/docs/apps/build/marketing-analytics/pixels> | Section 5 |
+| Shopify Tax | <https://help.shopify.com/en/manual/taxes/shopify-tax> | Section 5 |
 | Apps & App Store guidance | <https://shopify.dev/docs/apps> | Sections 3, 5 |
 | Shopify CLI / Theme Check | <https://shopify.dev/docs/themes/tools/cli> | Section 7 |
 | Shopify Markets (merchant docs) | <https://help.shopify.com/en/manual/markets> | Sections 6, 9 |

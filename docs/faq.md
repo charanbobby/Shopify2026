@@ -44,7 +44,7 @@ Who controls the checkout experience. In headed, the checkout lives on the same 
 
 **What is "Checkout Routing"?**
 
-The mechanism that directs a customer from the storefront to the checkout page. In headed, this is seamless - the customer clicks "Checkout" and stays on the same domain. In headless, the storefront (Hydrogen) and checkout (Shopify-hosted) are on different domains, so your code must: (1) create a checkout via the Storefront API, (2) redirect the customer to Shopify's checkout URL on a separate subdomain, and (3) pass the cart, customer session (via Multipass), and tracking context across the domain boundary. This cross-domain redirect is the root cause of the branding gap, analytics attribution loss, and shared cart middleware complexity.
+The mechanism that directs a customer from the storefront to the checkout page. In headed, this is seamless - the customer clicks "Checkout" and stays on the same domain. In headless, the storefront (Hydrogen) and checkout (Shopify-hosted) are on different domains, so your code must: (1) create a checkout via the Storefront API, (2) redirect the customer to Shopify's checkout URL on a separate subdomain, and (3) pass the cart, customer session (via Multipass), and tracking context across the domain boundary. This cross-domain redirect is the root cause of analytics attribution challenges and requires careful configuration.
 
 **What does "Checkout-Adjacent" mean in the Integration Map?**
 
@@ -102,9 +102,16 @@ The OS 2.0 mechanism that lets Shopify apps add UI components to your theme with
 
 ## Migration & Risk
 
-**What is "shared cart middleware"?**
+**What is the standard Shopify migration path?**
 
-In a phased headless migration, WooCommerce stays live while the Hydrogen storefront is built. Customers might browse on Hydrogen but check out on WooCommerce (or vice versa). Shared cart middleware keeps the shopping cart synchronized between both systems using the Storefront API for cart persistence and Multipass for session continuity. This is custom-built, not a Shopify feature.
+Shopify's official migration approach is a one-time data cutover — not running two platforms simultaneously. Methods include CSV import, the Store Migration app, third-party migration apps, or hiring a Shopify Partner. You migrate products, customers, and order history, then cut over to Shopify. Running WooCommerce and Hydrogen in parallel with synchronized carts is not a standard Shopify pattern and would require fully custom middleware.
+
+**Why is SEO continuity risk higher for headless?**
+
+- **Headed:** storefront and checkout live on the same domain (e.g., `yourstore.com`). Standard Shopify URL structures (`/products`, `/collections`, `/cart`). Analytics tracking is straightforward — one domain, seamless cookies and session persistence, simple customer journey attribution.
+- **Headless:** your custom Hydrogen storefront and Shopify's checkout are on separate domains. This requires careful cross-domain tracking configuration, redirect handling between your frontend and Shopify's checkout, and additional setup for tools like Google Analytics, Meta Pixel, etc. to track the full customer journey. More moving parts = more potential points of failure in tracking and attribution.
+
+"Lower risk" for headed means fewer technical requirements and less chance of losing attribution data during the customer journey.
 
 **What is "cross-domain analytics attribution loss"?**
 

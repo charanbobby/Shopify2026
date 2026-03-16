@@ -12,6 +12,7 @@ comments: true
 
 - **MVP Parity Required** = must be live and functional on Shopify at launch to match current WooCommerce operations. Any integration marked **No** is either Shopify-native out of the box (no build work) or a net-new capability beyond current state.
 - **Headless architecture note:** All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific and cannot be reused on Shopify - every integration must be rebuilt regardless of headed or headless. [[Ref: Apps](https://shopify.dev/docs/apps)] [[Ref: Admin API](https://shopify.dev/docs/admin-api)] The real benefit of a phased headless approach is **risk mitigation, not cost savings**: shared carts and checkout routing allow WooCommerce to stay live during Phase 1 while Shopify connectors are built in parallel. [[Ref: Hydrogen migration](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] The integration rebuild happens in Phase 2 regardless.
+- **Multipass (headless):** Multipass SSO is included in Shopify Plus but requires implementation. For headless, Multipass is required for unified customer sessions between WooCommerce/Liquid and Hydrogen frontends during phased migration. Verify activation status with Shopify account rep and allocate implementation time.
 - **Action required:** For each integration, validate the Shopify App Store listing and confirm migration effort with the vendor. [[Ref: Checkout Extensibility](https://shopify.dev/docs/apps/build/checkout)]
 
 ### Integration Types

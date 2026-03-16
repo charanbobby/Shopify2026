@@ -36,11 +36,11 @@ comments: true
 | Total Cost - Year 1 | 15% | | | |
 | Total Cost - Year 3 | 5% | | | Reduced - timeline risk outweighs long-run cost optimization. |
 | Content & Design Flexibility | 10% | | | OS2.0 JSON templates provide significant headed flexibility. |
-| Checkout Ownership | **- (TBD)** | | | Checkout Extensibility (headed) vs. checkout subdomain routing (headless). |
+| Checkout Ownership | **- (TBD)** | | | Checkout Extensibility (headed) vs. checkout subdomain routing (headless). **Headless note:** cross-domain flow (Hydrogen to Shopify checkout subdomain) requires [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration to prevent GA4 attribution loss. |
 | SEO Continuity Risk | 15% | | | Headed lower risk; redirects required either way. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
 | Internal Team Capacity | 10% | | | Co-dev model mitigates - agency handles architecture; internal team executes alongside. |
-| Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations. Details: [Integration Map](integration-map.md). |
-| Revenue Risk During Cutover | 5% | | | Shared carts support phased migration. |
+| Integration Complexity | **15%** | | | Headless adds overhead on checkout-adjacent integrations **and** shared cart middleware (Multipass + session sync). Details: [Integration Map](integration-map.md). |
+| Revenue Risk During Cutover | 5% | | | Shared carts support phased migration but require **custom middleware** - cart ID must be persisted across WooCommerce and Hydrogen frontends via Storefront API, and unified customer sessions require Multipass implementation. Budget for a technical spike. |
 
 ---
 
@@ -70,7 +70,7 @@ comments: true
 | Metric | Value |
 | --- | --- |
 | Annual GMV (CA + US) | TBD |
-| Shopify Plus GMV Fee Threshold | $800K USD/month (~0.25% above) - **confirm with Shopify account rep** |
+| Shopify Plus GMV Fee Threshold | $800K USD/month (**0.40%** above threshold) - confirmed per current Shopify Plus pricing |
 
 ### Current State (WooCommerce)
 
@@ -86,7 +86,7 @@ comments: true
 | Cost Category | Estimate | Notes |
 | --- | --- | --- |
 | Shopify Plus License | ~$27,600/yr | ~$2,300/mo - confirm with account rep |
-| GMV Fee | TBD | 0.25% above threshold |
+| GMV Fee | TBD | 0.40% above threshold |
 | Theme Development | TBD | One-time; OS2.0 reduces custom work |
 | App Subscriptions | TBD | Monthly recurring |
 | Data Migration | TBD | One-time |
@@ -105,6 +105,9 @@ comments: true
 | Frontend Infrastructure | TBD | Hydrogen/Oxygen hosting, CDN |
 | Checkout Subdomain Config | TBD | Required for headless |
 | Custom Event Mapping | TBD | GTM/pixel reimplementation |
+| Cross-Domain GA4/GTM Attribution | TBD | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) setup to prevent attribution loss across Hydrogen-to-checkout subdomain transition |
+| Shared Cart / Multipass Middleware | $15K-$25K | Session/cart sync between WooCommerce/Liquid and Hydrogen; Multipass SSO implementation. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| Oxygen CI/CD Infrastructure | TBD | Dev-ops hours for [Hydrogen/Oxygen deployment pipeline](https://shopify.dev/docs/storefronts/headless/hydrogen/deploy) setup |
 | Dedicated Frontend Engineering | TBD | Ongoing annual |
 | Data Migration | TBD | One-time |
 | Agency / Build Fees | TBD | |
@@ -120,21 +123,27 @@ comments: true
 
 | Risk | Likelihood | Impact | Key Mitigation |
 | --- | --- | --- | --- |
-| **Headless build cannot meet Aug 31 deadline** | Very High | Very High | Require shared cart PoC + checkout config + dry-run deployment before approving headless |
-| **Discount stacking limitation (Shopify Functions)** | Medium | High | Technical spike on Shopify Functions + discount APIs before architecture is locked |
-| **Co-dev capacity - agency + internal bandwidth** | Low–Medium | High | Internal headcount committed before contract; agency carries architecture load |
+| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | :red_circle: Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require shared cart PoC + Multipass spike + checkout config + dry-run deployment before approving headless. |
+| **Cross-domain analytics attribution loss (headless)** | High | High | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration required for Hydrogen-to-checkout subdomain transition; budget specialized technical scope |
+| **Discount stacking limitation (Shopify Functions)** | Medium | High | Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify [combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts). Hard ceiling at ~5 concurrent custom discount functions. |
+| **Co-dev capacity - agency + internal bandwidth** | Low-Medium | High | Internal headcount committed before contract; agency carries architecture load |
 
 ---
 
 ## 6. Go/No-Go Timeline
 
+> :red_circle: **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend, shared cart middleware, and Oxygen infrastructure typically extends to 6-9 months. The 6-week UAT window is likely to be consumed by middleware debugging. **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
+
 | Milestone | Target Date | Status |
 | --- | --- | --- |
+| Discount Logic Audit | **Before Apr 1** | Map WooCommerce coupon types to Shopify [discount combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts) |
+| Multipass / Shared Cart Middleware Technical Spike | **Before Apr 1** | Validate feasibility; required before approving headless |
 | Architecture & Agency Decision | **Apr 1, 2026** | Decision date locked |
 | Agency Notified | Apr 3 | |
 | Contract / SOW Signed | Apr 10 | |
 | Development Kickoff | Apr 14 | |
 | Checkout / Payment Validation | Jun 30 | |
+| Checkout Extensibility Branding Design | Jul 7 | Reconcile Hydrogen UI with Shopify-hosted checkout subdomain (headless only) |
 | UAT / Staging Launch | Jul 14 | 6-week UAT window |
 | Data Migration Cutover | Aug 18 | Dry-run at least once before |
 | Staff Training | Aug 24 | |
@@ -180,3 +189,6 @@ comments: true
 | Apps & App Store guidance | <https://shopify.dev/docs/apps> | Integrations |
 | Shopify CLI / Theme Check | <https://shopify.dev/docs/themes/tools/cli> | Risks |
 | Shopify Markets (merchant docs) | <https://help.shopify.com/en/manual/markets> | SEO, Assumptions |
+| Shopify Plus Pricing (plans & features) | <https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-plus-plan> | TCO |
+| Discount Combinations | <https://help.shopify.com/en/manual/discounts/combining-discounts> | Risks, Timeline |
+| Hydrogen/Oxygen Deployment | <https://shopify.dev/docs/storefronts/headless/hydrogen/deploy> | TCO, Timeline |

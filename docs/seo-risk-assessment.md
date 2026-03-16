@@ -11,10 +11,11 @@ comments: true
 | Area | Current State | Risk Level | Mitigation |
 | --- | --- | --- | --- |
 | Organic Traffic Value (monthly) | TBD | - | |
-| High-Value URLs requiring redirects | TBD | High | Full redirect map before go-live; Hydrogen migration guidance stresses redirect setup when routes change. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| High-Value URLs requiring redirects | TBD | High | Full redirect map before go-live; Hydrogen migration guidance stresses redirect setup when routes change. **WooCommerce-specific path mapping required:** `/product-category/*` to Shopify `/collections/*`, `/product/*` to `/products/*`, and any custom permalink structures. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | CA French / EN-FR hreflang | TBD | High | Validate hreflang on staging before launch; Shopify Markets provides built-in locale routing - validate behavior in sandbox. [[Ref](https://help.shopify.com/en/manual/markets)] |
 | Blog & Content Migration | TBD | Medium | Map all content URLs; preserve slugs where possible |
 | Canonical URL Strategy | TBD | Medium | Define canonical rules for CA vs US markets; Shopify Markets may handle locale routing natively - confirm. [[Ref](https://help.shopify.com/en/manual/markets)] |
 | Structured Data / Schema | TBD | Medium | Audit and reimplement JSON-LD via theme or app blocks (OS2.0). [[Ref](https://shopify.dev/docs/storefronts/themes/os20)] [[Ref](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)] |
 | Site Speed Impact Post-Migration | Headed likely neutral; Headless likely improved (edge rendering via Oxygen) | Medium | Run CWV benchmarks on staging (Lighthouse, Web Vitals); deploy staging with noindex until validated. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| Cross-Domain Analytics Attribution (headless) | Single-domain (WooCommerce) | **High** | Moving to cross-domain flow (Hydrogen to Shopify checkout subdomain) causes GA4 "Direct" traffic inflation. Requires [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration and advanced GTM cross-domain setup to preserve attribution. Budget specialized technical scope. |
 | Post-Launch SEO Monitoring | N/A | Medium | Run Google Search Console URL inspection post-migration; SEO recovery can take weeks - add contingency buffer |

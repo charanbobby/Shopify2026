@@ -33,7 +33,7 @@ comments: true
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
 | Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, shared carts, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
-| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds >$250K build + $15-25K middleware + Oxygen + analytics + dedicated frontend engineering. |
+| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K above headed (self-build, includes middleware) or >$250K (agency quote) + Oxygen + analytics + dedicated frontend engineering. |
 | Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
 | Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
 | Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: cross-domain branding gap + [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) required to prevent GA4 attribution loss. |
@@ -102,12 +102,12 @@ comments: true
 | --- | --- | --- |
 | Shopify Plus License | ~$27,600/yr | |
 | GMV Fee | TBD | |
-| Build Cost | >$250,000 | One-time - unvalidated |
+| Build Cost (incremental above headed) | $150K-$250K (self-build) / >$250K (agency) | Agency E quote may be over-estimated per team; self-build reduces cash outlay |
 | Frontend Infrastructure | TBD | Hydrogen/Oxygen hosting, CDN |
 | Checkout Subdomain Config | TBD | Required for headless |
 | Custom Event Mapping | TBD | GTM/pixel reimplementation |
 | Cross-Domain GA4/GTM Attribution | TBD | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) setup to prevent attribution loss across Hydrogen-to-checkout subdomain transition |
-| Shared Cart / Multipass Middleware | $15K-$25K | Session/cart sync between WooCommerce/Liquid and Hydrogen; Multipass SSO implementation. [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| Shared Cart / Multipass Middleware | Included in build cost | Session/cart sync between WooCommerce/Liquid and Hydrogen; Multipass SSO implementation. Assumed included in the $150K-$250K self-build estimate (agencies did not itemize separately). [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | Oxygen CI/CD Infrastructure | TBD | Dev-ops hours for [Hydrogen/Oxygen deployment pipeline](https://shopify.dev/docs/storefronts/headless/hydrogen/deploy) setup |
 | Dedicated Frontend Engineering | TBD | Ongoing annual |
 | Data Migration | TBD | One-time |

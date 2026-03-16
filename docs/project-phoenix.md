@@ -32,7 +32,7 @@ Shopify Plus is confirmed as the platform. The remaining architecture decision -
 - Stack: Hydrogen / Next.js | Sanity CMS
 - Maximum control over content structure, design, and frontend behavior
 - Frontend can evolve independently of commerce backend
-- Trade-off: Significantly higher build (>$250k estimate) and ongoing maintenance cost
+- Trade-off: Significantly higher build ($150K-$250K above headed for self-build; >$250K via agency) and ongoing maintenance cost
 
 ---
 

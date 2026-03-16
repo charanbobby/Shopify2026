@@ -1,4 +1,4 @@
-site_name: Shopify 2026 — Project Phoenix
+site_name: Shopify 2026 - Project Phoenix
 docs_dir: docs
 site_url: https://charanbobby.github.io/Shopify2026/
 use_directory_urls: false
@@ -33,7 +33,13 @@ nav:
 
   - Decision Framework:
       - Migration Decision: decision-framework.md
+      - Integration Map: integration-map.md
+      - Agency Notes: agency-notes.md
+      - SEO Risk Assessment: seo-risk-assessment.md
+      - Risk Register: risk-register.md
+      - Current State Baseline: current-state-baseline.md
 
-  - Developer Analysis:
-      - Headless Migration: developer-analysis.md
+  - Architecture:
+      - Current S&S Architecture: current-sns-architecture.md
+      - Developer Analysis: developer-analysis.md
 

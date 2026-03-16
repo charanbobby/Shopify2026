@@ -6,7 +6,7 @@ comments: true
 
 > **Decision date: April 1, 2026 | Hard launch: August 31, 2026 | Build window: ~5 months**
 >
-> This page is the executive go/no-go artifact. Supporting detail lives in linked pages. Shopify documentation references validated 2026-03-13 via `@shopify/dev-mcp` — see [Appendix](#appendix-shopify-documentation-references).
+> This page is the executive go/no-go artifact. Supporting detail lives in linked pages. Shopify documentation references validated 2026-03-13 via `@shopify/dev-mcp` - see [Appendix](#appendix-shopify-documentation-references).
 
 ---
 
@@ -16,7 +16,7 @@ comments: true
 
 | Field | Value |
 | --- | --- |
-| Recommended Architecture | TBD — Headed / Headless |
+| Recommended Architecture | TBD - Headed / Headless |
 | Recommended Agency | TBD |
 | Decision Date | **April 1, 2026** |
 | Hard Launch Deadline | **August 31, 2026** |
@@ -26,19 +26,19 @@ comments: true
 
 ---
 
-## 2. Decision Scorecard — Headed vs. Headless
+## 2. Decision Scorecard - Headed vs. Headless
 
 > Score each criterion 1 (poor) to 5 (excellent). Weighted total = Score × Weight, summed per column. Speed to Market weighted at 30% to reflect the 5-month build window.
 
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
 | Speed to Market | **30%** | | | Headed leverages OS2.0 + theme app extensions; headless adds checkout routing, shared carts, custom frontend scope. |
-| Total Cost — Year 1 | 15% | | | |
-| Total Cost — Year 3 | 5% | | | Reduced — timeline risk outweighs long-run cost optimization. |
+| Total Cost - Year 1 | 15% | | | |
+| Total Cost - Year 3 | 5% | | | Reduced - timeline risk outweighs long-run cost optimization. |
 | Content & Design Flexibility | 10% | | | OS2.0 JSON templates provide significant headed flexibility. |
-| Checkout Ownership | **— (TBD)** | | | Checkout Extensibility (headed) vs. checkout subdomain routing (headless). |
+| Checkout Ownership | **- (TBD)** | | | Checkout Extensibility (headed) vs. checkout subdomain routing (headless). |
 | SEO Continuity Risk | 15% | | | Headed lower risk; redirects required either way. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
-| Internal Team Capacity | 10% | | | Co-dev model mitigates — agency handles architecture; internal team executes alongside. |
+| Internal Team Capacity | 10% | | | Co-dev model mitigates - agency handles architecture; internal team executes alongside. |
 | Integration Complexity | 10% | | | Headless adds overhead on checkout-adjacent integrations. Details: [Integration Map](integration-map.md). |
 | Revenue Risk During Cutover | 5% | | | Shared carts support phased migration. |
 
@@ -52,10 +52,10 @@ comments: true
 
 | Criteria | Weight | Agency E (eHouse) | Agency D (Domaine) | Agency S (StreamCommerce) | Self-Build |
 | --- | --- | --- | --- | --- | --- |
-| Headless Experience | 25% | Low — defaults to headed | Strong — presented all options with co-dev | Low — no headless experience | Medium — learning curve remains |
+| Headless Experience | 25% | Low - defaults to headed | Strong - presented all options with co-dev | Low - no headless experience | Medium - learning curve remains |
 | Headed / Native Experience | 20% | Strong | Strong | Strong | Low |
-| Co-Dev Model | **25%** | TBD — **must confirm before Apr 1** | **Strong — explicit co-dev and consulting tracks** | Weak — not flexible; effectively disqualified | Full — entirely internal |
-| Estimated Build Cost | 15% | TBD — comparable to Agency S | **Significantly higher** | TBD — comparable to Agency E | Staff cost only |
+| Co-Dev Model | **25%** | TBD - **must confirm before Apr 1** | **Strong - explicit co-dev and consulting tracks** | Weak - not flexible; effectively disqualified | Full - entirely internal |
+| Estimated Build Cost | 15% | TBD - comparable to Agency S | **Significantly higher** | TBD - comparable to Agency E | Staff cost only |
 | Estimated Timeline | 5% | TBD | TBD | TBD | Longest |
 | Data Migration Experience | 5% | TBD | TBD | TBD | Low |
 | Post-Launch Support | 5% | TBD | TBD | TBD | Internal only |
@@ -70,7 +70,7 @@ comments: true
 | Metric | Value |
 | --- | --- |
 | Annual GMV (CA + US) | TBD |
-| Shopify Plus GMV Fee Threshold | $800K USD/month (~0.25% above) — **confirm with Shopify account rep** |
+| Shopify Plus GMV Fee Threshold | $800K USD/month (~0.25% above) - **confirm with Shopify account rep** |
 
 ### Current State (WooCommerce)
 
@@ -81,11 +81,11 @@ comments: true
 | Development & Maintenance | TBD | |
 | **Total** | **TBD** | |
 
-### Option 1 — Headed
+### Option 1 - Headed
 
 | Cost Category | Estimate | Notes |
 | --- | --- | --- |
-| Shopify Plus License | ~$27,600/yr | ~$2,300/mo — confirm with account rep |
+| Shopify Plus License | ~$27,600/yr | ~$2,300/mo - confirm with account rep |
 | GMV Fee | TBD | 0.25% above threshold |
 | Theme Development | TBD | One-time; OS2.0 reduces custom work |
 | App Subscriptions | TBD | Monthly recurring |
@@ -95,13 +95,13 @@ comments: true
 | **Year 1 Total** | **TBD** | |
 | **Year 3 Total** | **TBD** | |
 
-### Option 2 — Headless
+### Option 2 - Headless
 
 | Cost Category | Estimate | Notes |
 | --- | --- | --- |
 | Shopify Plus License | ~$27,600/yr | |
 | GMV Fee | TBD | |
-| Build Cost | >$250,000 | One-time — unvalidated |
+| Build Cost | >$250,000 | One-time - unvalidated |
 | Frontend Infrastructure | TBD | Hydrogen/Oxygen hosting, CDN |
 | Checkout Subdomain Config | TBD | Required for headless |
 | Custom Event Mapping | TBD | GTM/pixel reimplementation |
@@ -122,7 +122,7 @@ comments: true
 | --- | --- | --- | --- |
 | **Headless build cannot meet Aug 31 deadline** | Very High | Very High | Require shared cart PoC + checkout config + dry-run deployment before approving headless |
 | **Discount stacking limitation (Shopify Functions)** | Medium | High | Technical spike on Shopify Functions + discount APIs before architecture is locked |
-| **Co-dev capacity — agency + internal bandwidth** | Low–Medium | High | Internal headcount committed before contract; agency carries architecture load |
+| **Co-dev capacity - agency + internal bandwidth** | Low–Medium | High | Internal headcount committed before contract; agency carries architecture load |
 
 ---
 

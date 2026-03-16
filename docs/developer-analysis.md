@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Headless Shopify Migration — Developer Analysis
+# Headless Shopify Migration - Developer Analysis
 
 > Sources: Shopify headless migration phase list.docx, Shopify migration to headless to do list.xlsx
 
@@ -10,12 +10,12 @@ comments: true
 
 ## Migration Phases
 
-### Phase 0 — Preparatory Stage
+### Phase 0 - Preparatory Stage
 
 - Information gathering
 - Set up development environment
 
-### Phase 1 — Product Information Retrieved from Shopify
+### Phase 1 - Product Information Retrieved from Shopify
 
 Shopping cart and all ecommerce functions still run by WooCommerce. Product information (pricing, attributes, name, SKU, etc.) sourced from Shopify.
 
@@ -32,11 +32,11 @@ Note: During Phase 1, catalogues from both Shopify and WooCommerce need to be up
 - Extra workload temporarily
 - Potentially two sources of truth
 
-### Phase 2 — Shopping Cart, Ordering, and All Integrations from Shopify
+### Phase 2 - Shopping Cart, Ordering, and All Integrations from Shopify
 
 The site should be running solely on Shopify and not rely on WooCommerce. WooCommerce and product-related integrations will remain on site for reference and to minimize impact in case any platform was forgotten during migration.
 
-### Phase 3 — Legacy Plugins and Integrations Removed
+### Phase 3 - Legacy Plugins and Integrations Removed
 
 - Remove WooCommerce and any integrations/plugins that are no longer necessary
 - Plugin updates and customization port
@@ -107,7 +107,7 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 | Question | Answer |
 | --- | --- |
-| How do we handle bundled SKUs (e.g., furniture SKUs with multiple boxes)? | Use a BOM SKU (e.g., SNSFNWO5005AC3BDL) — same concept as WooCommerce. Fulfil has a BOM automation that explodes the bundle into individual components. |
+| How do we handle bundled SKUs (e.g., furniture SKUs with multiple boxes)? | Use a BOM SKU (e.g., SNSFNWO5005AC3BDL) - same concept as WooCommerce. Fulfil has a BOM automation that explodes the bundle into individual components. |
 | How do we handle bundle discounts? | Shopify Function |
 | How to handle BOGO (Eco Soy Pillows)? | Shopify Function |
 | Mattress, adj bed bundle (sheets bundle, eco soy, etc.) and flash sale discounts? | Shopify Function |
@@ -116,12 +116,12 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | How to handle White Gloves? | Set up White Gloves as a shipping rate; use Shopify Function to hide it outside the postal code range. |
 | Accounting reports? | Review Michael's requirements. Shopify Analytics, native exports, Matrixify for cleaner exports, Eziz pulls data from API to Power BI. Retail Shopify has been in use for accounting for some time. |
 | ActiveCampaign integration? | [Shopify App](https://apps.shopify.com/activecampaign) / [ActiveCampaign native integration](https://www.activecampaign.com/apps/shopify-integration) |
-| TrackShip integration — can we provide tracking information page and shipping email through Shopify? | [Shopify App](https://apps.shopify.com/trackship) |
-| ClaimLane integration? | No answer yet — to be investigated. |
+| TrackShip integration - can we provide tracking information page and shipping email through Shopify? | [Shopify App](https://apps.shopify.com/trackship) |
+| ClaimLane integration? | No answer yet - to be investigated. |
 | How to handle Affirm and PayPal financing? | These are payment methods added in Shopify admin. Affirm is already set up on production (Canada). |
 
 ### Other Questions
 
 | Question | Answer |
 | --- | --- |
-| Do we need to migrate old orders to Shopify? | Leaning towards no — new order ID naming convention makes it easy to differentiate when a customer calls. |
+| Do we need to migrate old orders to Shopify? | Leaning towards no - new order ID naming convention makes it easy to differentiate when a customer calls. |

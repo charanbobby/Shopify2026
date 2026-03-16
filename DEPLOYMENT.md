@@ -78,7 +78,7 @@ Giscus uses GitHub Discussions for page comments. To configure it for this repo:
 1. Enable **Discussions** on the [Shopify2026 repo settings](https://github.com/charanbobby/Shopify2026/settings)
 2. Install the [Giscus app](https://github.com/apps/giscus) on the repo
 3. Visit [giscus.app](https://giscus.app), enter `charanbobby/Shopify2026`, and copy the `data-repo-id` and `data-category-id` values
-4. Update `docs/js/giscus.js` — replace `REPLACE_WITH_REPO_ID` and `REPLACE_WITH_CATEGORY_ID` with the values from step 3
+4. Update `docs/js/giscus.js` - replace `REPLACE_WITH_REPO_ID` and `REPLACE_WITH_CATEGORY_ID` with the values from step 3
 
 ## Troubleshooting
 

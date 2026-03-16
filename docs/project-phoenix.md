@@ -9,28 +9,144 @@ Executive Briefing & Proposed Path Forward
 
 ---
 
-## Business Objectives
+## The Decision: Headed vs Headless
 
-Remove WooCommerce constraints and establish a Shopify Plus foundation that supports Silk & Snow's growth across CA (EN/FR), US, retail, and B2B.
+Shopify Plus is confirmed as the platform. The remaining architecture decision - **headed (Shopify Native) vs headless (Decoupled Frontend)** - must be made by **April 1, 2026**.
 
-### Why now
+| Constraint | Detail |
+| --- | --- |
+| Platform | **Shopify Plus** - decided |
+| Architecture Decision Date | **April 1, 2026** |
+| Hard Launch Deadline | **August 31, 2026** |
+| Effective Build Window | **~5 months** (Apr 14 kickoff → Aug 31 launch) |
+| Holiday Freeze | Oct 15 – Jan 5 - do not go live in this window |
+| Engagement Model | **Co-development + consultancy** - internal team builds alongside agency |
 
-- Rapid growth has outpaced the current platform
-- Teams are making high-impact decisions with limited system support
-- Manual workarounds increase risk, slow launches, and strain operations
+**The timeline is the primary constraint.** With only ~5 months to build, headless increases engineering scope significantly (checkout routing, shared carts, custom frontend, event mapping). Headed leverages OS2.0 + theme app extensions to move faster.
 
-### What this enables
+---
 
-- US and Canada (EN/FR) storefronts with compliant pricing, payments, and routing
-- Stable SEO through controlled migration and redirects
-- Fulfil integration parity to protect inventory, fulfillment, and finance flows
-- Reliable bundle, SKU, and promotion logic across online and POS
+## Core Architecture Options
 
-### Success looks like
+**Decision Lens:** Speed and cost efficiency vs long-term content and design flexibility.
 
-- Fewer operational exceptions and support escalations
-- Faster campaign and product launches
-- No disruption to fulfillment, inventory, or SEO post-launch
+### Option 1 - Headed (Shopify Native)
+
+- Stack: Shopify Online Store 2.0 | Liquid | React extensions
+- Primary Advantage: Fastest path to market with the lowest Total Cost of Ownership
+- Business Strengths:
+    - Leverages native Shopify capabilities (checkout, promotions, Functions)
+    - Lower operational and support complexity
+- Business Constraints:
+    - Limited flexibility for complex storytelling, long-form content, and advanced campaign layouts
+    - Risk of accumulating theme and app complexity over time
+- Best Suited For: Commerce-first experiences where speed, stability, and cost control are priorities
+
+### Option 2 - Headless (Decoupled Frontend)
+
+- Stack: Hydrogen / Next.js | Sanity CMS
+- Primary Advantage: Maximum control over content structure, design, and frontend behavior
+- Business Strengths:
+    - Enables richer editorial, brand, and promotional experiences
+    - Frontend can evolve independently of commerce backend
+- Business Trade-offs:
+    - Significantly higher build and ongoing maintenance cost (>$250k estimate)
+    - Increased operational complexity and reliance on engineering capacity
+- Best Suited For: Brand-led experiences where content flexibility and design control materially drive revenue
+
+---
+
+## Transition & Risk-Management Strategy
+
+Objective: Validate architectural choices while minimizing revenue, delivery, and team risk.
+
+### Phased Migration Approaches
+
+Frontend-First Hybrid:
+
+- Migrate commerce and checkout to Shopify first while retaining the existing frontend
+- Reduces "big-bang" launch risk and accelerates Shopify value realization
+
+Pilot-Based Validation (BBBY):
+
+- Use Bed Bath & Beyond as a controlled pilot for Headless + Sanity
+- Allows measurement of delivery velocity, content workflows, and maintenance overhead
+- Acknowledges short-term architectural inconsistency as a deliberate trade-off
+
+### Delivery & Governance Model
+
+Co-Development with Consultancy:
+
+- Internal teams build alongside an agency rather than fully outsourcing
+- Ensures knowledge transfer, shared accountability, and long-term ownership
+- Keeps future architectural decisions flexible and reversible
+
+---
+
+## Evaluating Our Agency Partners
+
+### eHouse
+
+Strong Shopify Headed advocates; recommended for straightforward, cost-conscious projects.
+
+Architecture Options presented:
+
+- Headed (Basic Theme)
+- Headed (Custom Theme / Lift & Shift)
+- Headless (Consultancy-Led by DX teams)
+- Headless (Co-Development)
+
+### Domaine
+
+Showcased relevant high-end design work; open to multiple architectural paths including a co-development model.
+
+Delivery Models presented:
+
+- Co-development
+- Consulting (Domaine-led)
+
+Architecture Options presented:
+
+- Headed with React
+- Headed
+- Headless (Hydrogen + Oxygen)
+- Headless
+
+### StreamCommerce
+
+Strong discovery work, but no experience in headless and not flexible with co-development.
+
+---
+
+## Voices From the Room
+
+### Summary of Perspectives Raised
+
+Key viewpoints expressed:
+
+### Headed Shopify is the most commonly adopted model
+
+External advisors and industry experience indicate most Shopify implementations use a headed architecture, citing ecosystem maturity and implementation speed.
+
+### Headless is viewed as a longer-term architectural option
+
+Headless approaches are associated with greater flexibility and future-proofing, alongside higher build effort, maintenance, and skill requirements.
+
+### Cost and complexity trade-offs remain unresolved
+
+Headed approaches are generally perceived as lower cost and simpler to operate, while headless value depends on longer-term horizons and scale.
+
+### Many challenges are attributed to execution patterns
+
+Several contributors noted that current pain points stem from how tools are used and governed, rather than the platforms themselves.
+
+### Different roles value different outcomes
+
+Engineering perspectives tend to favor extensibility and control, while marketing and content teams emphasize speed, autonomy, and ease of iteration.
+
+### Hybrid and phased models were raised as viable options
+
+Transitional approaches were discussed as a way to reduce risk while keeping future architectural options open.
 
 ---
 
@@ -44,11 +160,11 @@ Remove WooCommerce constraints and establish a Shopify Plus foundation that supp
 
 ### Requirements by workstream
 
-- Fulfillment, Inventory & Operations — ~27
-- Customer & Checkout Experience — ~24
-- Marketing & Engagement — ~18
-- Product Management & Logic — ~15
-- Customer Data, Service & B2B — ~8
+- Fulfillment, Inventory & Operations - ~27
+- Customer & Checkout Experience - ~24
+- Marketing & Engagement - ~18
+- Product Management & Logic - ~15
+- Customer Data, Service & B2B - ~8
 
 ### Outcome
 
@@ -104,131 +220,32 @@ Remove WooCommerce constraints and establish a Shopify Plus foundation that supp
 
 ---
 
-## Voices From the Room
+## Business Objectives
 
-### Summary of Perspectives Raised
+Remove WooCommerce constraints and establish a Shopify Plus foundation that supports Silk & Snow's growth across CA (EN/FR), US, retail, and B2B.
 
-Key viewpoints expressed:
+### Why now
 
-### Headed Shopify is the most commonly adopted model
+- Rapid growth has outpaced the current platform
+- Teams are making high-impact decisions with limited system support
+- Manual workarounds increase risk, slow launches, and strain operations
 
-External advisors and industry experience indicate most Shopify implementations use a headed architecture, citing ecosystem maturity and implementation speed.
+### What this enables
 
-### Headless is viewed as a longer-term architectural option
+- US and Canada (EN/FR) storefronts with compliant pricing, payments, and routing
+- Stable SEO through controlled migration and redirects
+- Fulfil integration parity to protect inventory, fulfillment, and finance flows
+- Reliable bundle, SKU, and promotion logic across online and POS
 
-Headless approaches are associated with greater flexibility and future-proofing, alongside higher build effort, maintenance, and skill requirements.
+### Success looks like
 
-### Cost and complexity trade-offs remain unresolved
-
-Headed approaches are generally perceived as lower cost and simpler to operate, while headless value depends on longer-term horizons and scale.
-
-### Many challenges are attributed to execution patterns
-
-Several contributors noted that current pain points stem from how tools are used and governed, rather than the platforms themselves.
-
-### Different roles value different outcomes
-
-Engineering perspectives tend to favor extensibility and control, while marketing and content teams emphasize speed, autonomy, and ease of iteration.
-
-### Hybrid and phased models were raised as viable options
-
-Transitional approaches were discussed as a way to reduce risk while keeping future architectural options open.
+- Fewer operational exceptions and support escalations
+- Faster campaign and product launches
+- No disruption to fulfillment, inventory, or SEO post-launch
 
 ---
 
-## Core Architecture Options
-
-**Decision Lens:** Speed and cost efficiency vs long-term content and design flexibility.
-
-### Option 1 — Headed (Shopify Native)
-
-- Stack: Shopify Online Store 2.0 | Liquid | React extensions
-- Primary Advantage: Fastest path to market with the lowest Total Cost of Ownership
-- Business Strengths:
-    - Leverages native Shopify capabilities (checkout, promotions, Functions)
-    - Lower operational and support complexity
-- Business Constraints:
-    - Limited flexibility for complex storytelling, long-form content, and advanced campaign layouts
-    - Risk of accumulating theme and app complexity over time
-- Best Suited For: Commerce-first experiences where speed, stability, and cost control are priorities
-
-### Option 2 — Headless (Decoupled Frontend)
-
-- Stack: Hydrogen / Next.js | Sanity CMS
-- Primary Advantage: Maximum control over content structure, design, and frontend behavior
-- Business Strengths:
-    - Enables richer editorial, brand, and promotional experiences
-    - Frontend can evolve independently of commerce backend
-- Business Trade-offs:
-    - Significantly higher build and ongoing maintenance cost (>$250k estimate)
-    - Increased operational complexity and reliance on engineering capacity
-- Best Suited For: Brand-led experiences where content flexibility and design control materially drive revenue
-
----
-
-## Transition & Risk-Management Strategy
-
-Objective: Validate architectural choices while minimizing revenue, delivery, and team risk.
-
-### Phased Migration Approaches
-
-Frontend-First Hybrid:
-
-- Migrate commerce and checkout to Shopify first while retaining the existing frontend
-- Reduces "big-bang" launch risk and accelerates Shopify value realization
-
-Pilot-Based Validation (BBBY):
-
-- Use Bed Bath & Beyond as a controlled pilot for Headless + Sanity
-- Allows measurement of delivery velocity, content workflows, and maintenance overhead
-- Acknowledges short-term architectural inconsistency as a deliberate trade-off
-
-### Delivery & Governance Model
-
-Co-Development with Consultancy:
-
-- Internal teams build alongside an agency rather than fully outsourcing
-- Ensures knowledge transfer, shared accountability, and long-term ownership
-- Keeps future architectural decisions flexible and reversible
-
----
-
-## Evaluating Our Agency Partners
-
-### eHouse
-
-Strong Shopify Headed advocates; recommended for straightforward, cost-conscious projects.
-
-Architecture Options presented:
-
-- Headed (Basic Theme)
-- Headed (Custom Theme / Lift & Shift)
-- Headless (Consultancy-Led by DX teams)
-- Headless (Co-Development)
-
-### StreamCommerce
-
-Strong discovery work, but no experience in headless and not flexible with co-development.
-
-### Domaine
-
-Showcased relevant high-end design work; open to multiple architectural paths including a co-development model.
-
-Delivery Models presented:
-
-- Co-development
-- Consulting (Domaine-led)
-
-Architecture Options presented:
-
-- Headed with React
-- Headed
-- Headless (Hydrogen + Oxygen)
-- Headless
-
----
-
-## Appendix A — Attributed Perspectives and Observations (Internal Stakeholders)
+## Appendix A - Attributed Perspectives and Observations (Internal Stakeholders)
 
 ### Justin G
 
@@ -272,7 +289,7 @@ Architecture Options presented:
 
 ---
 
-## Appendix B — Attributed Perspectives and Observations (External Advisors and Partners)
+## Appendix B - Attributed Perspectives and Observations (External Advisors and Partners)
 
 ### eHouse (Consultancy)
 
@@ -294,5 +311,3 @@ Architecture Options presented:
 - Raises concerns around Shopify bloat, analytics attribution, SEO impacts, and third-party plugin constraints.
 - Has limited demonstrated experience with headless and co-development models.
 - Viewed as competent but less flexible for collaborative delivery.
-
----

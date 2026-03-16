@@ -11,7 +11,9 @@ theme:
     accent: purple
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
+    - navigation.sections
     - search.highlight
 
 markdown_extensions:
@@ -31,8 +33,9 @@ nav:
       - Strategic Migration: project-phoenix.md
       - Requirements Backlog: requirements-backlog.md
 
-  - Decision Framework:
-      - Migration Decision: decision-framework.md
+  - Decision Framework: decision-framework.md
+
+  - Supporting Docs:
       - Integration Map: integration-map.md
       - Agency Notes: agency-notes.md
       - SEO Risk Assessment: seo-risk-assessment.md

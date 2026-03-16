@@ -1,4 +1,8 @@
-# **Silk & Snow – End-to-End Architecture (Updated Markdown Version)**
+---
+comments: true
+---
+
+# **Silk & Snow - End-to-End Architecture (Updated Markdown Version)**
 
 ## **1. Scenario Overview**
 

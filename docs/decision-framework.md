@@ -124,7 +124,7 @@ comments: true
 
 | Risk | Likelihood | Impact | Key Mitigation |
 | --- | --- | --- | --- |
-| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | :red_circle: Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require shared cart PoC + Multipass spike + checkout config + dry-run deployment before approving headless. |
+| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | 🔴 Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require shared cart PoC + Multipass spike + checkout config + dry-run deployment before approving headless. |
 | **Cross-domain analytics attribution loss (headless)** | High | High | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration required for Hydrogen-to-checkout subdomain transition; budget specialized technical scope |
 | **Discount stacking limitation (Shopify Functions)** | Medium | High | Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify [combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts). Hard ceiling at ~5 concurrent custom discount functions. |
 | **Co-dev capacity - agency + internal bandwidth** | Low-Medium | High | Internal headcount committed before contract; agency carries architecture load |
@@ -133,7 +133,7 @@ comments: true
 
 ## 6. Go/No-Go Timeline
 
-> :red_circle: **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend, shared cart middleware, and Oxygen infrastructure typically extends to 6-9 months. The 6-week UAT window is likely to be consumed by middleware debugging. **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
+> 🔴 **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend, shared cart middleware, and Oxygen infrastructure typically extends to 6-9 months. The 6-week UAT window is likely to be consumed by middleware debugging. **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
 
 | Milestone | Target Date | Status |
 | --- | --- | --- |

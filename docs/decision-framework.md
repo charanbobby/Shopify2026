@@ -33,10 +33,10 @@ comments: true
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
 | Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, shared carts, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
-| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Agency-led: >$250K. Details: [TCO](#4-total-cost-of-ownership). |
+| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Details: [TCO](#4-total-cost-of-ownership). |
 | Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
 | Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
-| Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: cross-domain branding gap + [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) required to prevent GA4 attribution loss. |
+| Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: checkout hosted on `.myshopify.com` by default (configurable to `checkout.yourstore.com`); cross-domain transition inflates GA4 "Direct" traffic. Branding gap mitigable via checkout branding settings and apps, but not eliminable. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) + GA4 referral exclusion list required. |
 | SEO Continuity Risk | 15% | **4** | **2** | Headed: single domain, standard Shopify URLs, lower risk. Headless: cross-domain analytics, more complex redirect handling. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
 | Internal Team Capacity | 10% | **4** | **2** | Headed: lower learning curve, co-dev model works well. Headless: React/Hydrogen/Oxygen expertise required, higher agency dependency. |
 | Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium, plus shared cart middleware (Multipass + session sync). Details: [Integration Map](integration-map.md). |
@@ -104,9 +104,9 @@ comments: true
 | GMV Fee | TBD | |
 | Build Cost (incremental above headed) | $150K-$250K (self-build) / >$250K (agency) | Agency E quote may be over-estimated per team; self-build reduces cash outlay |
 | Frontend Infrastructure | TBD | Hydrogen/Oxygen hosting, CDN |
-| Checkout Subdomain Config | TBD | Required for headless |
+| Checkout Subdomain Config | TBD | Required for headless; defaults to `.myshopify.com`, configurable to custom subdomain (e.g., `checkout.yourstore.com`) for brand consistency |
 | Custom Event Mapping | TBD | GTM/pixel reimplementation |
-| Cross-Domain GA4/GTM Attribution | TBD | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) setup to prevent attribution loss across Hydrogen-to-checkout subdomain transition |
+| Cross-Domain GA4/GTM Attribution | TBD | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) setup + GA4 referral exclusion list (checkout subdomain, primary domain, `checkout.shopify.com`, payment provider domains) to prevent attribution loss across Hydrogen-to-checkout domain transition |
 | Shared Cart / Multipass Middleware | Included in build cost | Session/cart sync between WooCommerce/Liquid and Hydrogen; Multipass SSO implementation. Assumed included in the $150K-$250K self-build estimate (agencies did not itemize separately). [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
 | Oxygen CI/CD Infrastructure | TBD | Dev-ops hours for [Hydrogen/Oxygen deployment pipeline](https://shopify.dev/docs/storefronts/headless/hydrogen/deploy) setup |
 | Dedicated Frontend Engineering | TBD | Ongoing annual |
@@ -125,7 +125,7 @@ comments: true
 | Risk | Likelihood | Impact | Key Mitigation |
 | --- | --- | --- | --- |
 | **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | 🔴 Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require shared cart PoC + Multipass spike + checkout config + dry-run deployment before approving headless. |
-| **Cross-domain analytics attribution loss (headless)** | High | High | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration required for Hydrogen-to-checkout subdomain transition; budget specialized technical scope |
+| **Cross-domain analytics attribution loss (headless)** | High | High | Headless checkout defaults to `.myshopify.com` (custom subdomain like `checkout.yourstore.com` configurable). GA4 interprets the domain change as a new session, inflating "Direct" traffic. Mitigations: [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) + add checkout domain, primary store domain, `checkout.shopify.com`, and payment provider domains to GA4 referral exclusion list. Budget specialized technical scope. |
 | **Discount stacking limitation (Shopify Functions)** | Medium | High | Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify [combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts). Hard ceiling at ~5 concurrent custom discount functions. |
 | **Co-dev capacity - agency + internal bandwidth** | Low-Medium | High | Internal headcount committed before contract; agency carries architecture load |
 
@@ -144,7 +144,7 @@ comments: true
 | Contract / SOW Signed | Apr 10 | |
 | Development Kickoff | Apr 14 | |
 | Checkout / Payment Validation | Jun 30 | |
-| Checkout Extensibility Branding Design | Jul 7 | Reconcile Hydrogen UI with Shopify-hosted checkout subdomain (headless only) |
+| Checkout Extensibility Branding Design | Jul 7 | Reconcile Hydrogen storefront UI with Shopify-hosted checkout (headless only); configure custom checkout subdomain, checkout branding settings, and checkout customization apps to minimize visual gap |
 | UAT / Staging Launch | Jul 14 | 6-week UAT window |
 | Data Migration Cutover | Aug 18 | Dry-run at least once before |
 | Staff Training | Aug 24 | |

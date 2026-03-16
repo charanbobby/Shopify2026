@@ -4,7 +4,7 @@ comments: true
 
 # Migration Decision Framework
 
-> **Decision date: April 1, 2026 | Hard launch: August 31, 2026 | Build window: ~5 months**
+> **Decision date: April 1, 2026 | Target launch: August 31, 2026 | Build window: ~5 months**
 >
 > This page is the executive go/no-go artifact. Supporting detail lives in linked pages. Shopify documentation references validated 2026-03-13 via `@shopify/dev-mcp` - see [Appendix](#appendix-shopify-documentation-references).
 
@@ -16,23 +16,23 @@ comments: true
 
 | Field | Value |
 | --- | --- |
-| Recommended Architecture | **Headed (OS 2.0)** - scored 3.70 vs Headless 2.05 out of 5.00 |
-| Recommended Agency | TBD |
+| Recommended Architecture | **Headed (OS 2.0)** - scored 3.85 vs Headless 2.20 out of 5.00 |
+| Recommended Agency | **Domaine (co-dev model)** — confirm eHouse co-dev availability before Apr 1 as secondary option |
 | Decision Date | **April 1, 2026** |
 | Hard Launch Deadline | **August 31, 2026** |
 | Decision Made By | TBD |
-| Next Action | Confirm Discount Logic Audit and agency co-dev model before Apr 1 |
-| Rationale | Headed wins on 7 of 9 criteria. The 5-month build window is the dominant constraint (30% weight); headless timeline of 6-9 months is incompatible with Aug 31 hard deadline. Headless leads only on Content & Design Flexibility. Recommended path: headed launch Aug 31, evaluate Hydrogen as 2027 fast-follow. |
+| Next Action | 1) Confirm eHouse co-dev model availability. 2) Confirm Discount Logic Audit before Apr 1. |
+| Rationale | Headed wins on 7 of 9 criteria. Timeline weight reduced to 20% (Aug 31 is a target date, not a hard constraint); cutover risk weight increased to 10% reflecting headed's significantly lower migration risk vs. headless frontend deployment. Headless leads only on Content & Design Flexibility. Co-dev model is the preferred engagement — Domaine has confirmed co-dev and consulting tracks; eHouse should be evaluated as a secondary option if co-dev is available. Recommended path: headed launch targeting Aug 31 with Domaine, evaluate Hydrogen as 2027 fast-follow. |
 
 ---
 
 ## 2. Decision Scorecard - Headed vs. Headless
 
-> Score each criterion 1 (poor) to 5 (excellent). Weighted total = Score × Weight, summed per column. Speed to Market weighted at 30% to reflect the 5-month build window.
+> Score each criterion 1 (poor) to 5 (excellent). Weighted total = Score × Weight, summed per column. Aug 31 is a target date (not a hard constraint), so Speed to Market weighted at 20%. Revenue Risk During Cutover weighted at 10% to reflect the operational importance of a clean migration.
 
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
+| Speed to Market | **20%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, custom frontend scope (6-9 mo typical). Aug 31 is a target date; weight reduced from 30% accordingly. |
 | Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Details: [TCO](#4-total-cost-of-ownership). |
 | SEO Continuity Risk | 15% | **4** | **2** | Headed: single domain, standard Shopify URLs, lower risk. Headless: cross-domain analytics, more complex redirect handling. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
 | Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
@@ -40,8 +40,27 @@ comments: true
 | Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium. Details: [Integration Map](integration-map.md). |
 | Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
 | Checkout Ownership | 5% | **4** | **3** | Headed: single-domain Checkout Extensibility (operationally simpler). Headless: checkout on separate domain (`.myshopify.com` default, custom subdomain configurable); cross-domain analytics solvable with GA4 alternatives; branding gap not a concern. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) available if GA4 retained. |
-| Revenue Risk During Cutover | 5% | **3** | **3** | Both use standard data migration cutover (big-bang). Well understood for headed; headless adds frontend deployment risk. |
-| **Weighted Total** | **100%** | **3.70** | **2.10** | **Headed leads by 1.60 points.** Speed to Market (30% weight x 3-point gap) accounts for the majority of the difference. Headless leads only on Content & Design Flexibility. |
+| Revenue Risk During Cutover | **10%** | **4** | **2** | Both use standard data migration cutover (big-bang). Headed is well-understood with lower operational risk; headless adds custom frontend deployment, Oxygen infrastructure, and cross-domain checkout — significantly higher cutover surface area. |
+| **Weighted Total** | **100%** | **3.85** | **2.20** | **Headed leads by 1.65 points.** Speed to Market (20%) and Revenue Risk During Cutover (10%) together account for the majority of the difference. Headless leads only on Content & Design Flexibility. |
+
+### Sensitivity: What if we have more time and budget?
+
+> If the Aug 31 target is extended (e.g., 9-12 month runway) and budget increases by $150K-$250K+, headless closes the gap but **headed still leads**. The table below shows how headless scores shift — headed scores remain unchanged.
+
+| Criteria | Weight | Headed | Headless (current) | Headless (relaxed) | Why it changes |
+| --- | --- | --- | --- | --- | --- |
+| Speed to Market | 20% | 4 | 1 | **4** | 6-9 month build fits comfortably in extended runway |
+| Total Cost - Year 1 | 15% | 4 | 2 | **3** | Larger budget absorbs the $150K-$250K delta |
+| SEO Continuity Risk | 15% | 4 | 2 | **2** | Architectural — cross-domain complexity doesn't shrink with more time or money |
+| Content & Design Flexibility | 10% | 3 | 5 | **5** | Already headless's strength; unchanged |
+| Internal Team Capacity | 10% | 4 | 2 | **3** | Time to upskill on React/Hydrogen or budget to hire expertise |
+| Integration Complexity | 10% | 4 | 2 | **3** | More time to plan GTM/pixel work, but architectural gaps remain |
+| Total Cost - Year 3 | 5% | 3 | 3 | **4** | Larger upfront investment amortizes better over 3 years |
+| Checkout Ownership | 5% | 4 | 3 | **3** | Cross-domain checkout is architectural; unchanged |
+| Revenue Risk During Cutover | 10% | 4 | 2 | **3** | More time for dry runs and phased rollout reduces risk |
+| **Weighted Total** | **100%** | **3.85** | **2.20** | **3.30** | **Gap narrows from 1.65 → 0.55** |
+
+**Key takeaway:** The remaining 0.55-point gap comes from **SEO continuity risk** and **integration complexity** — these are architectural differences that don't shrink with more time or money. Headless becomes *viable* with a relaxed timeline and budget, but headed remains the lower-risk path unless the business requires custom UI that OS 2.0 sections/templates fundamentally cannot deliver. The phased approach (headed now, headless 2027) actually becomes *stronger* with more resources — both phases get done properly without rushing either.
 
 ---
 
@@ -124,7 +143,7 @@ comments: true
 
 | Risk | Likelihood | Impact | Key Mitigation |
 | --- | --- | --- | --- |
-| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | 🔴 Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require checkout config + dry-run deployment before approving headless. Standard data migration cutover assumed. |
+| **Headless build may not meet Aug 31 target** | **High** | **High** | 🟡 Aug 31 is a target date, not a hard constraint. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require checkout config + dry-run deployment before approving headless. Standard data migration cutover assumed. |
 | **Cross-domain analytics attribution loss (headless)** | High | High | Headless checkout defaults to `.myshopify.com` (custom subdomain like `checkout.yourstore.com` configurable). GA4 interprets the domain change as a new session, inflating "Direct" traffic. Mitigations: [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) + add checkout domain, primary store domain, `checkout.shopify.com`, and payment provider domains to GA4 referral exclusion list. Budget specialized technical scope. |
 | **Discount stacking limitation (Shopify Functions)** | Medium | High | Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify [combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts). Hard ceiling at ~5 concurrent custom discount functions. |
 | **Co-dev capacity - agency + internal bandwidth** | Low-Medium | High | Internal headcount committed before contract; agency carries architecture load |
@@ -133,7 +152,7 @@ comments: true
 
 ## 6. Go/No-Go Timeline
 
-> 🔴 **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend and Oxygen infrastructure typically extends to 6-9 months. Standard data migration cutover assumed (CSV, Store Migration app, or Partner). **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
+> 🟡 **Headless timeline risk: MEDIUM-HIGH.** A 4.5-month headless build (kickoff to launch) is aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend and Oxygen infrastructure typically extends to 6-9 months. Standard data migration cutover assumed (CSV, Store Migration app, or Partner). Aug 31 is a target date (not a hard constraint), but headed remains the lower-risk path for cutover. **Recommended approach if headless is selected:** launch OS 2.0 (Headed) targeting Aug 31, then pursue Hydrogen as a fast-follow in 2027.
 
 | Milestone | Target Date | Status |
 | --- | --- | --- |

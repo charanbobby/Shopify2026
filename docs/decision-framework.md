@@ -32,16 +32,16 @@ comments: true
 
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, shared carts, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
+| Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
 | Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Details: [TCO](#4-total-cost-of-ownership). |
-| Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
-| Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
-| Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: checkout hosted on `.myshopify.com` by default (configurable to `checkout.yourstore.com`); cross-domain transition inflates GA4 "Direct" traffic. Branding gap mitigable via checkout branding settings and apps, but not eliminable. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) + GA4 referral exclusion list required. |
 | SEO Continuity Risk | 15% | **4** | **2** | Headed: single domain, standard Shopify URLs, lower risk. Headless: cross-domain analytics, more complex redirect handling. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
+| Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
 | Internal Team Capacity | 10% | **4** | **2** | Headed: lower learning curve, co-dev model works well. Headless: React/Hydrogen/Oxygen expertise required, higher agency dependency. |
-| Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium, plus shared cart middleware (Multipass + session sync). Details: [Integration Map](integration-map.md). |
-| Revenue Risk During Cutover | 5% | **3** | **3** | Headed: standard big-bang cutover, well understood. Headless: phased migration possible but shared cart middleware adds failure modes. |
-| **Weighted Total** | **100%** | **3.70** | **2.05** | **Headed leads by 1.65 points.** Speed to Market (30% weight x 3-point gap) accounts for 55% of the difference. Headless leads only on Content & Design Flexibility. |
+| Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium. Details: [Integration Map](integration-map.md). |
+| Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
+| Checkout Ownership | 5% | **4** | **3** | Headed: single-domain Checkout Extensibility (operationally simpler). Headless: checkout on separate domain (`.myshopify.com` default, custom subdomain configurable); cross-domain analytics solvable with GA4 alternatives; branding gap not a concern. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) available if GA4 retained. |
+| Revenue Risk During Cutover | 5% | **3** | **3** | Both use standard data migration cutover (big-bang). Well understood for headed; headless adds frontend deployment risk. |
+| **Weighted Total** | **100%** | **3.70** | **2.10** | **Headed leads by 1.60 points.** Speed to Market (30% weight x 3-point gap) accounts for the majority of the difference. Headless leads only on Content & Design Flexibility. |
 
 ---
 
@@ -107,7 +107,7 @@ comments: true
 | Checkout Subdomain Config | TBD | Required for headless; defaults to `.myshopify.com`, configurable to custom subdomain (e.g., `checkout.yourstore.com`) for brand consistency |
 | Custom Event Mapping | TBD | GTM/pixel reimplementation |
 | Cross-Domain GA4/GTM Attribution | TBD | [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) setup + GA4 referral exclusion list (checkout subdomain, primary domain, `checkout.shopify.com`, payment provider domains) to prevent attribution loss across Hydrogen-to-checkout domain transition |
-| Shared Cart / Multipass Middleware | Included in build cost | Session/cart sync between WooCommerce/Liquid and Hydrogen; Multipass SSO implementation. Assumed included in the $150K-$250K self-build estimate (agencies did not itemize separately). [[Ref](https://shopify.dev/docs/storefronts/headless/hydrogen/migrate)] |
+| Data Migration (standard) | Included in build cost | Standard Shopify migration path: CSV import, Store Migration app, or Shopify Partner. One-time data cutover from WooCommerce. |
 | Oxygen CI/CD Infrastructure | TBD | Dev-ops hours for [Hydrogen/Oxygen deployment pipeline](https://shopify.dev/docs/storefronts/headless/hydrogen/deploy) setup |
 | Dedicated Frontend Engineering | TBD | Ongoing annual |
 | Data Migration | TBD | One-time |
@@ -124,7 +124,7 @@ comments: true
 
 | Risk | Likelihood | Impact | Key Mitigation |
 | --- | --- | --- | --- |
-| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | 🔴 Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require shared cart PoC + Multipass spike + checkout config + dry-run deployment before approving headless. |
+| **Headless build cannot meet Aug 31 deadline** | **Very High** | **Very High** | 🔴 Reclassified as HIGH RISK. Typical Hydrogen builds take 6-9 months. Recommend headed-first launch with headless as 2027 fast-follow. Require checkout config + dry-run deployment before approving headless. Standard data migration cutover assumed. |
 | **Cross-domain analytics attribution loss (headless)** | High | High | Headless checkout defaults to `.myshopify.com` (custom subdomain like `checkout.yourstore.com` configurable). GA4 interprets the domain change as a new session, inflating "Direct" traffic. Mitigations: [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) + add checkout domain, primary store domain, `checkout.shopify.com`, and payment provider domains to GA4 referral exclusion list. Budget specialized technical scope. |
 | **Discount stacking limitation (Shopify Functions)** | Medium | High | Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify [combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts). Hard ceiling at ~5 concurrent custom discount functions. |
 | **Co-dev capacity - agency + internal bandwidth** | Low-Medium | High | Internal headcount committed before contract; agency carries architecture load |
@@ -133,12 +133,12 @@ comments: true
 
 ## 6. Go/No-Go Timeline
 
-> 🔴 **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend, shared cart middleware, and Oxygen infrastructure typically extends to 6-9 months. The 6-week UAT window is likely to be consumed by middleware debugging. **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
+> 🔴 **Headless timeline risk: HIGH.** A 4.5-month headless build (kickoff to hard launch) is extremely aggressive. Standard Shopify Plus headed migrations take 3-4 months; adding a custom Hydrogen frontend and Oxygen infrastructure typically extends to 6-9 months. Standard data migration cutover assumed (CSV, Store Migration app, or Partner). **Recommended approach if headless is selected:** launch OS 2.0 (Headed) by Aug 31 to meet the hard deadline, then pursue Hydrogen as a fast-follow in 2027.
 
 | Milestone | Target Date | Status |
 | --- | --- | --- |
 | Discount Logic Audit | **Before Apr 1** | Map WooCommerce coupon types to Shopify [discount combination rules](https://help.shopify.com/en/manual/discounts/combining-discounts) |
-| Multipass / Shared Cart Middleware Technical Spike | **Before Apr 1** | Validate feasibility; required before approving headless |
+| Data Migration Method Selection | **Before Apr 1** | Choose standard migration path: CSV import, Store Migration app, or Shopify Partner. Plan dry-run cutover schedule. |
 | Architecture & Agency Decision | **Apr 1, 2026** | Decision date locked |
 | Agency Notified | Apr 3 | |
 | Contract / SOW Signed | Apr 10 | |
@@ -174,7 +174,7 @@ comments: true
 | --- | --- | --- |
 | OS2.0 (themes, JSON templates, sections) | <https://shopify.dev/docs/storefronts/themes/os20> | Scorecard, Agency, SEO, Baseline |
 | Theme App Extensions (app blocks) | <https://shopify.dev/docs/apps/build/online-store/theme-app-extensions> | Scorecard, Integrations, SEO |
-| Hydrogen Migration (shared carts, checkout subdomain, redirects) | <https://shopify.dev/docs/storefronts/headless/hydrogen/migrate> | Scorecard, Integrations, TCO, SEO, Risks |
+| Hydrogen Migration (checkout subdomain, redirects) | <https://shopify.dev/docs/storefronts/headless/hydrogen/migrate> | Scorecard, Integrations, TCO, SEO, Risks |
 | Checkout Extensibility (UI extensions, constraints) | <https://shopify.dev/docs/apps/build/checkout> | Scorecard, Integrations, Agency, Timeline |
 | Shopify Functions (discounts, server-side customization) | <https://shopify.dev/docs/api/functions> | Agency, Risks |
 | Discount Functions | <https://shopify.dev/docs/apps/discounts/functions> | Agency, Risks |

@@ -14,12 +14,13 @@ This site consolidates planning materials, architectural decisions, and develope
 
 ### [Project Phoenix — Strategic Migration](project-phoenix.md)
 
-Executive briefing and proposed path forward, covering:
+Executive briefing and proposed path forward, leading with:
 
-- Business objectives and success criteria
+- **The Decision: Headed vs Headless** — constraints table, timeline as primary filter
 - Architecture options: Headed (Shopify Native) vs Headless (Decoupled Frontend)
-- Agency evaluations: eHouse, Domaine, StreamCommerce, and Self-Build
-- Stakeholder perspectives
+- Transition & risk-management strategy
+- Agency evaluations: eHouse, Domaine, StreamCommerce
+- Stakeholder perspectives, requirements blueprint, and business objectives
 
 ### [Requirements Backlog](requirements-backlog.md)
 
@@ -33,20 +34,15 @@ Full prioritized backlog sourced from Shopify requirements worksheet v4, organiz
 
 ### [Migration Decision Framework](decision-framework.md)
 
-10-section framework for making a confident go/no-go decision on architecture and agency, including:
+Executive go/no-go artifact — recommendation, decision scorecard, agency matrix, TCO, top risks, and timeline. Supporting detail is in linked pages:
 
-| Section | Status |
+| Supporting Document | Contents |
 | --- | --- |
-| 1. Recommendation | Blank — to be completed once all sections are populated |
-| 2. Decision Scorecard — Headed vs. Headless | Criteria and weights defined; scores TBD |
-| 3. Total Cost of Ownership | Structure in place; GMV and cost figures TBD |
-| 4. Agency Comparison Matrix | eHouse, Domaine, StreamCommerce, Self-Build — key observations populated from team meetings |
-| 5. Integration Complexity Map | 15 integrations mapped with Headed vs Headless effort ratings |
-| 6. SEO Risk Assessment | 7 risk areas identified with mitigations |
-| 7. Risk Register | 8 risks with likelihood, impact, and mitigation owners |
-| 8. Go/No-Go Timeline | **Dates locked** — Decision Apr 1; Kickoff Apr 14; UAT Jul 14; Hard Launch **Aug 31, 2026**; holiday freeze hard-blocked Oct 15 – Jan 5 |
-| 9. Open Assumptions | 7 assumptions requiring validation before decision is locked |
-| 10. Current State Baseline | WooCommerce pain points and site performance targets |
+| [Integration Complexity Map](integration-map.md) | 22 integrations with headed vs. headless effort ratings |
+| [Agency Evaluation Notes](agency-notes.md) | Detailed team observations from agency meetings |
+| [SEO Risk Assessment](seo-risk-assessment.md) | 8 SEO risk areas with mitigations |
+| [Risk Register & Open Assumptions](risk-register.md) | 11 risks + 12 assumptions requiring validation |
+| [Current State Baseline](current-state-baseline.md) | WooCommerce pain points and performance targets |
 
 ### [Current S&S Architecture](current-sns-architecture.md)
 

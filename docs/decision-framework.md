@@ -33,7 +33,7 @@ comments: true
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
 | Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, shared carts, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
-| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K above headed (self-build, includes middleware) or >$250K (agency quote) + Oxygen + analytics + dedicated frontend engineering. |
+| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Agency-led: >$250K. Details: [TCO](#4-total-cost-of-ownership). |
 | Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
 | Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
 | Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: cross-domain branding gap + [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) required to prevent GA4 attribution loss. |

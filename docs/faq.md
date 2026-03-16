@@ -104,7 +104,7 @@ The OS 2.0 mechanism that lets Shopify apps add UI components to your theme with
 
 **What is "shared cart middleware"?**
 
-In a phased headless migration, WooCommerce stays live while the Hydrogen storefront is built. Customers might browse on Hydrogen but check out on WooCommerce (or vice versa). Shared cart middleware keeps the shopping cart synchronized between both systems using the Storefront API for cart persistence and Multipass for session continuity. This is custom-built, not a Shopify feature. Cost is assumed included in the headless build estimate ($150K-$250K above headed for self-build).
+In a phased headless migration, WooCommerce stays live while the Hydrogen storefront is built. Customers might browse on Hydrogen but check out on WooCommerce (or vice versa). Shared cart middleware keeps the shopping cart synchronized between both systems using the Storefront API for cart persistence and Multipass for session continuity. This is custom-built, not a Shopify feature.
 
 **What is "cross-domain analytics attribution loss"?**
 

@@ -298,50 +298,11 @@ Also included:
 
 ## **7. Shopify Migration Notes**
 
-### MVP Parity Integrations - Must Replicate at Launch
+All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific. **None of it is reusable on Shopify.** Every integration must be rebuilt regardless of architecture.
 
-The following connections are **live today on WooCommerce** and must be re-established on Shopify to achieve parity at launch. All are considered **MVP Parity Required** in the [Migration Decision Framework](decision-framework.md).
+What IS preserved: vendor accounts/contracts, configurations, business rules, and domain knowledge. This reduces ramp-up time but not rebuild effort.
 
-| System | Current Connection | Shopify Path |
-| --- | --- | --- |
-| Fulfil.io (OMS) | WooCommerce → Fulfil API | Custom Shopify → Fulfil API (high effort) |
-| Zendesk | WooCommerce orders/customer data | Native Shopify App |
-| ClaimLane | WooCommerce returns/warranty | Custom / TBD |
-| Signifyd | WooCommerce fraud checks | Shopify Fraud Protect (native) or Signifyd Shopify App |
-| Avalara | WooCommerce tax calculation | Shopify Tax (native, likely replaces Avalara) or Avalara Shopify App |
-| Xero | WooCommerce orders/payments → Xero | Xero native Shopify integration |
-| ActiveCampaign | WooCommerce → ActiveCampaign | Native Shopify App |
-| Google Tag Manager | WordPress GTM → ad platforms | Shopify Customer Events / web pixel |
-| Google Ads | GTM conversion tracking | Shopify Google channel / GTM (high headless effort) |
-| Affirm & PayPal | WooCommerce payment methods | Native Shopify payment methods |
-| TrackShip | WooCommerce order tracking | Native Shopify App |
-| Google Merchant Center | WooCommerce product feed | Native Shopify Feed |
-| Impact Radius | WooCommerce affiliate pixel | Custom pixel / app |
-| RaveCapture | WooCommerce reviews | Judge.me / Junip (migration of review data TBD) |
-| Reputation | WooCommerce/Shopify → Reputation | Shopify App / webhook |
-| Zowie Chatbot | WordPress embed | TBD - may be embed-compatible |
-| MessageMedia (SMS) | Via ActiveCampaign | Klaviyo SMS or direct; routing decision needed |
-| Sprout Social | Social channels | TBD - likely embed-compatible |
-
-### Phased Migration and Integration Rebuild Reality
-
-All WooCommerce connector code - plugins, PHP hooks, webhooks - is WooCommerce-specific. **None of it is reusable on Shopify.** Every integration in the MVP parity table above must be rebuilt for Shopify regardless of whether headed or headless architecture is chosen.
-
-What IS preserved across any migration path:
-
-* Vendor accounts and contracts (Fulfil, Avalara, Xero, Zendesk, Signifyd, etc.)
-* Configurations and business rules (Avalara nexus settings, Fulfil item/SKU catalog, Xero chart of accounts)
-* Domain knowledge of how these systems are configured for S&S
-
-This reduces ramp-up time but not rebuild effort.
-
-**What a phased headless migration actually buys:**
-
-* **Phase 1:** Shopify Storefront API serves the frontend; WooCommerce backend stays live - all existing integrations keep running unchanged. Revenue operations are not disrupted.
-* **Phase 2:** Cart and checkout migrate to Shopify; every integration must be rebuilt and re-connected to Shopify's data model. This is the full integration lift - same scope as a headed build.
-* **Phase 3:** WooCommerce decommissioned; all connections fully on Shopify.
-
-The benefit is **risk mitigation and parallel build time**, not cost reduction. WooCommerce running in Phase 1 gives the team time to build and test Shopify connectors without a hard cutover deadline on the integrations. The rebuild still happens.
+For the full integration-by-integration Shopify migration plan with headed vs. headless effort ratings, see the **[Integration Complexity Map](integration-map.md)**. For the phased migration approach (Phase 0-3), see the **[Developer Analysis](developer-analysis.md)**.
 
 ---
 

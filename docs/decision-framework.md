@@ -16,13 +16,13 @@ comments: true
 
 | Field | Value |
 | --- | --- |
-| Recommended Architecture | TBD - Headed / Headless |
+| Recommended Architecture | **Headed (OS 2.0)** - scored 3.70 vs Headless 2.05 out of 5.00 |
 | Recommended Agency | TBD |
 | Decision Date | **April 1, 2026** |
 | Hard Launch Deadline | **August 31, 2026** |
 | Decision Made By | TBD |
-| Next Action | TBD |
-| Rationale | TBD |
+| Next Action | Confirm Discount Logic Audit and agency co-dev model before Apr 1 |
+| Rationale | Headed wins on 7 of 9 criteria. The 5-month build window is the dominant constraint (30% weight); headless timeline of 6-9 months is incompatible with Aug 31 hard deadline. Headless leads only on Content & Design Flexibility. Recommended path: headed launch Aug 31, evaluate Hydrogen as 2027 fast-follow. |
 
 ---
 
@@ -32,15 +32,16 @@ comments: true
 
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | **30%** | | | Headed leverages OS2.0 + theme app extensions; headless adds checkout routing, shared carts, custom frontend scope. |
-| Total Cost - Year 1 | 15% | | | |
-| Total Cost - Year 3 | 5% | | | Reduced - timeline risk outweighs long-run cost optimization. |
-| Content & Design Flexibility | 10% | | | OS2.0 JSON templates provide significant headed flexibility. |
-| Checkout Ownership | **- (TBD)** | | | Checkout Extensibility (headed) vs. checkout subdomain routing (headless). **Headless note:** cross-domain flow (Hydrogen to Shopify checkout subdomain) requires [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) configuration to prevent GA4 attribution loss. |
-| SEO Continuity Risk | 15% | | | Headed lower risk; redirects required either way. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
-| Internal Team Capacity | 10% | | | Co-dev model mitigates - agency handles architecture; internal team executes alongside. |
-| Integration Complexity | **15%** | | | Headless adds overhead on checkout-adjacent integrations **and** shared cart middleware (Multipass + session sync). Details: [Integration Map](integration-map.md). |
-| Revenue Risk During Cutover | 5% | | | Shared carts support phased migration but require **custom middleware** - cart ID must be persisted across WooCommerce and Hydrogen frontends via Storefront API, and unified customer sessions require Multipass implementation. Budget for a technical spike. |
+| Speed to Market | **30%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, shared carts, custom frontend scope (6-9 mo typical - HIGH RISK for Aug 31). |
+| Total Cost - Year 1 | 15% | **4** | **2** | Headless adds >$250K build + $15-25K middleware + Oxygen + analytics + dedicated frontend engineering. |
+| Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
+| Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
+| Checkout Ownership | 5% | **4** | **2** | Headed: single-domain Checkout Extensibility. Headless: cross-domain branding gap + [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) required to prevent GA4 attribution loss. |
+| SEO Continuity Risk | 15% | **4** | **2** | Headed: single domain, standard Shopify URLs, lower risk. Headless: cross-domain analytics, more complex redirect handling. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
+| Internal Team Capacity | 10% | **4** | **2** | Headed: lower learning curve, co-dev model works well. Headless: React/Hydrogen/Oxygen expertise required, higher agency dependency. |
+| Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium, plus shared cart middleware (Multipass + session sync). Details: [Integration Map](integration-map.md). |
+| Revenue Risk During Cutover | 5% | **3** | **3** | Headed: standard big-bang cutover, well understood. Headless: phased migration possible but shared cart middleware adds failure modes. |
+| **Weighted Total** | **100%** | **3.70** | **2.05** | **Headed leads by 1.65 points.** Speed to Market (30% weight x 3-point gap) accounts for 55% of the difference. Headless leads only on Content & Design Flexibility. |
 
 ---
 

@@ -42,6 +42,10 @@ Who controls the checkout experience. In headed, the checkout lives on the same 
 - A visual "branding gap" between your custom React storefront and Shopify's checkout UI
 - Analytics attribution issues (GA4 sees the domain change as a new session, inflating "Direct" traffic)
 
+**What is "Checkout Routing"?**
+
+The mechanism that directs a customer from the storefront to the checkout page. In headed, this is seamless - the customer clicks "Checkout" and stays on the same domain. In headless, the storefront (Hydrogen) and checkout (Shopify-hosted) are on different domains, so your code must: (1) create a checkout via the Storefront API, (2) redirect the customer to Shopify's checkout URL on a separate subdomain, and (3) pass the cart, customer session (via Multipass), and tracking context across the domain boundary. This cross-domain redirect is the root cause of the branding gap, analytics attribution loss, and shared cart middleware complexity.
+
 **What does "Checkout-Adjacent" mean in the Integration Map?**
 
 Integrations that operate at or near the checkout layer (tax calculation, payment methods, carbon offsets) but are constrained by Shopify's hosted checkout. The effort is capped at storefront UI changes since Shopify controls the actual checkout.

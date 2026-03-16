@@ -16,7 +16,7 @@ comments: true
 
 | Field | Value |
 | --- | --- |
-| Recommended Architecture | **Headed (OS 2.0)** - scored 3.85 vs Headless 2.20 out of 5.00 |
+| Recommended Architecture | **Headed (OS 2.0)** - scored 3.85 vs Headless 2.15 out of 5.00 |
 | Recommended Agency | **Domaine (co-dev model)** — confirm eHouse co-dev availability before Apr 1 as secondary option |
 | Decision Date | **April 1, 2026** |
 | Hard Launch Deadline | **August 31, 2026** |
@@ -32,16 +32,16 @@ comments: true
 
 | Criteria | Weight | Headed | Headless | Notes |
 | --- | --- | --- | --- | --- |
-| Speed to Market | **20%** | **4** | **1** | Headed leverages OS2.0 + theme app extensions (3-4 mo typical); headless adds checkout routing, custom frontend scope (6-9 mo typical). Aug 31 is a target date; weight reduced from 30% accordingly. |
+| Speed to Market | **20%** | **4** | **1** | **Headed (3-4 mo typical):** leverages OS 2.0 themes out of the box, theme app extensions integrate seamlessly, pre-built components and sections ready to use, faster development and testing cycles. **Headless (6-9 mo typical):** requires custom frontend development from scratch, checkout routing configuration, additional complexity connecting storefront to Shopify backend, more extensive testing across the custom stack. Aug 31 is a target date; weight reduced from 30% accordingly. |
 | Total Cost - Year 1 | 15% | **4** | **2** | Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Details: [TCO](#4-total-cost-of-ownership). |
-| SEO Continuity Risk | 15% | **4** | **2** | Headed: single domain, standard Shopify URLs, lower risk. Headless: cross-domain analytics, more complex redirect handling. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
-| Content & Design Flexibility | 10% | **3** | **5** | Headless wins: full React freedom. OS2.0 JSON templates + sections provide significant but theme-bounded flexibility. |
+| SEO Continuity Risk | 15% | **4** | **2** | **Headed:** single domain, built-in URL management, standard Shopify URLs — lower risk. **Headless:** cross-domain tracking complexity, custom URL structures, more manual redirect management — roughly doubles SEO migration risk. Headless score assumes proper implementation (canonical tags, structured data) but still requires ongoing developer expertise to maintain SEO parity. Note: headless can offer faster page loads (edge rendering via Oxygen) which benefits Core Web Vitals / SEO, but this upside is offset by the architectural complexity. Details: [SEO Risk Assessment](seo-risk-assessment.md). |
+| Content & Design Flexibility | 10% | **3** | **5** | **Headless:** complete control over frontend framework, component architecture, and UI/UX — full React freedom. **Headed:** OS 2.0 sections + JSON templates have closed the flexibility gap significantly vs. older themes, but you're still within Shopify's Liquid framework and theme structure ("theme-bounded flexibility"). The 3 vs 5 gap reflects that OS 2.0 is substantial but not unlimited. Weight at 10% reflects that current business requirements likely don't demand extreme custom UI beyond OS 2.0 — brands with highly unique design needs might weight 15-25%. Note: "flexibility" does not extend to custom checkout experiences — headless has more limitations there than expected (Shopify-hosted checkout in both architectures). Leverage depends on having React/frontend expertise internally to actually use headless freedom. |
 | Internal Team Capacity | 10% | **4** | **2** | Headed: lower learning curve, co-dev model works well. Headless: React/Hydrogen/Oxygen expertise required, higher agency dependency. |
 | Integration Complexity | 10% | **4** | **2** | Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium. Details: [Integration Map](integration-map.md). |
 | Total Cost - Year 3 | 5% | **3** | **3** | Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment. |
-| Checkout Ownership | 5% | **4** | **3** | Headed: single-domain Checkout Extensibility (operationally simpler). Headless: checkout on separate domain (`.myshopify.com` default, custom subdomain configurable); cross-domain analytics solvable with GA4 alternatives; branding gap not a concern. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) available if GA4 retained. |
-| Revenue Risk During Cutover | **10%** | **4** | **2** | Both use standard data migration cutover (big-bang). Headed is well-understood with lower operational risk; headless adds custom frontend deployment, Oxygen infrastructure, and cross-domain checkout — significantly higher cutover surface area. |
-| **Weighted Total** | **100%** | **3.85** | **2.20** | **Headed leads by 1.65 points.** Speed to Market (20%) and Revenue Risk During Cutover (10%) together account for the majority of the difference. Headless leads only on Content & Design Flexibility. |
+| Checkout Ownership | 5% | **4** | **2** | **Headed:** single-domain Checkout Extensibility — maintains trust signals and brand continuity seamlessly, native checkout apps work without custom integration, simpler compliance/privacy management (single domain for cookies/consent). **Headless:** separate domain by default (`.myshopify.com`) creates friction even if configurable to custom subdomain; cross-domain analytics tracking is "solvable" but adds ongoing work, monitoring, and potential data gaps. Key insight: headless does NOT give more checkout control — both architectures use Shopify Checkout Extensibility — headless just adds domain complexity. Score reduced from 3→2 per Sidekick validation. [Web Pixels API](https://shopify.dev/docs/api/pixels/customer-events) available if GA4 retained. |
+| Revenue Risk During Cutover | **10%** | **4** | **2** | Both require the same backend migration (products, customers, orders) — the difference is surface area. **Headed:** well-trodden path with predictable issues, known solutions, and extensive community/agency experience. **Headless:** roughly doubles cutover risk — must coordinate custom frontend deployment, API readiness, CDN/Oxygen configuration, and checkout domain switching simultaneously. Additional headless cutover risks: API rate limits during high-traffic windows, cache warming and CDN propagation delays, rollback complexity (can't just flip DNS back easily), less agency/developer experience with headless cutover procedures. Weight at 10% reflects that cutover risk is significant but temporary. |
+| **Weighted Total** | **100%** | **3.85** | **2.15** | **Headed leads by 1.70 points.** Speed to Market (20%) and Revenue Risk During Cutover (10%) together account for the majority of the difference. Headless leads only on Content & Design Flexibility. |
 
 ### Sensitivity: What if we have more time and budget?
 
@@ -56,11 +56,11 @@ comments: true
 | Internal Team Capacity | 10% | 4 | 2 | **3** | Time to upskill on React/Hydrogen or budget to hire expertise |
 | Integration Complexity | 10% | 4 | 2 | **3** | More time to plan GTM/pixel work, but architectural gaps remain |
 | Total Cost - Year 3 | 5% | 3 | 3 | **4** | Larger upfront investment amortizes better over 3 years |
-| Checkout Ownership | 5% | 4 | 3 | **3** | Cross-domain checkout is architectural; unchanged |
+| Checkout Ownership | 5% | 4 | 2 | **2** | Cross-domain checkout is architectural; both use Checkout Extensibility — unchanged with more time/money |
 | Revenue Risk During Cutover | 10% | 4 | 2 | **3** | More time for dry runs and phased rollout reduces risk |
-| **Weighted Total** | **100%** | **3.85** | **2.20** | **3.30** | **Gap narrows from 1.65 → 0.55** |
+| **Weighted Total** | **100%** | **3.85** | **2.15** | **3.25** | **Gap narrows from 1.70 → 0.60** |
 
-**Key takeaway:** The remaining 0.55-point gap comes from **SEO continuity risk** and **integration complexity** — these are architectural differences that don't shrink with more time or money. Headless becomes *viable* with a relaxed timeline and budget, but headed remains the lower-risk path unless the business requires custom UI that OS 2.0 sections/templates fundamentally cannot deliver. The phased approach (headed now, headless 2027) actually becomes *stronger* with more resources — both phases get done properly without rushing either.
+**Key takeaway:** The remaining 0.60-point gap comes from **SEO continuity risk**, **integration complexity**, and **checkout ownership** — these are architectural differences that don't shrink with more time or money. Headless becomes *viable* with a relaxed timeline and budget, but headed remains the lower-risk path unless the business requires custom UI that OS 2.0 sections/templates fundamentally cannot deliver. The phased approach (headed now, headless 2027) actually becomes *stronger* with more resources — both phases get done properly without rushing either.
 
 ---
 

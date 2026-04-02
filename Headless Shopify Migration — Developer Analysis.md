@@ -2,6 +2,21 @@
 
 *Sources: Shopify headless migration phase list.docx, Shopify migration to headless to do list.xlsx*
 
+## Phase Summary
+
+| Phase | Description | Tasks | ETA |
+|---|---|---|---|
+| 0 | Preparatory | 1-2 | |
+| 0.5 | Testing Phase 0 | 3 | |
+| 1 | Product Catalogue on Shopify | 4-15 | |
+| 1.5 | Testing Phase 1 | 17 | |
+| 2 | Checkout, Cart & Integrations | 18-34 | |
+| 2.5 | Testing Phase 2 | 35 | |
+| 3 | Legacy Removal & Cutover | 36-37 | |
+| 3.5 | Testing Phase 3 | 38 | |
+| **Release** | **August 31, 2026** | | |
+| 4 | Nice to Haves | 39-43 | |
+
 ---
 
 ## Migration Phases

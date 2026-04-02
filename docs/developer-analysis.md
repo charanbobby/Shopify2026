@@ -46,45 +46,94 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 ## To Do List
 
-### Phase 0 Tasks
+### Phase 0 - Preparatory
 
-| ID | Task |
-| --- | --- |
-| 1 | Decision on which product information should be on Shopify (carousel images, custom fields, dimensions, etc.) |
-| 2 | Set up development store on Shopify with current catalogue |
+| ID | Task | ETA |
+| --- | --- | --- |
+| 1 | Decision on which product information should be on Shopify (carousel images, custom fields, dimensions, etc.) | |
+| 2 | Set up development store on Shopify with current catalogue | |
 
-### Phase 1 Tasks
+### Phase 0.5 - Testing Phase 0
 
-| ID | Task |
-| --- | --- |
-| 3 | Set up and populate custom fields and images in Shopify (or migrate to WordPress page) |
-| 4 | Set up product page template using Shopify catalogue and Storefront API |
-| 5 | Additional modularization of product page components (carousel image, size/colour selector, details, etc.) |
-| 6 | All product pages using Shopify catalogue |
-| 7 | Set up landing page template using Shopify catalogue and Storefront API |
-| 8 | Landing pages using Shopify catalogue |
-| 9 | Search function using Shopify catalogue |
-| 10 | Home page and remaining pages using Shopify catalogue |
-| 11 | GMC feed from Shopify catalogue |
+| ID | Task | ETA |
+| --- | --- | --- |
+| 3 | Validate development store setup and catalogue accuracy | |
 
-### Phase 2 Tasks
+### Phase 1 - Product Catalogue on Shopify
 
-| ID | Task |
-| --- | --- |
-| 12 | Shopping cart using Shopify Storefront API |
-| 13 | Checkout on Shopify |
-| 14 | Rate shopping based on Shopify catalogue and orders |
-| 15 | ClaimLane based on Shopify |
-| 16 | Sending tracking number through Shopify |
-| 17 | ActiveCampaign integration with Shopify |
+| ID | Task | ETA |
+| --- | --- | --- |
+| 4 | Set up and populate custom fields and images in Shopify (or migrate to WordPress page) | |
+| 5 | Set up product page template using Shopify catalogue and Storefront API | |
+| 6 | Additional modularization of product page components (carousel image, size/colour selector, details, etc.) | |
+| 7 | All product pages using Shopify catalogue | |
+| 8 | Verify Shopify Functions to confirm all promotions are fully supported | |
+| 9 | Verify Silk&Snow bundling | |
+| 10 | Set up landing page template using Shopify catalogue and Storefront API | |
+| 11 | Landing pages using Shopify catalogue | |
+| 12 | Search function using Shopify catalogue | |
+| 13 | Home page and remaining pages using Shopify catalogue | |
+| 14 | GMC feed from Shopify catalogue | |
+| 15 | Locale-specific stock/availability per locale ([DEV-2387](https://app.clickup.com/t/9014235134/DEV-2387), [DEV-2383](https://app.clickup.com/t/9014235134/DEV-2383)) | |
 
-### Phase 3 Tasks
+### Phase 1.5 - Testing Phase 1
 
-| ID | Task |
-| --- | --- |
-| 18 | Remove WooCommerce from WordPress |
-| 19 | Upgrade to PHP 8.0 and modify deprecated code |
-| 20 | Update plugins and port customization |
+| ID | Task | ETA |
+| --- | --- | --- |
+| 17 | End-to-end validation: product pages, landing pages, search, GMC feed, promotions, bundles | |
+
+### Phase 2 - Checkout, Cart & Integrations
+
+| ID | Task | ETA |
+| --- | --- | --- |
+| 18 | Shopping cart using Shopify Storefront API | |
+| 19 | Checkout on Shopify | |
+| 20 | Fulfil OMS integration (order lifecycle, webhooks, Admin API) | |
+| 21 | Rate shopping - repoint custom FedEx app to pull dimensions/product details from Shopify catalogue | |
+| 22 | ClaimLane based on Shopify | |
+| 23 | Sending tracking number through Shopify | |
+| 24 | ActiveCampaign integration with Shopify | |
+| 25 | Payment processor - PayPal connection | |
+| 26 | Payment processor - Affirm financing | |
+| 27 | Signifyd / fraud detection at Shopify checkout | |
+| 28 | Avalara tax - validate if Shopify Tax replaces Avalara or if reconnection needed | |
+| 29 | Google Tag Manager / Google Ads - conversion tracking through Shopify checkout | |
+| 30 | Impact Radius - affiliate conversion pixel at checkout | |
+| 31 | Xero accounting sync (order/refund data from Shopify) | |
+| 32 | RaveCapture / reviews widget update for Shopify catalogue | |
+| 33 | Zendesk order data - confirm if already connected via Shopify POS or if repointing needed | |
+| 34 | Cutover order continuity - validate how orders placed on WooCommerce before cutover receive confirmations/tracking from the new Shopify platform | |
+
+### Phase 2.5 - Testing Phase 2
+
+| ID | Task | ETA |
+| --- | --- | --- |
+| 35 | End-to-end validation: cart, checkout, payments, fulfillment, tracking, integrations | |
+
+### Phase 3 - Legacy Removal & Cutover
+
+| ID | Task | ETA |
+| --- | --- | --- |
+| 36 | Remove WooCommerce from WordPress | |
+| 37 | Plan for cutover | |
+| 38 | Upgrade PHP to 8.3 and fix deprecated code | |
+| 39 | Plugin updates and customization port | |
+
+### Phase 3.5 - Testing Phase 3
+
+| ID | Task | ETA |
+| --- | --- | --- |
+| 40 | End-to-end testing | |
+
+### Release - August 31, 2026
+
+### Phase 4 - Nice to Haves
+
+| ID | Task | ETA |
+| --- | --- | --- |
+| 41 | Cross-sell and upsell handling - confirm frontend or Shopify ([DEV-2360](https://app.clickup.com/t/9014235134/DEV-2360)) | |
+| 42 | Gift Card purchase & redemption - works on headless via Storefront API `cartGiftCardCodesAdd` mutation (API 2025-10+); redeemed on Shopify-hosted checkout | |
+| 43 | Shop Pay accelerated checkout - works on headless; appears as payment option on Shopify-hosted checkout via `checkoutUrl` redirect. No custom UI needed | |
 
 ---
 
@@ -124,4 +173,4 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 | Question | Answer |
 | --- | --- |
-| Do we need to migrate old orders to Shopify? | Leaning towards no - new order ID naming convention makes it easy to differentiate when a customer calls. |
+| Do we need to migrate old orders to Shopify? | No. The real concern is cutover continuity: if a customer places an order on WooCommerce just before cutover, how do they receive confirmation/tracking from the new Shopify platform? This needs to be tested during Phase 3 cutover planning. |

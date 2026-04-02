@@ -116,14 +116,12 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 | --- | --- | --- |
 | 36 | Remove WooCommerce from WordPress | |
 | 37 | Plan for cutover | |
-| 38 | Upgrade PHP to 8.3 and fix deprecated code | |
-| 39 | Plugin updates and customization port | |
 
 ### Phase 3.5 - Testing Phase 3
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 40 | End-to-end testing | |
+| 38 | End-to-end testing | |
 
 ### Release - August 31, 2026
 
@@ -131,6 +129,8 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 | ID | Task | ETA |
 | --- | --- | --- |
+| 39 | Upgrade PHP to 8.3 and fix deprecated code | |
+| 40 | Plugin updates and customization port | |
 | 41 | Cross-sell and upsell handling - confirm frontend or Shopify ([DEV-2360](https://app.clickup.com/t/9014235134/DEV-2360)) | |
 | 42 | Gift Card purchase & redemption - works on headless via Storefront API `cartGiftCardCodesAdd` mutation (API 2025-10+); redeemed on Shopify-hosted checkout | |
 | 43 | Shop Pay accelerated checkout - works on headless; appears as payment option on Shopify-hosted checkout via `checkoutUrl` redirect. No custom UI needed | |

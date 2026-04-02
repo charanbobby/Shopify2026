@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Headless Shopify Migration - Developer Analysis
+# Shopify Migration - Short-Term Strategy
 
 > Sources: Shopify headless migration phase list.docx, Shopify migration to headless to do list.xlsx
 

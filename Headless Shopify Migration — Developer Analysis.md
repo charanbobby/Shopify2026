@@ -50,6 +50,14 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 - Remove WooCommerce and any integrations/plugins that are no longer necessary
 - Plan for cutover
 
+### Phase 4 - Nice to Haves
+
+- Upgrade PHP to 8.3 and fix deprecated code
+- Plugin updates and customization port
+- Cross-sell and upsell handling
+- Gift Card purchase & redemption
+- Shop Pay accelerated checkout
+
 ---
 
 ## To Do List

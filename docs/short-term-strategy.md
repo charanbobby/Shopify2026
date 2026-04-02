@@ -10,16 +10,16 @@ comments: true
 
 | Phase | Description | Tasks | ETA |
 | --- | --- | --- | --- |
-| 0 | Preparatory | 1-2 | |
-| 0.5 | Testing Phase 0 | 3 | |
-| 1 | Product Catalogue on Shopify | 4-15 | |
-| 1.5 | Testing Phase 1 | 17 | |
-| 2 | Checkout, Cart & Integrations | 18-34 | |
-| 2.5 | Testing Phase 2 | 35 | |
-| 3 | Legacy Removal & Cutover | 36-37 | |
-| 3.5 | Testing Phase 3 | 38 | |
-| **Release** | **August 31, 2026** | | |
-| 4 | Nice to Haves | 39-43 | |
+| 0 | Preparatory | 1-2 | TBD |
+| 0.5 | Testing Phase 0 | 3 | TBD |
+| 1 | Product Catalogue on Shopify | 4-15 | TBD |
+| 1.5 | Testing Phase 1 | 17 | TBD |
+| 2 | Checkout, Cart & Integrations | 18-34 | TBD |
+| 2.5 | Testing Phase 2 | 35 | TBD |
+| 3 | Legacy Removal & Cutover | 36-37 | TBD |
+| 3.5 | Testing Phase 3 | 38 | TBD |
+| **Release** | **August 31, 2026** | | TBD |
+| 4 | Nice to Haves | 39-43 | TBD |
 
 ---
 
@@ -72,78 +72,78 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 1 | Decision on which product information should be on Shopify (carousel images, custom fields, dimensions, etc.) | |
-| 2 | Set up development store on Shopify with current catalogue | |
+| 1 | Decision on which product information should be on Shopify (carousel images, custom fields, dimensions, etc.) | TBD |
+| 2 | Set up development store on Shopify with current catalogue | TBD |
 
 ### Phase 0.5 - Testing Phase 0
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 3 | Validate development store setup and catalogue accuracy | |
+| 3 | Validate development store setup and catalogue accuracy | TBD |
 
 ### Phase 1 - Product Catalogue on Shopify
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 4 | Set up and populate custom fields and images in Shopify (or migrate to WordPress page) | |
-| 5 | Set up product page template using Shopify catalogue and Storefront API | |
-| 6 | Additional modularization of product page components (carousel image, size/colour selector, details, etc.) | |
-| 7 | All product pages using Shopify catalogue | |
-| 8 | Verify Shopify Functions to confirm all promotions are fully supported | |
-| 9 | Verify Silk&Snow bundling | |
-| 10 | Set up landing page template using Shopify catalogue and Storefront API | |
-| 11 | Landing pages using Shopify catalogue | |
-| 12 | Search function using Shopify catalogue | |
-| 13 | Home page and remaining pages using Shopify catalogue | |
-| 14 | GMC feed from Shopify catalogue | |
-| 15 | Locale-specific stock/availability per locale ([DEV-2387](https://app.clickup.com/t/9014235134/DEV-2387), [DEV-2383](https://app.clickup.com/t/9014235134/DEV-2383)) | |
+| 4 | Set up and populate custom fields and images in Shopify (or migrate to WordPress page) | TBD |
+| 5 | Set up product page template using Shopify catalogue and Storefront API | TBD |
+| 6 | Additional modularization of product page components (carousel image, size/colour selector, details, etc.) | TBD |
+| 7 | All product pages using Shopify catalogue | TBD |
+| 8 | Verify Shopify Functions to confirm all promotions are fully supported | TBD |
+| 9 | Verify Silk&Snow bundling | TBD |
+| 10 | Set up landing page template using Shopify catalogue and Storefront API | TBD |
+| 11 | Landing pages using Shopify catalogue | TBD |
+| 12 | Search function using Shopify catalogue | TBD |
+| 13 | Home page and remaining pages using Shopify catalogue | TBD |
+| 14 | GMC feed from Shopify catalogue | TBD |
+| 15 | Locale-specific stock/availability per locale ([DEV-2387](https://app.clickup.com/t/9014235134/DEV-2387), [DEV-2383](https://app.clickup.com/t/9014235134/DEV-2383)) | TBD |
 
 ### Phase 1.5 - Testing Phase 1
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 17 | End-to-end validation: product pages, landing pages, search, GMC feed, promotions, bundles | |
+| 17 | End-to-end validation: product pages, landing pages, search, GMC feed, promotions, bundles | TBD |
 
 ### Phase 2 - Checkout, Cart & Integrations
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 18 | Shopping cart using Shopify Storefront API | |
-| 19 | Checkout on Shopify | |
-| 20 | Fulfil OMS integration (order lifecycle, webhooks, Admin API) | |
-| 21 | Rate shopping - repoint custom FedEx app to pull dimensions/product details from Shopify catalogue | |
-| 22 | ClaimLane based on Shopify | |
-| 23 | Sending tracking number through Shopify | |
-| 24 | ActiveCampaign integration with Shopify | |
-| 25 | Payment processor - PayPal connection | |
-| 26 | Payment processor - Affirm financing | |
-| 27 | Signifyd / fraud detection at Shopify checkout | |
-| 28 | Avalara tax - validate if Shopify Tax replaces Avalara or if reconnection needed | |
-| 29 | Google Tag Manager / Google Ads - conversion tracking through Shopify checkout | |
-| 30 | Impact Radius - affiliate conversion pixel at checkout | |
-| 31 | Xero accounting sync (order/refund data from Shopify) | |
-| 32 | RaveCapture / reviews widget update for Shopify catalogue | |
-| 33 | Zendesk order data - confirm if already connected via Shopify POS or if repointing needed | |
-| 34 | Cutover order continuity - validate how orders placed on WooCommerce before cutover receive confirmations/tracking from the new Shopify platform | |
+| 18 | Shopping cart using Shopify Storefront API | TBD |
+| 19 | Checkout on Shopify | TBD |
+| 20 | Fulfil OMS integration (order lifecycle, webhooks, Admin API) | TBD |
+| 21 | Rate shopping - repoint custom FedEx app to pull dimensions/product details from Shopify catalogue | TBD |
+| 22 | ClaimLane based on Shopify | TBD |
+| 23 | Sending tracking number through Shopify | TBD |
+| 24 | ActiveCampaign integration with Shopify | TBD |
+| 25 | Payment processor - PayPal connection | TBD |
+| 26 | Payment processor - Affirm financing | TBD |
+| 27 | Signifyd / fraud detection at Shopify checkout | TBD |
+| 28 | Avalara tax - validate if Shopify Tax replaces Avalara or if reconnection needed | TBD |
+| 29 | Google Tag Manager / Google Ads - conversion tracking through Shopify checkout | TBD |
+| 30 | Impact Radius - affiliate conversion pixel at checkout | TBD |
+| 31 | Xero accounting sync (order/refund data from Shopify) | TBD |
+| 32 | RaveCapture / reviews widget update for Shopify catalogue | TBD |
+| 33 | Zendesk order data - confirm if already connected via Shopify POS or if repointing needed | TBD |
+| 34 | Cutover order continuity - validate how orders placed on WooCommerce before cutover receive confirmations/tracking from the new Shopify platform | TBD |
 
 ### Phase 2.5 - Testing Phase 2
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 35 | End-to-end validation: cart, checkout, payments, fulfillment, tracking, integrations | |
+| 35 | End-to-end validation: cart, checkout, payments, fulfillment, tracking, integrations | TBD |
 
 ### Phase 3 - Legacy Removal & Cutover
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 36 | Remove WooCommerce from WordPress | |
-| 37 | Plan for cutover | |
+| 36 | Remove WooCommerce from WordPress | TBD |
+| 37 | Plan for cutover | TBD |
 
 ### Phase 3.5 - Testing Phase 3
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 38 | End-to-end testing | |
+| 38 | End-to-end testing | TBD |
 
 ### Release - August 31, 2026
 
@@ -151,11 +151,11 @@ The site should be running solely on Shopify and not rely on WooCommerce. WooCom
 
 | ID | Task | ETA |
 | --- | --- | --- |
-| 39 | Upgrade PHP to 8.3 and fix deprecated code | |
-| 40 | Plugin updates and customization port | |
-| 41 | Cross-sell and upsell handling - confirm frontend or Shopify ([DEV-2360](https://app.clickup.com/t/9014235134/DEV-2360)) | |
-| 42 | Gift Card purchase & redemption - works on headless via Storefront API `cartGiftCardCodesAdd` mutation (API 2025-10+); redeemed on Shopify-hosted checkout | |
-| 43 | Shop Pay accelerated checkout - works on headless; appears as payment option on Shopify-hosted checkout via `checkoutUrl` redirect. No custom UI needed | |
+| 39 | Upgrade PHP to 8.3 and fix deprecated code | TBD |
+| 40 | Plugin updates and customization port | TBD |
+| 41 | Cross-sell and upsell handling - confirm frontend or Shopify ([DEV-2360](https://app.clickup.com/t/9014235134/DEV-2360)) | TBD |
+| 42 | Gift Card purchase & redemption - works on headless via Storefront API `cartGiftCardCodesAdd` mutation (API 2025-10+); redeemed on Shopify-hosted checkout | TBD |
+| 43 | Shop Pay accelerated checkout - works on headless; appears as payment option on Shopify-hosted checkout via `checkoutUrl` redirect. No custom UI needed | TBD |
 
 ---
 

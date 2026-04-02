@@ -1,14 +1,4 @@
-/* Consistent table column widths for to-do list tables */
+/* Keep all tables full width */
 .md-typeset table:not([class]) {
   width: 100%;
-}
-
-.md-typeset table:not([class]) th:last-child,
-.md-typeset table:not([class]) td:last-child {
-  width: 100px;
-}
-
-.md-typeset table:not([class]) th:first-child,
-.md-typeset table:not([class]) td:first-child {
-  width: 50px;
 }

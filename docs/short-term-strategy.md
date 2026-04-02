@@ -51,11 +51,10 @@ Note: During Phase 1, catalogues from both Shopify and WooCommerce need to be up
 
 The site should be running solely on Shopify and not rely on WooCommerce. WooCommerce and product-related integrations will remain on site for reference and to minimize impact in case any platform was forgotten during migration.
 
-### Phase 3 - Legacy Plugins and Integrations Removed
+### Phase 3 - Legacy Removal & Cutover
 
 - Remove WooCommerce and any integrations/plugins that are no longer necessary
-- Plugin updates and customization port
-- Upgrade PHP to 8.3 and fix deprecated code
+- Plan for cutover
 
 ---
 

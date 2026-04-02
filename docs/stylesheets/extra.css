@@ -1,0 +1,20 @@
+/* Fix table column alignment for to-do list tables */
+.md-typeset table:not([class]) {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.md-typeset table:not([class]) th:first-child,
+.md-typeset table:not([class]) td:first-child {
+  width: 8%;
+}
+
+.md-typeset table:not([class]) th:nth-child(2),
+.md-typeset table:not([class]) td:nth-child(2) {
+  width: 72%;
+}
+
+.md-typeset table:not([class]) th:nth-child(3),
+.md-typeset table:not([class]) td:nth-child(3) {
+  width: 20%;
+}

@@ -63,7 +63,7 @@ comments: true
 
 ## Self-Build (Internal)
 
-- Explored in developer analysis (see [Headless Migration - Developer Analysis](developer-analysis.md)) as a phased approach
+- Explored in developer analysis (see [Headless Migration - Developer Analysis](short-term-strategy.md)) as a phased approach
 - Phase 1: product pages via Storefront API while WooCommerce handles cart/checkout
 - Phase 2: cart and checkout migrate to Shopify; WooCommerce remains on standby
 - Phase 3: WooCommerce removed; full Shopify stack

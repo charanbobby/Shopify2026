@@ -48,7 +48,7 @@ Executive go/no-go artifact - recommendation, decision scorecard, agency matrix,
 
 End-to-end system map of the live WooCommerce stack (hosting, OMS, CX, marketing, finance, data flows).
 
-### [Developer Analysis](developer-analysis.md)
+### [Developer Analysis](short-term-strategy.md)
 
 Phased migration plan (Phase 0-3), task lists, and key exploratory questions with answers.
 

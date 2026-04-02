@@ -306,7 +306,7 @@ All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-spe
 
 What IS preserved: vendor accounts/contracts, configurations, business rules, and domain knowledge. This reduces ramp-up time but not rebuild effort.
 
-For the full integration-by-integration Shopify migration plan with headed vs. headless effort ratings, see the **[Integration Complexity Map](integration-map.md)**. For the phased migration approach (Phase 0-3), see the **[Developer Analysis](developer-analysis.md)**.
+For the full integration-by-integration Shopify migration plan with headed vs. headless effort ratings, see the **[Integration Complexity Map](integration-map.md)**. For the phased migration approach (Phase 0-3), see the **[Developer Analysis](short-term-strategy.md)**.
 
 ---
 

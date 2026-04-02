@@ -1,0 +1,2116 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://charanbobby.github.io/Shopify2026/decision-framework.html">
+      
+      
+        <link rel="prev" href="requirements-backlog.html">
+      
+      
+        <link rel="next" href="integration-map.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Decision Framework - Shopify 2026 - Project Phoenix</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migration-decision-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Shopify 2026 - Project Phoenix" class="md-header__button md-logo" aria-label="Shopify 2026 - Project Phoenix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Shopify 2026 - Project Phoenix
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Decision Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="project-phoenix.html" class="md-tabs__link">
+          
+  
+  
+  Project Phoenix
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="decision-framework.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Decision Framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="integration-map.html" class="md-tabs__link">
+          
+  
+  
+  Supporting Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="current-sns-architecture.html" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="faq.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Shopify 2026 - Project Phoenix" class="md-nav__button md-logo" aria-label="Shopify 2026 - Project Phoenix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Shopify 2026 - Project Phoenix
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Phoenix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Phoenix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-phoenix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements-backlog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Framework
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="decision-framework.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-decision-scorecard-headed-vs-headless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Decision Scorecard - Headed vs. Headless
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Decision Scorecard - Headed vs. Headless">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensitivity-what-if-we-have-more-time-and-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitivity: What if we have more time and budget?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agency-comparison-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Agency Comparison Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-total-cost-of-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Total Cost of Ownership
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Total Cost of Ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-state-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State (WooCommerce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-headed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 - Headed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-headless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 - Headless
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-top-risks-to-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Top Risks to Decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gono-go-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Go/No-Go Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-shopify-documentation-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Shopify Documentation References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supporting Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supporting Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integration-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agency-notes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agency Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="seo-risk-assessment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEO Risk Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="risk-register.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="current-state-baseline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="current-sns-architecture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current S&S Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="short-term-strategy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short-Term Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-decision-scorecard-headed-vs-headless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Decision Scorecard - Headed vs. Headless
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Decision Scorecard - Headed vs. Headless">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensitivity-what-if-we-have-more-time-and-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitivity: What if we have more time and budget?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agency-comparison-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Agency Comparison Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-total-cost-of-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Total Cost of Ownership
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Total Cost of Ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-state-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State (WooCommerce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-headed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 - Headed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-headless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 - Headless
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-top-risks-to-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Top Risks to Decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gono-go-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Go/No-Go Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-shopify-documentation-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Shopify Documentation References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="migration-decision-framework">Migration Decision Framework<a class="headerlink" href="#migration-decision-framework" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Decision date: April 1, 2026 | Target launch: August 31, 2026 | Build window: ~5 months</strong></p>
+<p>This page is the executive go/no-go artifact. Supporting detail lives in linked pages. Shopify documentation references validated 2026-03-13 via <code>@shopify/dev-mcp</code> - see <a href="#appendix-shopify-documentation-references">Appendix</a>.</p>
+</blockquote>
+<hr />
+<h2 id="1-recommendation">1. Recommendation<a class="headerlink" href="#1-recommendation" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>To be completed once sections below are scored.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recommended Architecture</td>
+<td><strong>Headed (OS 2.0)</strong> - scored 4.05 vs Headless 2.95 out of 5.00</td>
+</tr>
+<tr>
+<td>Recommended Agency</td>
+<td><strong>Domaine (co-dev model)</strong> — confirm eHouse co-dev availability before Apr 1 as secondary option</td>
+</tr>
+<tr>
+<td>Decision Date</td>
+<td><strong>April 1, 2026</strong></td>
+</tr>
+<tr>
+<td>Hard Launch Deadline</td>
+<td><strong>August 31, 2026 (hard deadline)</strong></td>
+</tr>
+<tr>
+<td>Decision Made By</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>Next Action</td>
+<td>1) Confirm eHouse co-dev model availability. 2) Confirm Discount Logic Audit before Apr 1. 3) <strong>Validate co-dev headed timeline meets Aug 31 hard deadline — if not, pivot to developer's headless phased strategy.</strong></td>
+</tr>
+<tr>
+<td>Fallback Strategy</td>
+<td>If co-dev headed model cannot confirm Aug 31 delivery, proceed with developer's <a href="short-term-strategy.html">Headless Phased Migration Strategy</a> — a 3-phase approach that incrementally migrates from WooCommerce to Shopify via Storefront API while preserving the existing frontend, reducing big-bang risk.</td>
+</tr>
+<tr>
+<td>Rationale</td>
+<td>Headed wins on 6 of 9 criteria (Speed to Market now tied at 4 each — developer's phased approach closes the headless timeline gap). Infrastructure/HA criterion (10%) reflects current WooCommerce downtime issues — headed gets full Shopify infrastructure (330 PoPs, 99.9% uptime, GCP redundancy); headless storefront runs on Oxygen (still Shopify-managed, scored 4). Headless adoption is ~10-20% of e-commerce market; headed is the standard path (Sidekick-validated). Headless leads only on Content &amp; Design Flexibility. Co-dev model is the preferred engagement — Domaine has confirmed co-dev and consulting tracks; eHouse should be evaluated as a secondary option if co-dev is available. <strong>Aug 31 is a hard deadline — time constraint validation is critical before Apr 1 decision.</strong> Pixel-to-pixel design fidelity from current Silk &amp; Snow site is confirmed achievable in both architectures (developer-validated). <strong>Key co-dev concern:</strong> dependency on an external agency (Domaine/eHouse) introduces schedule and delivery risk — if the agency cannot meet timelines, internal team absorbs the impact. The developer's headless phased approach mitigates this by keeping execution primarily in-house. Recommended path: headed launch targeting Aug 31 with co-dev agency; if timeline cannot be confirmed, pivot to developer's <a href="short-term-strategy.html">headless phased approach</a>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-decision-scorecard-headed-vs-headless">2. Decision Scorecard - Headed vs. Headless<a class="headerlink" href="#2-decision-scorecard-headed-vs-headless" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Score each criterion 1 (poor) to 5 (excellent). Weighted total = Score × Weight, summed per column. <strong>Aug 31 is a hard deadline</strong> (updated from target date). Speed to Market weighted at 20%. Infrastructure/HA weighted at 10% — current WooCommerce site has recurring downtime, making availability a key migration driver. Revenue Risk During Cutover weighted at 10% to reflect the operational importance of a clean migration.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Weight</th>
+<th>Headed</th>
+<th>Headless</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed to Market</td>
+<td><strong>20%</strong></td>
+<td><strong>4</strong></td>
+<td><strong>4</strong></td>
+<td><strong>Headed (3-4 mo typical):</strong> leverages OS 2.0 themes out of the box, theme app extensions integrate seamlessly, pre-built components and sections ready to use, faster development and testing cycles. <strong>Headless — phased approach (revised):</strong> developer's <a href="short-term-strategy.html">phased migration strategy</a> eliminates the traditional 6-9 month big-bang headless build. Phase 1 keeps WordPress frontend, sources product data from Shopify via Storefront API; Phase 2 migrates cart/checkout/integrations; Phase 3 removes legacy plugins. Incremental rollout reduces risk and parallelizes work. Score revised 1→4 based on phased feasibility. <strong>Aug 31 is a hard deadline</strong> (updated from target date). <strong>Co-dev concern:</strong> headed path depends on an external agency (Domaine/eHouse) for delivery — agency delays directly impact the Aug 31 deadline. The developer's headless phased approach keeps execution primarily in-house, reducing external dependency.</td>
+</tr>
+<tr>
+<td>Total Cost - Year 1</td>
+<td>15%</td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+<td>Headless adds $150K-$250K in estimated effort above headed (agency delta pricing). Self-build converts this to internal capacity cost, not cash outlay, but may require additional Hydrogen/React expertise. Details: <a href="#4-total-cost-of-ownership">TCO</a>.</td>
+</tr>
+<tr>
+<td>SEO Continuity Risk</td>
+<td>15%</td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+<td><strong>Headed:</strong> single domain, built-in URL management, standard Shopify URLs — lower risk. <strong>Headless:</strong> cross-domain tracking complexity, custom URL structures, more manual redirect management — roughly doubles SEO migration risk. Headless score assumes proper implementation (canonical tags, structured data) but still requires ongoing developer expertise to maintain SEO parity. Note: headless can offer faster page loads (edge rendering via Oxygen) which benefits Core Web Vitals / SEO, but this upside is offset by the architectural complexity. Details: <a href="seo-risk-assessment.html">SEO Risk Assessment</a>.</td>
+</tr>
+<tr>
+<td>Content &amp; Design Flexibility</td>
+<td>10%</td>
+<td><strong>4</strong></td>
+<td><strong>5</strong></td>
+<td><strong>Headless:</strong> complete control over frontend framework, component architecture, and UI/UX — full React freedom. <strong>Headed:</strong> OS 2.0 sections + JSON templates have closed the flexibility gap significantly vs. older themes, and React code injection into theme sections is possible for interactive components — you're not limited to pure Liquid. Still within Shopify's theme structure ("theme-bounded flexibility") but the ceiling is higher than it appears. The 4 vs 5 gap reflects that OS 2.0 + React injection is substantial — headless's lead here is narrow. Weight at 10% reflects that current business requirements likely don't demand extreme custom UI beyond OS 2.0 — brands with highly unique design needs might weight 15-25%. Note: "flexibility" does not extend to custom checkout experiences — headless has more limitations there than expected (Shopify-hosted checkout in both architectures). Leverage depends on having React/frontend expertise internally to actually use headless freedom. <strong>Pixel-to-pixel design fidelity:</strong> manager requires exact visual translation from current Silk &amp; Snow website — developer has confirmed this is achievable in headless (full frontend control) and feasible in headed (OS 2.0 sections + custom Liquid/CSS). No frontend blocker in either architecture.</td>
+</tr>
+<tr>
+<td>Integration Complexity</td>
+<td>10%</td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+<td>Headed: most integrations Low via app extensions. Headless: GTM/Ads High, 4 others Medium. Details: <a href="integration-map.html">Integration Map</a>.</td>
+</tr>
+<tr>
+<td>Revenue Risk During Cutover</td>
+<td><strong>10%</strong></td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+<td>Both require the same backend migration (products, customers, orders) — the difference is surface area. <strong>Headed:</strong> well-trodden path with predictable issues, known solutions, and extensive community/agency experience. <strong>Headless:</strong> roughly doubles cutover risk — must coordinate custom frontend deployment, API readiness, CDN/Oxygen configuration, and checkout domain switching simultaneously. Additional headless cutover risks: API rate limits during high-traffic windows, cache warming and CDN propagation delays, rollback complexity (can't just flip DNS back easily), less agency/developer experience with headless cutover procedures. Weight at 10% reflects that cutover risk is significant but temporary.</td>
+</tr>
+<tr>
+<td>Infrastructure / High Availability</td>
+<td><strong>10%</strong></td>
+<td><strong>5</strong></td>
+<td><strong>4</strong></td>
+<td><strong>Current WooCommerce site has recurring downtime — HA is a key migration driver.</strong> Shopify core infrastructure: 99.9% guaranteed uptime, 284M requests/minute edge capacity, 330 PoPs across 125+ countries, GCP-backed redundancy with automatic failover, full disaster recovery program. <strong>Headed:</strong> entire storefront + checkout + backend runs on this infrastructure — 100% Shopify-managed availability. <strong>Headless:</strong> checkout and backend APIs remain on Shopify core infrastructure, but the <strong>storefront runs on Oxygen</strong> (Shopify's Hydrogen hosting) — a separate deployment with its own availability characteristics that does not inherit the full 330-PoP storefront infrastructure. Oxygen is still Shopify-managed but introduces a distinct availability surface requiring its own monitoring and deployment pipeline. Headless adoption remains ~10-20% of e-commerce market (Sidekick-validated) — headed is the standard path for most merchants including Shopify Plus. Sidekick-validated 2026-03-18.</td>
+</tr>
+<tr>
+<td>Total Cost - Year 3</td>
+<td>5%</td>
+<td><strong>3</strong></td>
+<td><strong>3</strong></td>
+<td>Too many TBDs to differentiate; headless has ongoing frontend costs but amortizes build investment.</td>
+</tr>
+<tr>
+<td>Checkout Ownership</td>
+<td>5%</td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+<td><strong>Headed:</strong> single-domain Checkout Extensibility — maintains trust signals and brand continuity seamlessly, native checkout apps work without custom integration, simpler compliance/privacy management (single domain for cookies/consent). <strong>Headless:</strong> separate domain by default (<code>.myshopify.com</code>) creates friction even if configurable to custom subdomain; cross-domain analytics tracking is "solvable" but adds ongoing work, monitoring, and potential data gaps. Key insight: headless does NOT give more checkout control — both architectures use Shopify Checkout Extensibility — headless just adds domain complexity. Score reduced from 3→2 per Sidekick validation. <a href="https://shopify.dev/docs/api/pixels/customer-events">Web Pixels API</a> available if GA4 retained.</td>
+</tr>
+<tr>
+<td><strong>Weighted Total</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>4.05</strong></td>
+<td><strong>2.95</strong></td>
+<td><strong>Headed leads by 1.10 points</strong> (narrowed from 1.70 after developer's phased approach revised headless Speed to Market 1→4). Revenue Risk During Cutover (10%), SEO Continuity (15%), and Integration Complexity (10%) remain key differentiators. Infrastructure/HA (10%) differentiates — headed gets full Shopify infrastructure vs. headless's Oxygen-managed storefront. Headless leads only on Content &amp; Design Flexibility (by 1 point). <strong>The phased headless approach makes headless a viable fallback if headed co-dev cannot confirm Aug 31 delivery.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sensitivity-what-if-we-have-more-time-and-budget">Sensitivity: What if we have more time and budget?<a class="headerlink" href="#sensitivity-what-if-we-have-more-time-and-budget" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>If the Aug 31 target is extended (e.g., 9-12 month runway) and budget increases by $150K-$250K+, headless closes the gap but <strong>headed still leads</strong>. The table below shows how headless scores shift — headed scores remain unchanged.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Weight</th>
+<th>Headed</th>
+<th>Headless (current)</th>
+<th>Headless (relaxed)</th>
+<th>Why it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed to Market</td>
+<td>20%</td>
+<td>4</td>
+<td>4</td>
+<td><strong>4</strong></td>
+<td>Phased approach already closes this gap at current timeline; extended runway adds buffer</td>
+</tr>
+<tr>
+<td>Total Cost - Year 1</td>
+<td>15%</td>
+<td>4</td>
+<td>2</td>
+<td><strong>3</strong></td>
+<td>Larger budget absorbs the $150K-$250K delta</td>
+</tr>
+<tr>
+<td>SEO Continuity Risk</td>
+<td>15%</td>
+<td>4</td>
+<td>2</td>
+<td><strong>2</strong></td>
+<td>Architectural — cross-domain complexity doesn't shrink with more time or money</td>
+</tr>
+<tr>
+<td>Content &amp; Design Flexibility</td>
+<td>10%</td>
+<td>4</td>
+<td>5</td>
+<td><strong>5</strong></td>
+<td>Headless still leads but gap narrowed (headed bumped 3→4 with React injection); unchanged in relaxed scenario</td>
+</tr>
+<tr>
+<td>Integration Complexity</td>
+<td>10%</td>
+<td>4</td>
+<td>2</td>
+<td><strong>3</strong></td>
+<td>More time to plan GTM/pixel work, but architectural gaps remain</td>
+</tr>
+<tr>
+<td>Revenue Risk During Cutover</td>
+<td>10%</td>
+<td>4</td>
+<td>2</td>
+<td><strong>3</strong></td>
+<td>More time for dry runs and phased rollout reduces risk</td>
+</tr>
+<tr>
+<td>Infrastructure / High Availability</td>
+<td>10%</td>
+<td>5</td>
+<td>4</td>
+<td><strong>4</strong></td>
+<td>Architectural — Oxygen is Shopify-managed but a separate availability surface; doesn't change with more time or money</td>
+</tr>
+<tr>
+<td>Total Cost - Year 3</td>
+<td>5%</td>
+<td>3</td>
+<td>3</td>
+<td><strong>4</strong></td>
+<td>Larger upfront investment amortizes better over 3 years</td>
+</tr>
+<tr>
+<td>Checkout Ownership</td>
+<td>5%</td>
+<td>4</td>
+<td>2</td>
+<td><strong>2</strong></td>
+<td>Cross-domain checkout is architectural; both use Checkout Extensibility — unchanged with more time/money</td>
+</tr>
+<tr>
+<td><strong>Weighted Total</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>4.05</strong></td>
+<td><strong>2.95</strong></td>
+<td><strong>3.55</strong></td>
+<td><strong>Gap narrows from 1.10 → 0.50</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key takeaway:</strong> The remaining 0.50-point gap comes from <strong>SEO continuity risk</strong>, <strong>integration complexity</strong>, and <strong>checkout ownership</strong> — these are architectural differences that don't shrink with more time or money. Infrastructure/HA is a wash in the relaxed scenario (both architectures are Shopify-managed). With the developer's phased approach, headless is now a <strong>viable fallback</strong> even at the current timeline — the gap has narrowed significantly. Headed remains the lower-risk path, but headless is no longer disqualified on speed grounds. The phased approach (headed now, headless 2027) remains an option, but so does headless-first if co-dev headed cannot confirm Aug 31 delivery.</p>
+<hr />
+<h2 id="3-agency-comparison-matrix">3. Agency Comparison Matrix<a class="headerlink" href="#3-agency-comparison-matrix" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Engagement model: <strong>co-development + consultancy</strong>. Agencies without a co-dev track are disqualified. Detailed team notes: <a href="agency-notes.html">Agency Evaluation Notes</a>.</p>
+<p>RFP should require demonstrated experience with OS2.0, Checkout Extensibility, and Hydrogen/Oxygen.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Weight</th>
+<th>Agency E (eHouse)</th>
+<th>Agency D (Domaine)</th>
+<th>Agency S (StreamCommerce)</th>
+<th>Self-Build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headless Experience</td>
+<td>25%</td>
+<td>Low - defaults to headed</td>
+<td>Strong - presented all options with co-dev</td>
+<td>Low - no headless experience</td>
+<td>Medium - learning curve remains</td>
+</tr>
+<tr>
+<td>Headed / Native Experience</td>
+<td>20%</td>
+<td>Strong</td>
+<td>Strong</td>
+<td>Strong</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Co-Dev Model</td>
+<td><strong>25%</strong></td>
+<td>TBD - <strong>must confirm before Apr 1</strong></td>
+<td><strong>Strong - explicit co-dev and consulting tracks</strong></td>
+<td>Weak - not flexible; effectively disqualified</td>
+<td>Full - entirely internal</td>
+</tr>
+<tr>
+<td>Estimated Build Cost</td>
+<td>15%</td>
+<td>TBD - comparable to Agency S</td>
+<td><strong>Significantly higher</strong></td>
+<td>TBD - comparable to Agency E</td>
+<td>Staff cost only</td>
+</tr>
+<tr>
+<td>Estimated Timeline</td>
+<td>5%</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Longest</td>
+</tr>
+<tr>
+<td>Data Migration Experience</td>
+<td>5%</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Post-Launch Support</td>
+<td>5%</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Internal only</td>
+</tr>
+<tr>
+<td><strong>Weighted Score</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>TBD</strong></td>
+<td><strong>TBD</strong></td>
+<td><strong>TBD</strong></td>
+<td><strong>TBD</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-total-cost-of-ownership">4. Total Cost of Ownership<a class="headerlink" href="#4-total-cost-of-ownership" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>All estimates anchored against annual GMV. Populate GMV first.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annual GMV (CA + US)</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>Shopify Plus GMV Fee Threshold</td>
+<td>$800K USD/month (<strong>0.40%</strong> above threshold) - confirmed per current Shopify Plus pricing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="current-state-woocommerce">Current State (WooCommerce)<a class="headerlink" href="#current-state-woocommerce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cost Category</th>
+<th>Annual Cost</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosting &amp; Infrastructure</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td>Plugin &amp; License Fees</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td>Development &amp; Maintenance</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-1-headed">Option 1 - Headed<a class="headerlink" href="#option-1-headed" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cost Category</th>
+<th>Estimate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopify Plus License</td>
+<td>~$27,600/yr</td>
+<td>~$2,300/mo - confirm with account rep</td>
+</tr>
+<tr>
+<td>GMV Fee</td>
+<td>TBD</td>
+<td>0.40% above threshold</td>
+</tr>
+<tr>
+<td>Theme Development</td>
+<td>TBD</td>
+<td>One-time; OS2.0 reduces custom work</td>
+</tr>
+<tr>
+<td>App Subscriptions</td>
+<td>TBD</td>
+<td>Monthly recurring</td>
+</tr>
+<tr>
+<td>Data Migration</td>
+<td>TBD</td>
+<td>One-time</td>
+</tr>
+<tr>
+<td>Agency / Build Fees</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td>Ongoing Maintenance</td>
+<td>TBD</td>
+<td>Annual</td>
+</tr>
+<tr>
+<td><strong>Year 1 Total</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Year 3 Total</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-2-headless">Option 2 - Headless<a class="headerlink" href="#option-2-headless" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cost Category</th>
+<th>Estimate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopify Plus License</td>
+<td>~$27,600/yr</td>
+<td></td>
+</tr>
+<tr>
+<td>GMV Fee</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td>Build Cost (incremental above headed)</td>
+<td>$150K-$250K (self-build) / &gt;$250K (agency)</td>
+<td>Agency E quote may be over-estimated per team; self-build reduces cash outlay</td>
+</tr>
+<tr>
+<td>Frontend Infrastructure</td>
+<td>TBD</td>
+<td>Hydrogen/Oxygen hosting, CDN</td>
+</tr>
+<tr>
+<td>Checkout Subdomain Config</td>
+<td>TBD</td>
+<td>Required for headless; defaults to <code>.myshopify.com</code>, configurable to custom subdomain (e.g., <code>checkout.yourstore.com</code>) for brand consistency</td>
+</tr>
+<tr>
+<td>Custom Event Mapping</td>
+<td>TBD</td>
+<td>GTM/pixel reimplementation</td>
+</tr>
+<tr>
+<td>Cross-Domain GA4/GTM Attribution</td>
+<td>TBD</td>
+<td><a href="https://shopify.dev/docs/api/pixels/customer-events">Web Pixels API</a> setup + GA4 referral exclusion list (checkout subdomain, primary domain, <code>checkout.shopify.com</code>, payment provider domains) to prevent attribution loss across Hydrogen-to-checkout domain transition</td>
+</tr>
+<tr>
+<td>Data Migration (standard)</td>
+<td>Included in build cost</td>
+<td>Standard Shopify migration path: CSV import, Store Migration app, or Shopify Partner. One-time data cutover from WooCommerce.</td>
+</tr>
+<tr>
+<td>Oxygen CI/CD Infrastructure</td>
+<td>TBD</td>
+<td>Dev-ops hours for <a href="https://shopify.dev/docs/storefronts/headless/hydrogen/deploy">Hydrogen/Oxygen deployment pipeline</a> setup</td>
+</tr>
+<tr>
+<td>Dedicated Frontend Engineering</td>
+<td>TBD</td>
+<td>Ongoing annual</td>
+</tr>
+<tr>
+<td>Data Migration</td>
+<td>TBD</td>
+<td>One-time</td>
+</tr>
+<tr>
+<td>Agency / Build Fees</td>
+<td>TBD</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Year 1 Total</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Year 3 Total</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Break-Even vs Headed</strong></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-top-risks-to-decision">5. Top Risks to Decision<a class="headerlink" href="#5-top-risks-to-decision" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Full register with 11 risks and 12 assumptions: <a href="risk-register.html">Risk Register &amp; Open Assumptions</a>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Key Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Headless build may not meet Aug 31 deadline</strong></td>
+<td><strong>Medium</strong></td>
+<td><strong>High</strong></td>
+<td>🟢 Developer's <a href="short-term-strategy.html">phased migration strategy</a> reduces this risk — incremental rollout (Phase 1: product data, Phase 2: cart/checkout, Phase 3: cleanup) avoids big-bang rebuild. <strong>Aug 31 is now a hard deadline.</strong> Phased approach lowers likelihood from High→Medium. Require Phase 1 completion checkpoint by Jun 15 to validate pace. Standard data migration cutover assumed.</td>
+</tr>
+<tr>
+<td><strong>External agency dependency (co-dev model)</strong></td>
+<td><strong>Medium</strong></td>
+<td><strong>Medium</strong></td>
+<td>🟡 Developer flagged: the co-dev headed model depends on an external agency (Domaine/eHouse) for architecture, build, and timeline delivery. If the agency has capacity constraints, staffing changes, or delivery delays, the Aug 31 hard deadline is at risk. The developer's headless phased approach keeps execution primarily in-house, reducing this dependency. Mitigations: confirm agency SOW with milestone-based deliverables and penalty clauses; maintain headless phased approach as a ready fallback; ensure internal team has enough context to proceed independently if needed.</td>
+</tr>
+<tr>
+<td><strong>Cross-domain analytics attribution loss (headless)</strong></td>
+<td>High</td>
+<td>High</td>
+<td>Headless checkout defaults to <code>.myshopify.com</code> (custom subdomain like <code>checkout.yourstore.com</code> configurable). GA4 interprets the domain change as a new session, inflating "Direct" traffic. Mitigations: <a href="https://shopify.dev/docs/api/pixels/customer-events">Web Pixels API</a> + add checkout domain, primary store domain, <code>checkout.shopify.com</code>, and payment provider domains to GA4 referral exclusion list. Budget specialized technical scope.</td>
+</tr>
+<tr>
+<td><strong>Discount stacking limitation (Shopify Functions)</strong></td>
+<td>Medium</td>
+<td>High</td>
+<td>Discount Logic Audit before Apr 1: map WooCommerce's top 10 complex coupons to Shopify <a href="https://help.shopify.com/en/manual/discounts/combining-discounts">combination rules</a>. Hard ceiling at ~5 concurrent custom discount functions.</td>
+</tr>
+<tr>
+<td><strong>Co-dev capacity - agency + internal bandwidth</strong></td>
+<td>Low-Medium</td>
+<td>High</td>
+<td>Internal headcount committed before contract; agency carries architecture load</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-gono-go-timeline">6. Go/No-Go Timeline<a class="headerlink" href="#6-gono-go-timeline" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🟢 <strong>Headless timeline risk: MEDIUM</strong> (revised from MEDIUM-HIGH). Developer's <a href="short-term-strategy.html">phased migration strategy</a> reduces big-bang risk — incremental rollout keeps existing WordPress frontend operational while migrating backend to Shopify in phases. Standard data migration cutover assumed (CSV, Store Migration app, or Partner). <strong>Aug 31 is a hard deadline.</strong> Headed remains the lower-risk path, but headless phased approach is now a viable fallback. <strong>Primary strategy:</strong> co-dev headed model targeting Aug 31. <strong>Fallback:</strong> developer's headless phased approach if co-dev cannot confirm Aug 31 delivery.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Target Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discount Logic Audit</td>
+<td><strong>Before Apr 1</strong></td>
+<td>Map WooCommerce coupon types to Shopify <a href="https://help.shopify.com/en/manual/discounts/combining-discounts">discount combination rules</a></td>
+</tr>
+<tr>
+<td>Data Migration Method Selection</td>
+<td><strong>Before Apr 1</strong></td>
+<td>Choose standard migration path: CSV import, Store Migration app, or Shopify Partner. Plan dry-run cutover schedule.</td>
+</tr>
+<tr>
+<td>Architecture &amp; Agency Decision</td>
+<td><strong>Apr 1, 2026</strong></td>
+<td>Decision date locked</td>
+</tr>
+<tr>
+<td>Agency Notified</td>
+<td>Apr 3</td>
+<td></td>
+</tr>
+<tr>
+<td>Contract / SOW Signed</td>
+<td>Apr 10</td>
+<td></td>
+</tr>
+<tr>
+<td>Development Kickoff</td>
+<td>Apr 14</td>
+<td></td>
+</tr>
+<tr>
+<td>Checkout / Payment Validation</td>
+<td>Jun 30</td>
+<td></td>
+</tr>
+<tr>
+<td>Checkout Extensibility Branding Design</td>
+<td>Jul 7</td>
+<td>Reconcile Hydrogen storefront UI with Shopify-hosted checkout (headless only); configure custom checkout subdomain, checkout branding settings, and checkout customization apps to minimize visual gap</td>
+</tr>
+<tr>
+<td>UAT / Staging Launch</td>
+<td>Jul 14</td>
+<td>6-week UAT window</td>
+</tr>
+<tr>
+<td>Data Migration Cutover</td>
+<td>Aug 18</td>
+<td>Dry-run at least once before</td>
+</tr>
+<tr>
+<td>Staff Training</td>
+<td>Aug 24</td>
+<td></td>
+</tr>
+<tr>
+<td>Soft Launch</td>
+<td>Aug 25</td>
+<td>Limited traffic; monitoring on</td>
+</tr>
+<tr>
+<td><strong>Production Hard Launch</strong></td>
+<td><strong>Aug 31, 2026</strong></td>
+<td><strong>Hard deadline</strong></td>
+</tr>
+<tr>
+<td>Holiday Freeze</td>
+<td>Oct 15 – Jan 5</td>
+<td>No go-live in this window</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="supporting-documents">Supporting Documents<a class="headerlink" href="#supporting-documents" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="integration-map.html">Integration Complexity Map</a></td>
+<td>22 integrations with headed vs. headless effort ratings</td>
+</tr>
+<tr>
+<td><a href="agency-notes.html">Agency Evaluation Notes</a></td>
+<td>Team observations from agency meetings</td>
+</tr>
+<tr>
+<td><a href="seo-risk-assessment.html">SEO Risk Assessment</a></td>
+<td>8 SEO risk areas with mitigations</td>
+</tr>
+<tr>
+<td><a href="risk-register.html">Risk Register &amp; Open Assumptions</a></td>
+<td>11 risks + 12 assumptions</td>
+</tr>
+<tr>
+<td><a href="short-term-strategy.html">Developer Analysis — Headless Phased Strategy</a></td>
+<td>3-phase headless migration plan (fallback strategy) with task breakdown</td>
+</tr>
+<tr>
+<td><a href="current-state-baseline.html">Current State Baseline</a></td>
+<td>WooCommerce pain points and performance targets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-shopify-documentation-references">Appendix: Shopify Documentation References<a class="headerlink" href="#appendix-shopify-documentation-references" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Index of all Shopify documentation cited across this framework and supporting pages. Generated 2026-03-13 via <code>@shopify/dev-mcp</code>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Short Name</th>
+<th>URL</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS2.0 (themes, JSON templates, sections)</td>
+<td><a href="https://shopify.dev/docs/storefronts/themes/os20">https://shopify.dev/docs/storefronts/themes/os20</a></td>
+<td>Scorecard, Agency, SEO, Baseline</td>
+</tr>
+<tr>
+<td>Theme App Extensions (app blocks)</td>
+<td><a href="https://shopify.dev/docs/apps/build/online-store/theme-app-extensions">https://shopify.dev/docs/apps/build/online-store/theme-app-extensions</a></td>
+<td>Scorecard, Integrations, SEO</td>
+</tr>
+<tr>
+<td>Hydrogen Migration (checkout subdomain, redirects)</td>
+<td><a href="https://shopify.dev/docs/storefronts/headless/hydrogen/migrate">https://shopify.dev/docs/storefronts/headless/hydrogen/migrate</a></td>
+<td>Scorecard, Integrations, TCO, SEO, Risks</td>
+</tr>
+<tr>
+<td>Checkout Extensibility (UI extensions, constraints)</td>
+<td><a href="https://shopify.dev/docs/apps/build/checkout">https://shopify.dev/docs/apps/build/checkout</a></td>
+<td>Scorecard, Integrations, Agency, Timeline</td>
+</tr>
+<tr>
+<td>Shopify Functions (discounts, server-side customization)</td>
+<td><a href="https://shopify.dev/docs/api/functions">https://shopify.dev/docs/api/functions</a></td>
+<td>Agency, Risks</td>
+</tr>
+<tr>
+<td>Discount Functions</td>
+<td><a href="https://shopify.dev/docs/apps/discounts/functions">https://shopify.dev/docs/apps/discounts/functions</a></td>
+<td>Agency, Risks</td>
+</tr>
+<tr>
+<td>Admin API (REST)</td>
+<td><a href="https://shopify.dev/docs/api/admin-rest">https://shopify.dev/docs/api/admin-rest</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Admin API (legacy path)</td>
+<td><a href="https://shopify.dev/docs/admin-api">https://shopify.dev/docs/admin-api</a></td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>Storefront API</td>
+<td><a href="https://shopify.dev/docs/storefront-api">https://shopify.dev/docs/storefront-api</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Webhooks</td>
+<td><a href="https://shopify.dev/docs/apps/build/webhooks">https://shopify.dev/docs/apps/build/webhooks</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Web Pixels / Customer Events</td>
+<td><a href="https://shopify.dev/docs/api/pixels/customer-events">https://shopify.dev/docs/api/pixels/customer-events</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Hydrogen Analytics</td>
+<td><a href="https://shopify.dev/docs/storefronts/headless/hydrogen/analytics">https://shopify.dev/docs/storefronts/headless/hydrogen/analytics</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Checkout for Headless (Storefront API)</td>
+<td><a href="https://shopify.dev/docs/storefronts/headless/building-with-storefront-api/checkout">https://shopify.dev/docs/storefronts/headless/building-with-storefront-api/checkout</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Marketing Analytics / Pixels</td>
+<td><a href="https://shopify.dev/docs/apps/build/marketing-analytics/pixels">https://shopify.dev/docs/apps/build/marketing-analytics/pixels</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Shopify Tax</td>
+<td><a href="https://help.shopify.com/en/manual/taxes/shopify-tax">https://help.shopify.com/en/manual/taxes/shopify-tax</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Apps &amp; App Store guidance</td>
+<td><a href="https://shopify.dev/docs/apps">https://shopify.dev/docs/apps</a></td>
+<td>Integrations</td>
+</tr>
+<tr>
+<td>Shopify CLI / Theme Check</td>
+<td><a href="https://shopify.dev/docs/themes/tools/cli">https://shopify.dev/docs/themes/tools/cli</a></td>
+<td>Risks</td>
+</tr>
+<tr>
+<td>Shopify Markets (merchant docs)</td>
+<td><a href="https://help.shopify.com/en/manual/markets">https://help.shopify.com/en/manual/markets</a></td>
+<td>SEO, Assumptions</td>
+</tr>
+<tr>
+<td>Shopify Plus Pricing (plans &amp; features)</td>
+<td><a href="https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-plus-plan">https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-plus-plan</a></td>
+<td>TCO</td>
+</tr>
+<tr>
+<td>Discount Combinations</td>
+<td><a href="https://help.shopify.com/en/manual/discounts/combining-discounts">https://help.shopify.com/en/manual/discounts/combining-discounts</a></td>
+<td>Risks, Timeline</td>
+</tr>
+<tr>
+<td>Hydrogen/Oxygen Deployment</td>
+<td><a href="https://shopify.dev/docs/storefronts/headless/hydrogen/deploy">https://shopify.dev/docs/storefronts/headless/hydrogen/deploy</a></td>
+<td>TCO, Timeline</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+<h2 id="__comments">Comments</h2>
+<script src="https://giscus.app/client.js"
+        data-repo="charanbobby/Shopify2026"
+        data-repo-id="R_kgDORkW7oQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDORkW7oc4C4LSl"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.instant", "navigation.instant.progress", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

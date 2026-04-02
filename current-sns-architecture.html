@@ -1,0 +1,2186 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://charanbobby.github.io/Shopify2026/current-sns-architecture.html">
+      
+      
+        <link rel="prev" href="current-state-baseline.html">
+      
+      
+        <link rel="next" href="short-term-strategy.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Current S&S Architecture - Shopify 2026 - Project Phoenix</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#silk-snow-end-to-end-architecture-updated-markdown-version" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Shopify 2026 - Project Phoenix" class="md-header__button md-logo" aria-label="Shopify 2026 - Project Phoenix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Shopify 2026 - Project Phoenix
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Current S&S Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="project-phoenix.html" class="md-tabs__link">
+          
+  
+  
+  Project Phoenix
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="decision-framework.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Decision Framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="integration-map.html" class="md-tabs__link">
+          
+  
+  
+  Supporting Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="current-sns-architecture.html" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="faq.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Shopify 2026 - Project Phoenix" class="md-nav__button md-logo" aria-label="Shopify 2026 - Project Phoenix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Shopify 2026 - Project Phoenix
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Phoenix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Phoenix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-phoenix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements-backlog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="decision-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supporting Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supporting Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integration-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agency-notes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agency Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="seo-risk-assessment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEO Risk Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="risk-register.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="current-state-baseline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current S&S Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="current-sns-architecture.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current S&S Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scenario-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Scenario Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-containers-high-level-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Containers (High-Level Boxes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perimeter-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perimeter &amp; Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-website-e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Website &amp; E-commerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-experience-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Experience &amp; Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-management-logistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Management &amp; Logistics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order Management &amp; Logistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ERP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouses-3pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouses / 3PL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sales-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sales Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-invoice-feeds-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carrier Invoice Feeds (CSV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-tracking-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carrier Tracking APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouse-shipment-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouse Shipment Feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouse-inventory-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouse Inventory Feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shippingtracking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shipping/Tracking Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketing-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketing &amp; Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-fraud-tax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance, Fraud &amp; Tax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-connections-arrows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Connections (Arrows)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Connections (Arrows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-browsing-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Browsing &amp; Checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#courier-warehouse-data-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Courier &amp; Warehouse Data Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketing-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketing &amp; Reviews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance &amp; Accounting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hr-payroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HR &amp; Payroll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-layout-instructions-for-diagram-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Layout Instructions for Diagram Rendering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Layout Instructions for Diagram Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middle-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middle Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-system-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External System Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-shopify-migration-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Shopify Migration Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Icon Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="short-term-strategy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short-Term Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scenario-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Scenario Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-containers-high-level-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Containers (High-Level Boxes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perimeter-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perimeter &amp; Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-website-e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Website &amp; E-commerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-experience-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Experience &amp; Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-management-logistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Management &amp; Logistics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Order Management &amp; Logistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ERP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouses-3pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouses / 3PL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sales-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sales Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-invoice-feeds-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carrier Invoice Feeds (CSV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-tracking-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carrier Tracking APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouse-shipment-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouse Shipment Feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warehouse-inventory-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warehouse Inventory Feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shippingtracking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shipping/Tracking Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketing-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketing &amp; Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-fraud-tax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance, Fraud &amp; Tax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-connections-arrows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Connections (Arrows)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Connections (Arrows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-browsing-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Browsing &amp; Checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#courier-warehouse-data-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Courier &amp; Warehouse Data Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketing-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketing &amp; Reviews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance &amp; Accounting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hr-payroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HR &amp; Payroll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-layout-instructions-for-diagram-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Layout Instructions for Diagram Rendering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Layout Instructions for Diagram Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middle-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middle Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-system-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External System Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-shopify-migration-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Shopify Migration Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Icon Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="silk-snow-end-to-end-architecture-updated-markdown-version"><strong>Silk &amp; Snow - End-to-End Architecture (Updated Markdown Version)</strong><a class="headerlink" href="#silk-snow-end-to-end-architecture-updated-markdown-version" title="Permanent link">&para;</a></h1>
+<h2 id="1-scenario-overview"><strong>1. Scenario Overview</strong><a class="headerlink" href="#1-scenario-overview" title="Permanent link">&para;</a></h2>
+<p>E-commerce architecture for <strong>silkandsnow.com</strong>, including:</p>
+<ul>
+<li>Website hosted on <strong>AWS EC2 (LAMP + WordPress + WooCommerce)</strong></li>
+<li>Perimeter security via <strong>Cloudflare</strong> and <strong>COMODO SSL</strong></li>
+<li>Systems supporting order management, logistics, customer service, marketing, finance, HR</li>
+<li><strong>Centralized data &amp; reporting</strong> built on Azure + PowerBI</li>
+<li><strong>External POS (STORIS)</strong> operated by parent company, with <strong>manual order feed</strong> to Fulfil and <strong>Domo CSV exports</strong> into analytics</li>
+</ul>
+<p>Also included:</p>
+<ul>
+<li>Definition of resources</li>
+<li>Data flows</li>
+<li>Layout instructions</li>
+<li>Icon usage rules (including the <strong>Architecture Diagram\Logos</strong> folder)</li>
+</ul>
+<hr />
+<h2 id="2-containers-high-level-boxes"><strong>2. Containers (High-Level Boxes)</strong><a class="headerlink" href="#2-containers-high-level-boxes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>1. Public Internet
+2. Perimeter &amp; Hosting
+3. Core Website &amp; E-commerce
+4. Order Management &amp; Logistics
+5. Customer Experience &amp; Support
+6. Marketing &amp; Growth
+7. Finance, Fraud &amp; Tax
+8. Data &amp; Analytics
+9. External Systems (STORIS POS)
+10. SaaS Lifecycle
+</code></pre></div>
+<hr />
+<h2 id="3-resources"><strong>3. Resources</strong><a class="headerlink" href="#3-resources" title="Permanent link">&para;</a></h2>
+<h3 id="perimeter-hosting"><strong>Perimeter &amp; Hosting</strong><a class="headerlink" href="#perimeter-hosting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cloudflare</li>
+<li>Namecheap</li>
+<li>COMODO SSL</li>
+<li>AWS EC2 (LAMP)</li>
+</ul>
+<hr />
+<h3 id="core-website-e-commerce"><strong>Core Website &amp; E-commerce</strong><a class="headerlink" href="#core-website-e-commerce" title="Permanent link">&para;</a></h3>
+<ul>
+<li>WordPress</li>
+<li>WooCommerce</li>
+<li>Shopify POS</li>
+<li>
+<p><strong>STORIS POS (External System)</strong></p>
+</li>
+<li>
+<p>Independent system operated outside Silk &amp; Snow</p>
+</li>
+<li><strong>Manual order feed into Fulfil.io</strong></li>
+<li><strong>Domo CSV feed to Azure Data</strong></li>
+</ul>
+<hr />
+<h3 id="customer-experience-support"><strong>Customer Experience &amp; Support</strong><a class="headerlink" href="#customer-experience-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Google Workspace (Gmail)</li>
+<li>Zendesk</li>
+<li>Zowie</li>
+<li>Asana</li>
+<li>Assembled</li>
+<li>Oracle HR</li>
+</ul>
+<hr />
+<h3 id="order-management-logistics"><strong>Order Management &amp; Logistics</strong><a class="headerlink" href="#order-management-logistics" title="Permanent link">&para;</a></h3>
+<h4 id="erp">ERP<a class="headerlink" href="#erp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Fulfil.io</li>
+</ul>
+<h4 id="warehouses-3pl">Warehouses / 3PL<a class="headerlink" href="#warehouses-3pl" title="Permanent link">&para;</a></h4>
+<ul>
+<li>NFI Distribution</li>
+<li>JD Logistics</li>
+<li>Caledonia</li>
+</ul>
+<h4 id="sales-channels">Sales Channels<a class="headerlink" href="#sales-channels" title="Permanent link">&para;</a></h4>
+<ul>
+<li>WooCommerce</li>
+<li>Shopify POS</li>
+<li>EQ3</li>
+<li>TSC</li>
+<li>SCC</li>
+<li>Costco</li>
+<li><strong>STORIS POS (manual feed)</strong></li>
+</ul>
+<h4 id="carrier-invoice-feeds-csv">Carrier Invoice Feeds (CSV)<a class="headerlink" href="#carrier-invoice-feeds-csv" title="Permanent link">&para;</a></h4>
+<ul>
+<li>FedEx – SFTP</li>
+<li>UPS – SFTP</li>
+<li>Canpar – Email</li>
+</ul>
+<h4 id="carrier-tracking-apis">Carrier Tracking APIs<a class="headerlink" href="#carrier-tracking-apis" title="Permanent link">&para;</a></h4>
+<ul>
+<li>FedEx</li>
+<li>UPS</li>
+<li>Canpar</li>
+<li>Frontier</li>
+<li>TrackShip</li>
+</ul>
+<h4 id="warehouse-shipment-feeds">Warehouse Shipment Feeds<a class="headerlink" href="#warehouse-shipment-feeds" title="Permanent link">&para;</a></h4>
+<ul>
+<li>NFI – CSV (email)</li>
+<li>JD – API</li>
+</ul>
+<h4 id="warehouse-inventory-feeds">Warehouse Inventory Feeds<a class="headerlink" href="#warehouse-inventory-feeds" title="Permanent link">&para;</a></h4>
+<ul>
+<li>NFI – CSV (email)</li>
+<li>JD – API</li>
+</ul>
+<h4 id="shippingtracking-tools">Shipping/Tracking Tools<a class="headerlink" href="#shippingtracking-tools" title="Permanent link">&para;</a></h4>
+<ul>
+<li>AST (WooCommerce plugin)</li>
+<li>TrackShip</li>
+<li>Outbound carriers (FedEx, UPS, Canada Post, Canpar, Frontier, HET, AIT, Metropolitan)</li>
+</ul>
+<hr />
+<h3 id="marketing-growth"><strong>Marketing &amp; Growth</strong><a class="headerlink" href="#marketing-growth" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reputation</li>
+<li>Google My Business</li>
+<li>RaveCapture</li>
+<li>ActiveCampaign</li>
+<li>MessageMedia</li>
+<li>Sprout Social</li>
+<li>Google Ads</li>
+<li>Google Tag Manager</li>
+<li>Google Merchant Center</li>
+<li><strong>Reddit Ads (API – ad spend feed)</strong></li>
+</ul>
+<hr />
+<h3 id="finance-fraud-tax"><strong>Finance, Fraud &amp; Tax</strong><a class="headerlink" href="#finance-fraud-tax" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Xero</li>
+<li>Dext</li>
+<li>ApprovalMax</li>
+<li>PayPal</li>
+<li>Affirm</li>
+<li>Signifyd</li>
+<li>Avalara</li>
+</ul>
+<p><strong>Retired</strong>: NoFraud, ADP</p>
+<hr />
+<h3 id="data-analytics"><strong>Data &amp; Analytics</strong><a class="headerlink" href="#data-analytics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Microsoft Azure</li>
+<li>PowerBI</li>
+<li>BoC (exchange rate API)</li>
+<li>Headcount CSV (SFTP)</li>
+<li>Domo CSV (STORIS POS feed)</li>
+<li>Courier &amp; warehouse data feeds</li>
+<li>Paid ads &amp; marketing APIs</li>
+</ul>
+<hr />
+<h2 id="4-connections-arrows"><strong>4. Connections (Arrows)</strong><a class="headerlink" href="#4-connections-arrows" title="Permanent link">&para;</a></h2>
+<h3 id="customer-browsing-checkout"><strong>Customer Browsing &amp; Checkout</strong><a class="headerlink" href="#customer-browsing-checkout" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Users → Cloudflare → AWS EC2 → WordPress + WooCommerce</li>
+<li>WooCommerce → PayPal / Affirm / Signifyd / Avalara</li>
+</ul>
+<hr />
+<h3 id="order-flow"><strong>Order Flow</strong><a class="headerlink" href="#order-flow" title="Permanent link">&para;</a></h3>
+<ul>
+<li>WooCommerce / Shopify POS / EQ3 / TSC / SCC / Costco → Fulfil.io</li>
+<li><strong>STORIS POS → Fulfil.io (manual order feed)</strong></li>
+<li>Fulfil.io → NFI / JD / Caledonia</li>
+<li>Warehouses → Carriers</li>
+</ul>
+<hr />
+<h3 id="courier-warehouse-data-flows"><strong>Courier &amp; Warehouse Data Flows</strong><a class="headerlink" href="#courier-warehouse-data-flows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Courier invoices</p>
+</li>
+<li>
+<p>FedEx (SFTP) → Azure</p>
+</li>
+<li>UPS (SFTP) → Azure</li>
+<li>Canpar (Email) → Azure</li>
+<li>Tracking status APIs → Azure</li>
+<li>
+<p>Warehouse shipment/inventory</p>
+</li>
+<li>
+<p>NFI CSV → Azure</p>
+</li>
+<li>JD API → Azure</li>
+</ul>
+<hr />
+<h3 id="customer-support"><strong>Customer Support</strong><a class="headerlink" href="#customer-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Website → Zowie → Zendesk</li>
+<li>Email → Gmail → Zendesk</li>
+<li>Zendesk → Assembled (metrics)</li>
+<li>Zendesk → Asana (workflows)</li>
+</ul>
+<hr />
+<h3 id="marketing-reviews"><strong>Marketing &amp; Reviews</strong><a class="headerlink" href="#marketing-reviews" title="Permanent link">&para;</a></h3>
+<ul>
+<li>WooCommerce/Shopify → Reputation</li>
+<li>Reputation → Google/Yelp/BBB/Trustpilot</li>
+<li>WordPress/WooCommerce → GTM → Ad platforms</li>
+<li>WooCommerce → Merchant Center → Google Ads</li>
+<li>WooCommerce → ActiveCampaign → MessageMedia</li>
+<li>Social Media ↔ Sprout Social</li>
+<li>Reddit Ads → Azure</li>
+</ul>
+<hr />
+<h3 id="finance-accounting"><strong>Finance &amp; Accounting</strong><a class="headerlink" href="#finance-accounting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PayPal / Affirm / WooCommerce → Xero</li>
+<li>Dext → Xero</li>
+<li>ApprovalMax → Xero</li>
+<li>WooCommerce → Avalara</li>
+<li>WooCommerce / PayPal → Signifyd</li>
+</ul>
+<hr />
+<h3 id="hr-payroll"><strong>HR &amp; Payroll</strong><a class="headerlink" href="#hr-payroll" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HR data → Oracle HR</li>
+<li>Headcount CSV → Azure</li>
+</ul>
+<hr />
+<h3 id="data-reporting"><strong>Data &amp; Reporting</strong><a class="headerlink" href="#data-reporting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>WooCommerce / Fulfil.io / Xero / Zendesk → Azure</li>
+<li>Warehouse feeds → Azure</li>
+<li>Courier feeds → Azure</li>
+<li>Marketing feeds → Azure</li>
+<li><strong>STORIS → Domo CSV → Azure</strong></li>
+<li>Azure → PowerBI</li>
+</ul>
+<hr />
+<h2 id="5-layout-instructions-for-diagram-rendering"><strong>5. Layout Instructions for Diagram Rendering</strong><a class="headerlink" href="#5-layout-instructions-for-diagram-rendering" title="Permanent link">&para;</a></h2>
+<h3 id="top"><strong>Top</strong><a class="headerlink" href="#top" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Users</li>
+<li>Cloudflare</li>
+<li>Search/social platforms</li>
+</ul>
+<h3 id="second-layer"><strong>Second Layer</strong><a class="headerlink" href="#second-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Namecheap</li>
+<li>COMODO SSL</li>
+<li>AWS EC2</li>
+<li>WordPress / WooCommerce</li>
+</ul>
+<h3 id="middle-layer"><strong>Middle Layer</strong><a class="headerlink" href="#middle-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Left: Order Management &amp; Logistics</li>
+<li>Center: Support &amp; CX</li>
+<li>Right: Marketing &amp; Growth</li>
+</ul>
+<h3 id="lower-layer"><strong>Lower Layer</strong><a class="headerlink" href="#lower-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Finance / Fraud / Tax</li>
+<li>HR</li>
+</ul>
+<h3 id="bottom"><strong>Bottom</strong><a class="headerlink" href="#bottom" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Data sources (file drops, SFTP, APIs, warehouses, STORIS via Domo)</li>
+<li>Azure</li>
+<li>PowerBI</li>
+</ul>
+<h3 id="external-system-placement"><strong>External System Placement</strong><a class="headerlink" href="#external-system-placement" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>STORIS POS placed outside Silk &amp; Snow network boundary</strong></li>
+<li>
+<p>Lines:</p>
+</li>
+<li>
+<p><strong>STORIS → Fulfil.io (manual order feed)</strong></p>
+</li>
+<li><strong>STORIS → Domo CSV → Azure</strong></li>
+</ul>
+<h3 id="legend"><strong>Legend</strong><a class="headerlink" href="#legend" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Green – new systems</li>
+<li>Grey dashed – retired</li>
+<li>Default – active</li>
+</ul>
+<hr />
+<h2 id="7-shopify-migration-notes"><strong>7. Shopify Migration Notes</strong><a class="headerlink" href="#7-shopify-migration-notes" title="Permanent link">&para;</a></h2>
+<p>All WooCommerce connector code (plugins, PHP hooks, webhooks) is WooCommerce-specific. <strong>None of it is reusable on Shopify.</strong> Every integration must be rebuilt regardless of architecture.</p>
+<p>What IS preserved: vendor accounts/contracts, configurations, business rules, and domain knowledge. This reduces ramp-up time but not rebuild effort.</p>
+<p>For the full integration-by-integration Shopify migration plan with headed vs. headless effort ratings, see the <strong><a href="integration-map.html">Integration Complexity Map</a></strong>. For the phased migration approach (Phase 0-3), see the <strong><a href="short-term-strategy.html">Developer Analysis</a></strong>.</p>
+<hr />
+<h2 id="6-icon-guidelines"><strong>6. Icon Guidelines</strong><a class="headerlink" href="#6-icon-guidelines" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use official logos where available.</li>
+<li><strong>Icons are stored in: <em>Architecture Diagram\Logos</em> folder</strong></li>
+<li>
+<p>Category colors:</p>
+</li>
+<li>
+<p>Infrastructure – blue</p>
+</li>
+<li>ERP/Operations – dark orange</li>
+<li>Customer Support – green</li>
+<li>Marketing – purple</li>
+<li>Finance/HR – teal</li>
+<li>Retired – grey</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+<h2 id="__comments">Comments</h2>
+<script src="https://giscus.app/client.js"
+        data-repo="charanbobby/Shopify2026"
+        data-repo-id="R_kgDORkW7oQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDORkW7oc4C4LSl"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.instant", "navigation.instant.progress", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
